@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Codes\\Nam4\\WebAPIStrain\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\data\\mydbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\data\\mydbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\data\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\data\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\data\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\data\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\data\\gamegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\data\\gamegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\nam4\\webapistrain\\webapistrain\\models\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\models\\gamemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Program.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Program.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Program.cs",
+              "RelativeToolTip": "WebAPIStrain\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T09:45:19.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
+              "RelativeDocumentMoniker": "WebAPIStrain\\appsettings.json",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
+              "RelativeToolTip": "WebAPIStrain\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-23T09:29:21.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\GameController.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Controllers\\GameController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\GameController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAwCEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T07:49:38.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MyDbContex.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\MyDbContex.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Data\\MyDbContex.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\MyDbContex.cs",
+              "RelativeToolTip": "WebAPIStrain\\Data\\MyDbContex.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:58:58.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameModel.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Models\\GameModel.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Models\\GameModel.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Models\\GameModel.cs",
+              "RelativeToolTip": "WebAPIStrain\\Models\\GameModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:47:52.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\Game.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Data\\Game.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\Game.cs",
+              "RelativeToolTip": "WebAPIStrain\\Data\\Game.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:24:13.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GameGenre.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\GameGenre.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Data\\GameGenre.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\GameGenre.cs",
+              "RelativeToolTip": "WebAPIStrain\\Data\\GameGenre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:23:11.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\Genre.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Data\\Genre.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Data\\Genre.cs",
+              "RelativeToolTip": "WebAPIStrain\\Data\\Genre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:22:45.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAIwD0AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T07:58:35.854Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
