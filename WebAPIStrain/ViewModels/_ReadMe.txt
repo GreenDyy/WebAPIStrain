@@ -1,0 +1,1 @@
+﻿Vm tui dùng để lấy data show lên FE, tránh lấy trực tiếp từ entity

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
+    "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\NEWW\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
+    "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\NEWW\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "projectUniqueName": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\NEWW\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
         "projectName": "WebAPIStrain",
-        "projectPath": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\Nam4\\WebAPIStrain\\WebAPIStrain\\obj\\",
+        "projectPath": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\NEWW\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "packagesPath": "C:\\Users\\GreenDuy\\.nuget\\packages\\",
+        "outputPath": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\NEWW\\WebAPIStrain\\WebAPIStrain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GreenDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +49,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -97,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

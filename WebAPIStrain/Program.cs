@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebAPIStrain.Data;
-using WebAPIStrain.Controllers;
+using WebAPIStrain.Services;
+using WebAPIStrain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<MyDbContex>(options =>
+builder.Services.AddDbContext<IrtContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -25,6 +25,12 @@ builder.Services.AddCors(options =>
             policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
         });
 });
+
+//các Repository Pattern 
+builder.Services.AddScoped<IPhylumRepository, PhylumRepository>();
+builder.Services.AddScoped<IStrainRepository, StrainRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 var app = builder.Build();
 
