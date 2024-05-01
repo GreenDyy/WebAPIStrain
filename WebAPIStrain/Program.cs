@@ -31,6 +31,8 @@ builder.Services.AddScoped<IPhylumRepository, PhylumRepository>();
 builder.Services.AddScoped<IStrainRepository, StrainRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IClassRepository, ClassRepository>();
+builder.Services.AddScoped<IGenusRepository, GenusRepository>();
 
 var app = builder.Build();
 
