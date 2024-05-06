@@ -9,8 +9,6 @@ public partial class Employee
 
     public int? IdRole { get; set; }
 
-    public int? IdAccount { get; set; }
-
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
@@ -29,23 +27,17 @@ public partial class Employee
 
     public string? Degree { get; set; }
 
-    public string? Addresss { get; set; }
+    public string? Address { get; set; }
 
     public DateOnly? JoinDate { get; set; }
 
-    public string? Institution { get; set; }
+    public byte[]? ImageEmployee { get; set; }
 
-    public string? Department { get; set; }
-
-    public string? Position { get; set; }
-
-    public string? ResearchField { get; set; }
+    public virtual AccountForEmployee? AccountForEmployee { get; set; }
 
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
 
     public virtual ICollection<ContentWork> ContentWorks { get; set; } = new List<ContentWork>();
-
-    public virtual AccountForEmployee? IdAccountNavigation { get; set; }
 
     public virtual RoleForEmployee? IdRoleNavigation { get; set; }
 

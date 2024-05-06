@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAPIStrain.Entities;
 
 public partial class Customer
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; set; }
-
-    public string? IdCustomer { get; set; }
+    public string IdCustomer { get; set; } = null!;
 
     public string? FirstName { get; set; }
 
@@ -25,7 +21,7 @@ public partial class Customer
 
     public string? PhoneNumber { get; set; }
 
-    public virtual ICollection<AccountForCustomer> AccountForCustomers { get; set; } = new List<AccountForCustomer>();
+    public virtual AccountForCustomer? AccountForCustomer { get; set; }
 
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
 

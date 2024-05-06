@@ -41,28 +41,27 @@ GO
 --Bảng điều kiện
 CREATE TABLE ConditionalStrain (
 	ID_Condition INT IDENTITY(1,1) PRIMARY KEY,
-	Medium NVARCHAR(255) DEFAULT 'null',
-	Temperature NVARCHAR(255) DEFAULT 'null',
-	Light_Intensity NVARCHAR(255) DEFAULT 'null',
-	Duration NVARCHAR(255) DEFAULT 'null',
+	Medium NVARCHAR(255) DEFAULT NULL,
+	Temperature NVARCHAR(255) DEFAULT NULL,
+	Light_Intensity NVARCHAR(255) DEFAULT NULL,
+	Duration NVARCHAR(255) DEFAULT NULL,
 );
 GO
 
 --Bảng Strain:
 CREATE TABLE Strain(
     ID_Strain INT IDENTITY(1,1) PRIMARY KEY,
-	Strain_Number NVARCHAR(100) DEFAULT 'null',
+	Strain_Number NVARCHAR(100) DEFAULT NULL,
     ID_Species INT,
 	ID_Condition INT,
-	Image_Strain VARBINARY(MAX),
-    Scientific_Name NVARCHAR(50), --Tên khoa học của strain
+	Image_Strain VARBINARY(MAX) DEFAULT NULL,
+    Scientific_Name NVARCHAR(255), --Tên khoa học của strain
     Synonym_Strain NVARCHAR(255), --Đồng danh
     Former_Name NVARCHAR(255), --Tên ban đầu
     Common_Name NVARCHAR(255), --Tên thường gọi
     Cell_Size NVARCHAR(255), --Kích thước
     Organization NVARCHAR(255), --Tổ chức cơ thể
     Characteristics NVARCHAR(255), --Đặc điểm
-    Deposition_Date DATE, --Ngày kí gửi mẫu
     Collection_Site NVARCHAR(MAX), --Vị trí thu mẫu
     Continent NVARCHAR(255), --Châu lục
     Country NVARCHAR(255), --Quốc gia
@@ -74,7 +73,9 @@ CREATE TABLE Strain(
     Gene_Information NVARCHAR(MAX), --Thông tin về gen
     Publications NVARCHAR(255), --Ấn phẩm
     Recommended_For_Teaching NVARCHAR(20), --Có khuyến khích cho việc giảng dạy? (Yes/No)
-	Status_of_Strain NVARCHAR(255),
+	Price DECIMAL(10, 2),
+	Quality INT,
+	Status NVARCHAR(255),
 
     CONSTRAINT FK_Strain_Species FOREIGN KEY (ID_Species) REFERENCES Species(ID_Species),
 	CONSTRAINT FK_Strain_Condition FOREIGN KEY (ID_Condition) REFERENCES ConditionalStrain(ID_Condition)
@@ -89,20 +90,9 @@ CREATE TABLE RoleForEmployee (
 );
 GO
 
---Bảng tài khoản cho user: nhân viên, nghiên cứu viên, nhân viên quản lý...
-CREATE TABLE AccountForEmployee(
-	ID_Account INT PRIMARY KEY IDENTITY(1,1),
-	Username NVARCHAR(255),
-	Password NVARCHAR(255),
-	Status NVARCHAR(100),
-);
-GO
-
---Bảng Nhân viên: nghiên cứu viên, nhân viên bán hàng, nhân viên quản lý bài báo khoa học, nhân viên quản lý tiến độ dự án,....
 CREATE TABLE Employee (
     ID_Employee NVARCHAR(50) PRIMARY KEY, -- Mã nhân viên (Định dạng: NV0001->NV9999)
     ID_Role INT,
-    ID_Account INT,
     FirstName NVARCHAR(100),
     LastName NVARCHAR(100),
     FullName NVARCHAR(100),
@@ -112,17 +102,23 @@ CREATE TABLE Employee (
     Email NVARCHAR(255),
     Phone_Number NVARCHAR(20),
     Degree NVARCHAR(100), -- Bằng cấp
-    Addresss NVARCHAR(255), -- Địa chỉ ở hiện tại
+    Address NVARCHAR(255), -- Địa chỉ ở hiện tại
     Join_Date DATE, -- Ngày tham gia công ty
-    Institution NVARCHAR(255), -- Tên cơ quan, tổ chức mà nhân viên đang công tác
-    Department NVARCHAR(255), -- Phòng ban hoặc khoa mà nhân viên thuộc về
-    Position NVARCHAR(100), -- Vị trí hiện tại của nhân viên
-    Research_Field NVARCHAR(255), -- Lĩnh vực nghiên cứu chính
+	Image_Employee VARBINARY(MAX),
 
-    CONSTRAINT FK_Employee_RoleForEmployee FOREIGN KEY (ID_Role) REFERENCES RoleForEmployee(ID_Role),
-    CONSTRAINT FK_Employee_AccountForEmployee FOREIGN KEY (ID_Account) REFERENCES AccountForEmployee(ID_Account),
+    CONSTRAINT FK_Employee_RoleForEmployee FOREIGN KEY (ID_Role) REFERENCES RoleForEmployee(ID_Role)
 );
 GO
+
+CREATE TABLE AccountForEmployee(
+    ID_Employee NVARCHAR(50) PRIMARY KEY,
+    Username NVARCHAR(255),
+    Password NVARCHAR(255),
+    Status NVARCHAR(100),
+    CONSTRAINT FK_AccountForEmployee_Employee FOREIGN KEY (ID_Employee) REFERENCES Employee(ID_Employee)
+);
+GO
+
 
 
 --1 nghiên cứu viên có thể nghiên cứu nhiều strain và ngược lại
@@ -190,22 +186,16 @@ CREATE TABLE Project (
     ID_Project NVARCHAR(50) PRIMARY KEY, -- Mã dự án nghiên cứu (Định dạng: DA0001->DA9999)
     ID_Employee NVARCHAR(50), -- Người chủ nhiệm dự án
 	ID_Partner INT, --Đối tác quản lý dự án
-    ProjectName NVARCHAR(255),
-    StartDate DATE,
-    EndDate DATE,
-	Description NVARCHAR(MAX), -- Mô tả dự án
-    --Budget DECIMAL(18,2), -- Ngân sách dành cho dự án ?
+    ProjectName NVARCHAR(MAX),
+	Results NVARCHAR(MAX),
+    StartDateProject DATE,
+	ContractNo NVARCHAR(MAX),
+	Description NVARCHAR(MAX),
+	FileProject VARBINARY(MAX), 
 	Status NVARCHAR(255),
-	File_For_Project VARBINARY(MAX), 
 	--Từng gia đoạn của dự án:
-		--1. Lên kế hoạch (Xác định mục tiêu -> Lập kế hoạch)
-		--2. Phân tích và thiết kế (Phân tích nhu cầu và yêu cầu -> Thiết kế)
-		--3. Thực hiện nghiên cứu
-		--4. Phân tích dữ liệu (Thực hiện nghiên cứu -> Thu thập dữ liệu)
-		--5. Phân tích kết quả
-		--6. Viết báo cáo
-		--7. Đánh giá
-		--8. Hoàn thành
+		--1. Chưa hoàn thành
+		--2. Đã hoàn thành
 
     CONSTRAINT FK_Project_Employee FOREIGN KEY (ID_Employee) REFERENCES Employee(ID_Employee),
 	CONSTRAINT FK_Project_Partner FOREIGN KEY (ID_Partner) REFERENCES Partner(ID_Partner)
@@ -215,8 +205,13 @@ GO
 --Bảng nội dung cho bảng dự án nghiên cứu
 CREATE TABLE ProjectContent(
 	ID_ProjectContent INT IDENTITY(1,1) PRIMARY KEY,
-	Name_Content NVARCHAR(MAX),
 	ID_Project NVARCHAR(50),
+	Name_Content NVARCHAR(MAX),
+	Results NVARCHAR(MAX),
+	StartDate DATE,
+	EndDate DATE,
+	ContractNo NVARCHAR(MAX),
+	Status NVARCHAR(255),
 
 	CONSTRAINT FK_ProjectContent_Project FOREIGN KEY (ID_Project) REFERENCES Project(ID_Project)
 );
@@ -225,9 +220,14 @@ GO
 --Bảng công việc cho nội dung
 CREATE TABLE ContentWork(
 	ID_ContentWork INT IDENTITY(1,1) PRIMARY KEY,
-	Content NVARCHAR(MAX),
 	ID_ProjectContent INT,
 	ID_Employee NVARCHAR(50),
+	Name_Content NVARCHAR(MAX),
+	Results NVARCHAR(MAX),
+	StartDate DATE,
+	EndDate DATE,
+	ContractNo NVARCHAR(MAX),
+	Status NVARCHAR(255),
 
 	CONSTRAINT FK_ContentWork_ProjectContent FOREIGN KEY (ID_ProjectContent) REFERENCES ProjectContent(ID_ProjectContent),
 	CONSTRAINT FK_ContentWork_Employee FOREIGN KEY (ID_Employee) REFERENCES Employee(ID_Employee)
@@ -236,8 +236,7 @@ GO
 
 --Bảng khách hàng
 CREATE TABLE Customer(
-	ID INT IDENTITY(1,1) PRIMARY KEY,
-	ID_Customer NVARCHAR(50) UNIQUE, -- Mã khách hàng (Định dạng: KH00001)
+	ID_Customer NVARCHAR(50) PRIMARY KEY, -- Mã khách hàng (Định dạng: KH00001)
 	FirstName NVARCHAR(100),
     LastName NVARCHAR(100),
     FullName NVARCHAR(100),
@@ -250,27 +249,26 @@ GO
 
 --Bảng tài khoản khách hàng
 CREATE TABLE AccountForCustomer(
-	ID_AccountForCustomer INT IDENTITY(1,1) PRIMARY KEY,
-	ID INT,
+	ID_Customer NVARCHAR(50) PRIMARY KEY,
 	Username NVARCHAR(255),
 	Password NVARCHAR(255),
 	Status NVARCHAR(100),
 
-	CONSTRAINT FK_AccountForCustomer_Customer FOREIGN KEY (ID) REFERENCES Customer(ID)
+	CONSTRAINT FK_AccountForCustomer_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
 );
 GO
 
 --Bảng hóa đơn
 CREATE TABLE Bill(
 	ID_Bill NVARCHAR(50) PRIMARY KEY, -- Mã hóa đơn (Định dạng: 159753xxxxxx)
-	ID_Customer INT,
+	ID_Customer NVARCHAR(50),
 	ID_Employee NVARCHAR(50),
 	BillDate DATE,
 	Status_Of_Bill NVARCHAR(255),
 	Type_Of_Bill NVARCHAR(255),
 	Total FLOAT,
 
-	CONSTRAINT FK_BillOffline_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID),
+	CONSTRAINT FK_BillOffline_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer),
 	CONSTRAINT FK_BillOffline_Employee FOREIGN KEY (ID_Employee) REFERENCES Employee(ID_Employee)
 );
 GO
@@ -287,21 +285,13 @@ CREATE TABLE BillDetail(
 );
 GO
 
---Bảng số lượng sản phẩm có trong kho
-CREATE TABLE Warehouse(
-	ID_Strain INT PRIMARY KEY,
-	Quantity_Of_Strain INT,
-
-	CONSTRAINT FK_Warehouse_Strain FOREIGN KEY (ID_Strain) REFERENCES Strain(ID_Strain)
-);
-
 --Bảng giỏ hàng, khi mua online trên website
 CREATE TABLE Cart(
 	ID_Cart INT IDENTITY(1,1) PRIMARY KEY,
-	ID_Customer INT,
+	ID_Customer NVARCHAR(50),
 	Toatal_Product INT,
 
-	CONSTRAINT FK_Cart_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID)
+	CONSTRAINT FK_Cart_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
 );
 GO
 
@@ -317,135 +307,162 @@ CREATE TABLE CartDetail(
 );
 GO
 
---------------------------------------------------------------------
---Nháp
---SELECT
---    s.ID_Strain,
---    p.Name_Phylum,
---    c.Name_Class,
---    s.Scientific_Name,
---    s.Synonym_Strain,
---    s.Former_Name,
---    s.Common_Name,
---    s.Cell_Size,
---    s.Organization,
---    s.Characteristics,
---    r.FullName,
---    YEAR(rs.Research_Start_Date) AS 'Research_Start_Date_Of_Year',
---    s.Deposition_Date,
---    s.Collection_Site,
---    s.Continent,
---    s.Country,
---    s.Isolation_Source,
---    cs.Levels,
---    cs.DetailLevels,
---    cs.Temperature,
---    cs.Light_Intensity,
---    cs.Duration,
---    s.Toxin_Producer,
---    s.State_of_Strain,
---    s.Agitation_Resistance,
---    s.Remarks,
---    s.Gene_Information,
---    s.Publications,
---    s.Recommended_For_Teaching
---FROM
---    Strain s
---INNER JOIN
---    Class c ON s.ID_Class = c.ID_Class
---INNER JOIN
---    Phylum p ON c.ID_Phylum = p.ID_Phylum
---INNER JOIN
---    EmployeeStrain rs ON s.ID_Strain = rs.ID_Strain
---INNER JOIN
---    Employee r ON rs.ID_Employee = r.ID_Employee
---INNER JOIN
---    ConditionalStrain cs ON s.ID_Condition = cs.ID_Condition;
-go
---Insert DATA
---Bảng role nhan vien
-INSERT INTO RoleForEmployee (RoleName, RoleDescription) VALUES
-(N'Nhân viên', N'non'),
-(N'Nghiên cứu viên', N'Nghiên cứu viên'),
-(N'Nhân viên quản lý', N'Nhân viên quản lý')
-go
---Bảng account employee
-INSERT INTO AccountForEmployee (Username, Password, Status) VALUES 
-('duy', '1', 'Active'),
-('quan', '1', 'Active'),
-('tanh', '1', 'Active')
-go
---bảng employee
-INSERT INTO Employee (
-    ID_Employee, 
-    ID_Role, 
-    ID_Account, 
-    FirstName, 
-    LastName, 
-    FullName, 
-    ID_Card, 
-    Date_of_Birth, 
-    Gender, 
-    Email, 
-    Phone_Number, 
-    Degree, 
-    Addresss, 
-    Join_Date, 
-    Institution, 
-    Department, 
-    Position, 
-    Research_Field
-) 
-VALUES (
-    'NV0001', -- Mã nhân viên (Định dạng: NV0001->NV9999)
-    1, -- ID_Role của Researcher
-    1, -- ID_Account của Account tương ứng
-    N'Huỳnh Khánh', 
-    N'Duy', 
-    N'Huỳnh Khánh Duy', 
-    '123456789012', 
-    '2002-01-01', 
-    N'Nam', 
-    'duy.doe@example.com', 
-    '123456789', 
-    'PhD', 
-    '123 Main St, City, Country', 
-    '2000-01-01', 
-    'ABC Company', 
-    'Research Department', 
-    'Researcher', 
-    'Biology'
-);
+--=================================================================================================================================================================
+--=================================================================================================================================================================
 
---INSERT INTO Employee VALUES 
---('NV0002', 1, 2, N'Quân', N'Châu Minh', N'Châu Minh Quân', '29293923', '2002-01-01', N'Nam', 'quan@gmail.com', '02939292', 'ASC', N'TP HCM', '2000-01-01', 'Company', 'Rearch', 'AduGa', 'AduGa')
---thêm customer
-go
--- Thêm dữ liệu vào bảng Customer
-INSERT INTO Customer (ID_Customer, FirstName, LastName, FullName, Date_of_Birth, Gender, Email, Phone_Number)
-VALUES 
-('KH00001', N'Linh', N'Đỗ', N'Đỗ Linh', '2002-03-15', N'Nữ', 'linh@gmail.com', '123456789'),
-('KH00002', N'Trưởng', N'Bùi', N'Bùi Trưởng', '2002-03-15', N'Nam', 'truong@gmail.com', '123456789')
-go
--- Thêm dữ liệu vào bảng AccountForCustomer
-INSERT INTO AccountForCustomer (ID, Username, Password, Status)
-VALUES
-(1, 'linh', '123', 'Active'),
-(2, 'truong', '123', 'Active');
-go
+--CREATE OR ALTER PROCEDURE sp_InsertRoleForEmployee
+--    @RoleName NVARCHAR(100),
+--    @RoleDescription NVARCHAR(255)
+--AS
+--BEGIN
+--    INSERT INTO RoleForEmployee (RoleName, RoleDescription)
+--    VALUES (@RoleName, @RoleDescription);
+--END;
+--GO
+
+--EXEC sp_InsertRoleForEmployee
+--    @RoleName = N'Viện trưởng',
+--    @RoleDescription = N'Quản lý các hoạt động của công ty';
+--EXEC sp_InsertRoleForEmployee
+--    @RoleName = N'Nhân viên bán hàng',
+--    @RoleDescription = N'Nhân viên thực hiện các nhiệm vụ được giao';
+--EXEC sp_InsertRoleForEmployee
+--    @RoleName = N'Nghiên cứu viên',
+--    @RoleDescription = N'Nghiên cứu viên nghiên cứu sản phẩm';
 
 
-select *  from Strain
-select getdate()
+--------------------------------------------
 
-select * from RoleForEmployee
+--CREATE OR ALTER PROCEDURE sp_InsertEmployee
+--    @ID_Role INT,
+--    @FirstName NVARCHAR(100),
+--    @LastName NVARCHAR(100),
+--    @ID_Card NVARCHAR(12),
+--    @Date_of_Birth DATE,
+--    @Gender NVARCHAR(10),
+--    @Email NVARCHAR(255),
+--    @Phone_Number NVARCHAR(20),
+--    @Degree NVARCHAR(100),
+--    @Address NVARCHAR(255),
+--    @Join_Date DATE,
+--    @Institution NVARCHAR(255),
+--    @Department NVARCHAR(255),
+--    @Position NVARCHAR(100),
+--    @Research_Field NVARCHAR(255),
+--    @Image_Employee VARBINARY(MAX) = NULL
+--AS
+--BEGIN
+--    DECLARE @ID_Employee NVARCHAR(50);
+--    DECLARE @MaxNumber INT;
 
-select * from AccountForEmployee
-select * from Employee
+--    SELECT @MaxNumber = COALESCE(MAX(CAST(SUBSTRING(ID_Employee, 3, LEN(ID_Employee) - 2) AS INT)), 0) + 1 FROM Employee;
+--    SET @ID_Employee = FORMAT(@MaxNumber, 'NV000');
 
-select * from Customer
-select * from AccountForCustomer
+--    INSERT INTO Employee (
+--        ID_Employee, ID_Role, FirstName, LastName, FullName,
+--        ID_Card, Date_of_Birth, Gender, Email, Phone_Number,
+--        Degree, Address, Join_Date, Institution, Department,
+--        Position, Research_Field, Image_Employee
+--    )
+--    VALUES (
+--        @ID_Employee, @ID_Role, @FirstName, @LastName, @LastName + ' ' + @FirstName,
+--        @ID_Card, @Date_of_Birth, @Gender, @Email, @Phone_Number,
+--        @Degree, @Address, @Join_Date, @Institution, @Department,
+--        @Position, @Research_Field, @Image_Employee
+--    );
+--END;
+--GO
 
-select * from Genus --cao nhất	
-select * from Class -- nhì
-Select * from Phylum -- ba
+--EXEC sp_InsertEmployee
+--    @ID_Role = 1,
+--    @FirstName = N'Tuấn Anh',
+--    @LastName = N'Phạm Lê',
+--    @ID_Card = '123456780123',
+--    @Date_of_Birth = '2002-12-05',
+--    @Gender = N'Nam',
+--    @Email = 'tuananh@gmail.com',
+--    @Phone_Number = '0123456789',
+--    @Degree = 'Đại học',
+--    @Address = N'Quận 1, TP. HCM',
+--    @Join_Date = '2024-05-01',
+--    @Institution = '-',
+--    @Department = '-',
+--    @Position = '-',
+--    @Research_Field = N'Công nghệ thông tin',
+--	@Image_Employee = NULL;
+
+--EXEC sp_InsertEmployee
+--    @ID_Role = 2,
+--    @FirstName = N'Quân',
+--    @LastName = N'Châu Minh',
+--    @ID_Card = '567801231234',
+--    @Date_of_Birth = '2002-12-27',
+--    @Gender = N'Nam',
+--    @Email = 'quan@gmail.com',
+--    @Phone_Number = '0123456789',
+--    @Degree = 'Đại học',
+--    @Address = N'Bình Tân, TP. HCM',
+--    @Join_Date = '2024-05-01',
+--    @Institution = '',
+--    @Department = '',
+--    @Position = '',
+--    @Research_Field = N'Công nghệ thông tin',
+--	@Image_Employee = NULL;
+
+
+--------------------------------------------
+
+--CREATE OR ALTER PROCEDURE sp_InsertAccountForEmployee
+--    @ID_Employee NVARCHAR(50),
+--    @Username NVARCHAR(255),
+--    @Password NVARCHAR(255),
+--    @Status NVARCHAR(100)
+--AS
+--BEGIN
+--    INSERT INTO AccountForEmployee (ID_Employee, Username, Password, Status)
+--    VALUES (@ID_Employee, @Username, @Password, @Status);
+--END;
+--GO
+
+--EXEC sp_InsertAccountForEmployee
+--    @ID_Employee = N'NV001',
+--    @Username = N'tuananh',
+--    @Password = N'123',
+--    @Status = N'Đang hoạt động';
+--EXEC sp_InsertAccountForEmployee
+--    @ID_Employee = N'NV002',
+--    @Username = N'quan',
+--    @Password = N'456',
+--    @Status = N'Đang hoạt động';
+
+
+
+SELECT 
+    s.Strain_Number,
+    sp.Name_Species AS Species_Name,
+    ge.Name_Genus AS Name_Genus,
+    cs.Name_Class AS Name_Class,
+    ph.Name_Phylum AS Name_Phylum,
+    s.Image_Strain
+FROM 
+    Strain s
+JOIN 
+    Species sp ON s.ID_Species = sp.ID_Species
+JOIN 
+    Genus ge ON sp.ID_Genus = ge.ID_Genus
+JOIN 
+    Class cs ON ge.ID_Class = cs.ID_Class
+JOIN 
+    Phylum ph ON cs.ID_Phylum = ph.ID_Phylum
+WHERE
+	Strain_Number = '' OR Name_Species = ''
+
+
+	select * from Customer
+	select * from AccountForCustomer
+
+	
+	select * from Employee
+	select * from AccountForEmployee
+
+	select * from RoleForEmployee

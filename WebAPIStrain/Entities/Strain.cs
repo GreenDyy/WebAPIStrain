@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAPIStrain.Entities;
 
 public partial class Strain
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IdStrain { get; set; }
 
     public string? StrainNumber { get; set; }
@@ -31,8 +29,6 @@ public partial class Strain
 
     public string? Characteristics { get; set; }
 
-    public DateOnly? DepositionDate { get; set; }
-
     public string? CollectionSite { get; set; }
 
     public string? Continent { get; set; }
@@ -55,7 +51,11 @@ public partial class Strain
 
     public string? RecommendedForTeaching { get; set; }
 
-    public string? StatusOfStrain { get; set; }
+    public decimal? Price { get; set; }
+
+    public int? Quality { get; set; }
+
+    public string? Status { get; set; }
 
     public virtual ICollection<BillDetail> BillDetails { get; set; } = new List<BillDetail>();
 
@@ -68,6 +68,4 @@ public partial class Strain
     public virtual ICollection<IdentifyStrain> IdentifyStrains { get; set; } = new List<IdentifyStrain>();
 
     public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
-
-    public virtual Warehouse? Warehouse { get; set; }
 }

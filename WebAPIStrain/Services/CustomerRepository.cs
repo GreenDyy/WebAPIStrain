@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using System.Security.Principal;
 using WebAPIStrain.Entities;
 using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
@@ -21,7 +22,7 @@ namespace WebAPIStrain.Services
             //các bước xử lý id: cắt chuỗi số -> convert sang int -> tăng 1 -> conver sang string dạng D5 -> ghép lại như cữ
             string newIdCustomer;
             string? lastIdCustomer;
-            var lastCustomer = dbContext.Customers.OrderBy(c=>c.IdCustomer).LastOrDefault();
+            var lastCustomer = dbContext.Customers.OrderBy(c => c.IdCustomer).LastOrDefault();
             if (lastCustomer != null)
             {
                 lastIdCustomer = lastCustomer.IdCustomer;
@@ -51,11 +52,14 @@ namespace WebAPIStrain.Services
             dbContext.Add(newCustomer);
             dbContext.SaveChanges();
 
+            //account
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputCustomer.Password);
+
             var newAccount = new AccountForCustomer
             {
-                Id = newCustomer.Id, //lấy id dc generate từ customer vừa add ở trên
+                IdCustomer = newCustomer.IdCustomer, //lấy id dc generate từ customer vừa add ở trên
                 Username = inputCustomer.Username,
-                Password = inputCustomer.Password,
+                Password = hashedPassword,
                 Status = inputCustomer.Status
             };
             dbContext.Add(newAccount);
@@ -63,7 +67,6 @@ namespace WebAPIStrain.Services
             //truy vào csdl lấy data mới thêm, dùng VM
             return new CustomerVM
             {
-                Id = newCustomer.Id,
                 IdCustomer = newCustomer.IdCustomer,
                 FirstName = newCustomer.FirstName,
                 LastName = newCustomer.LastName,
@@ -73,19 +76,18 @@ namespace WebAPIStrain.Services
                 Email = newCustomer.Email,
                 PhoneNumber = newCustomer.PhoneNumber,
 
-                IdAccountForCustomer = newAccount.IdAccountForCustomer,
                 Username = newAccount.Username,
                 Password = newAccount.Password,
                 Status = newAccount.Status,
             };
         }
 
-        public bool Delete(int id)
+        public bool Delete(string id)
         {
-            var customer = dbContext.Customers.Include(c => c.AccountForCustomers).FirstOrDefault(s => s.Id == id);
+            var customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(s => s.IdCustomer == id);
             if (customer != null)
             {
-                dbContext.RemoveRange(customer.AccountForCustomers);
+                dbContext.Remove(customer.AccountForCustomer);
                 dbContext.Remove(customer);
                 dbContext.SaveChanges();
                 return true;
@@ -97,7 +99,6 @@ namespace WebAPIStrain.Services
         {
             var customers = dbContext.Customers.Select(c => new CustomerVM
             {
-                Id = c.Id,
                 IdCustomer = c.IdCustomer,
                 FirstName = c.FirstName,
                 LastName = c.LastName,
@@ -106,22 +107,20 @@ namespace WebAPIStrain.Services
                 Gender = c.Gender,
                 Email = c.Email,
                 PhoneNumber = c.PhoneNumber,
-                IdAccountForCustomer = c.AccountForCustomers.FirstOrDefault().IdAccountForCustomer,
-                Username = c.AccountForCustomers.FirstOrDefault().Username,
-                Password = c.AccountForCustomers.FirstOrDefault().Password,
-                Status = c.AccountForCustomers.FirstOrDefault().Status
+                Username = c.AccountForCustomer.Username,
+                Password = c.AccountForCustomer.Password,
+                Status = c.AccountForCustomer.Status
             }).ToList();
             return customers;
         }
 
-        public CustomerVM GetById(int id)
+        public CustomerVM GetById(string id)
         {
-            var customer = dbContext.Customers.Include(c => c.AccountForCustomers).FirstOrDefault(c => c.Id == id);
+            var customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == id);
             if (customer != null)
             {
                 return new CustomerVM
                 {
-                    Id = customer.Id,
                     IdCustomer = customer.IdCustomer,
                     FirstName = customer.FirstName,
                     LastName = customer.LastName,
@@ -130,18 +129,17 @@ namespace WebAPIStrain.Services
                     Gender = customer.Gender,
                     Email = customer.Email,
                     PhoneNumber = customer.PhoneNumber,
-                    IdAccountForCustomer = customer.AccountForCustomers.FirstOrDefault().IdAccountForCustomer,
-                    Username = customer.AccountForCustomers.FirstOrDefault().Username,
-                    Password = customer.AccountForCustomers.FirstOrDefault().Password,
-                    Status = customer.AccountForCustomers.FirstOrDefault().Status
+                    Username = customer.AccountForCustomer.Username,
+                    Password = customer.AccountForCustomer.Password,
+                    Status = customer.AccountForCustomer.Status
                 };
             }
             return null;
         }
 
-        public bool Update(int id, CustomerModel customer)
+        public bool Update(string id, CustomerModel customer)
         {
-            var _customer = dbContext.Customers.Include(c => c.AccountForCustomers).FirstOrDefault(c => c.Id == id);
+            var _customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == id);
             if (_customer != null)
             {
                 _customer.FirstName = customer.FirstName;
@@ -151,14 +149,48 @@ namespace WebAPIStrain.Services
                 _customer.Gender = customer.Gender;
                 _customer.Email = customer.Email;
                 _customer.PhoneNumber = customer.PhoneNumber;
-                _customer.AccountForCustomers.FirstOrDefault().Username = customer.Username;
-                _customer.AccountForCustomers.FirstOrDefault().Password = customer.Password;
-                _customer.AccountForCustomers.FirstOrDefault().Status = customer.Status;
+                _customer.AccountForCustomer.Username = customer.Username;
+                _customer.AccountForCustomer.Password = customer.Password;
+                _customer.AccountForCustomer.Status = customer.Status;
 
                 dbContext.SaveChanges();
                 return true;
             }
             return false;
+        }
+
+        public CustomerVM Login(string username, string password)
+        {
+            var account = dbContext.AccountForCustomers.FirstOrDefault(ac => ac.Username == username);
+            if (account != null)
+            {
+                //bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(password, account.Password);
+                //if (isPasswordMatch)
+                //{
+                //    return true;
+                //} đợi sửa data pass custom thành mã hoá rồi dùng
+                if (account.Password == password)
+                {
+                    var profile = dbContext.Customers.FirstOrDefault(c => c.IdCustomer == account.IdCustomer);
+                    return new CustomerVM
+                    {
+                        IdCustomer = profile.IdCustomer,
+                        FirstName = profile.FirstName,
+                        LastName = profile.LastName,
+                        FullName = profile.FullName,
+                        DateOfBirth = profile.DateOfBirth,
+                        Gender = profile.Gender,
+                        Email = profile.Email,
+                        PhoneNumber = profile.PhoneNumber,
+
+                        Username = account.Username,
+                        Password = account.Password,
+                        Status = account.Status,
+                    };
+                }
+                return null;
+            }
+            return null;
         }
     }
 }

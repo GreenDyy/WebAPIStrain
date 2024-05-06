@@ -3,9 +3,7 @@ namespace WebAPIStrain.ViewModels
 {
     public class CustomerVM
     {
-        public int Id { get; set; }
-
-        public string? IdCustomer { get; set; }
+        public string IdCustomer { get; set; } = null!;
 
         public string? FirstName { get; set; }
 
@@ -21,15 +19,7 @@ namespace WebAPIStrain.ViewModels
 
         public string? PhoneNumber { get; set; }
 
-        //public virtual ICollection<AccountForCustomer> AccountForCustomers { get; set; } = new List<AccountForCustomer>();
-
-        //public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
-
-        //public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
         //account
-        public int IdAccountForCustomer { get; set; }
-
-        //public int? Id { get; set; } trên có rồi
 
         public string? Username { get; set; }
 

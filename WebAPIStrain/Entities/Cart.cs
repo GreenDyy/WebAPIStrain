@@ -7,7 +7,7 @@ public partial class Cart
 {
     public int IdCart { get; set; }
 
-    public int? IdCustomer { get; set; }
+    public string? IdCustomer { get; set; }
 
     public int? ToatalProduct { get; set; }
 

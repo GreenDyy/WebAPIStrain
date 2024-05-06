@@ -4,16 +4,7 @@ namespace WebAPIStrain.ViewModels
 {
     public class EmployeeVM
     {
-        //account 
-        public int IdAccount { get; set; }
-
-        public string? Username { get; set; }
-
-        public string? Password { get; set; }
-
-        //employe
-
-        public string? Status { get; set; }
+        //employee
         public string IdEmployee { get; set; } = null!;
 
         public int? IdRole { get; set; }
@@ -36,16 +27,18 @@ namespace WebAPIStrain.ViewModels
 
         public string? Degree { get; set; }
 
-        public string? Addresss { get; set; }
+        public string? Address { get; set; }
 
         public DateOnly? JoinDate { get; set; }
 
-        public string? Institution { get; set; }
+        public byte[]? ImageEmployee { get; set; }
 
-        public string? Department { get; set; }
+        // account
 
-        public string? Position { get; set; }
+        public string? Username { get; set; }
 
-        public string? ResearchField { get; set; }
+        public string? Password { get; set; }
+
+        public string? Status { get; set; }
     }
 }

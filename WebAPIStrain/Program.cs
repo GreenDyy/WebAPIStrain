@@ -33,6 +33,7 @@ builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
 builder.Services.AddScoped<IGenusRepository, GenusRepository>();
+builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository>();
 
 var app = builder.Build();
 

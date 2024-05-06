@@ -30,7 +30,7 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(string id)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, EmployeeModel inputEmployee)
+        public IActionResult Update(string id, EmployeeModel inputEmployee)
         {
             try
             {

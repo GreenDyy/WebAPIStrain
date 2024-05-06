@@ -13,15 +13,17 @@ public partial class Project
 
     public string? ProjectName { get; set; }
 
-    public DateOnly? StartDate { get; set; }
+    public string? Results { get; set; }
 
-    public DateOnly? EndDate { get; set; }
+    public DateOnly? StartDateProject { get; set; }
+
+    public string? ContractNo { get; set; }
 
     public string? Description { get; set; }
 
-    public string? Status { get; set; }
+    public byte[]? FileProject { get; set; }
 
-    public byte[]? FileForProject { get; set; }
+    public string? Status { get; set; }
 
     public virtual Employee? IdEmployeeNavigation { get; set; }
 

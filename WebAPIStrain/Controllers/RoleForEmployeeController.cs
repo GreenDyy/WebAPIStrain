@@ -7,13 +7,13 @@ namespace WebAPIStrain.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class RoleForEmployeeController : ControllerBase
     {
-        private readonly ICustomerRepository _customerRepository;
+        private readonly IRoleForEmployeeRepository _roleForEmployeeRepository;
 
-        public CustomerController(ICustomerRepository customerRepository)
+        public RoleForEmployeeController(IRoleForEmployeeRepository roleForEmployeeRepository)
         {
-            _customerRepository = customerRepository;
+            _roleForEmployeeRepository = roleForEmployeeRepository;
         }
 
         [HttpGet]
@@ -21,7 +21,7 @@ namespace WebAPIStrain.Controllers
         {
             try
             {
-                return Ok(_customerRepository.GetAll());
+                return Ok(_roleForEmployeeRepository.GetAll());
             }
             catch
             {
@@ -30,11 +30,11 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(string id)
+        public IActionResult GetById(int id)
         {
             try
             {
-                var data = _customerRepository.GetById(id);
+                var data = _roleForEmployeeRepository.GetById(id);
                 if (data != null)
                 {
                     return Ok(data);
@@ -48,11 +48,11 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(int id)
         {
             try
             {
-                if (_customerRepository.Delete(id))
+                if (_roleForEmployeeRepository.Delete(id))
                 {
                     return NoContent();
                 }
@@ -68,11 +68,11 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, CustomerModel customer)
+        public IActionResult Update(int id, RoleForEmployeeModel inputRole)
         {
             try
             {
-                if (_customerRepository.Update(id, customer))
+                if (_roleForEmployeeRepository.Update(id, inputRole))
                 {
                     return NoContent();
                 }
@@ -88,22 +88,17 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CustomerModel customer)
+        public IActionResult Create(RoleForEmployeeModel inputRole)
         {
-            _customerRepository.Create(customer);
-            return Ok();
-        }
-
-        [HttpPost("Login")]
-        public IActionResult Login(string username, string password)
-        {
-            var customer = _customerRepository.Login(username, password);
-            if (customer != null)
+            try
             {
-                return Ok(customer); 
+                _roleForEmployeeRepository.Create(inputRole);
+                return Ok();
             }
-
-            return StatusCode(StatusCodes.Status401Unauthorized);
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

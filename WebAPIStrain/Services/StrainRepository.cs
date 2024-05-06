@@ -1,4 +1,8 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics.Metrics;
+using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using WebAPIStrain.Entities;
 using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
@@ -8,7 +12,7 @@ namespace WebAPIStrain.Services
     public class StrainRepository : IStrainRepository
     {
         public readonly IrtContext dbContext;
-        public static int PAGE_SIZE { get; set; } = 12;
+        public static int PAGE_SIZE { get; set; } = 4;
         public int totalPage;
         public StrainRepository(IrtContext context)
         {
@@ -30,7 +34,6 @@ namespace WebAPIStrain.Services
                 CellSize = strain.CellSize,
                 Organization = strain.Organization,
                 Characteristics = strain.Characteristics,
-                DepositionDate = strain.DepositionDate,
                 CollectionSite = strain.CollectionSite,
                 Continent = strain.Continent,
                 Country = strain.Country,
@@ -42,37 +45,41 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                StatusOfStrain = strain.StatusOfStrain
+                Price = strain.Price,
+                Quality = strain.Quality,
+                Status = strain.Status
             };
             dbContext.Add(_strain);
             dbContext.SaveChanges();
             //truy vào csdl lấy data mới thêm, dùng VM
             return new StrainVM
             {
-                StrainNumber = strain.StrainNumber,
-                IdSpecies = strain.IdSpecies,
-                IdCondition = strain.IdCondition,
-                ImageStrain = strain.ImageStrain,
-                ScientificName = strain.ScientificName,
-                SynonymStrain = strain.SynonymStrain,
-                FormerName = strain.FormerName,
-                CommonName = strain.CommonName,
-                CellSize = strain.CellSize,
-                Organization = strain.Organization,
-                Characteristics = strain.Characteristics,
-                DepositionDate = strain.DepositionDate,
-                CollectionSite = strain.CollectionSite,
-                Continent = strain.Continent,
-                Country = strain.Country,
-                IsolationSource = strain.IsolationSource,
-                ToxinProducer = strain.ToxinProducer,
-                StateOfStrain = strain.StateOfStrain,
-                AgitationResistance = strain.AgitationResistance,
-                Remarks = strain.Remarks,
-                GeneInformation = strain.GeneInformation,
-                Publications = strain.Publications,
-                RecommendedForTeaching = strain.RecommendedForTeaching,
-                StatusOfStrain = strain.StatusOfStrain
+                IdStrain = _strain.IdStrain,
+                StrainNumber = _strain.StrainNumber,
+                IdSpecies = _strain.IdSpecies,
+                IdCondition = _strain.IdCondition,
+                ImageStrain = _strain.ImageStrain,
+                ScientificName = _strain.ScientificName,
+                SynonymStrain = _strain.SynonymStrain,
+                FormerName = _strain.FormerName,
+                CommonName = _strain.CommonName,
+                CellSize = _strain.CellSize,
+                Organization = _strain.Organization,
+                Characteristics = _strain.Characteristics,
+                CollectionSite = _strain.CollectionSite,
+                Continent = _strain.Continent,
+                Country = _strain.Country,
+                IsolationSource = _strain.IsolationSource,
+                ToxinProducer = _strain.ToxinProducer,
+                StateOfStrain = _strain.StateOfStrain,
+                AgitationResistance = _strain.AgitationResistance,
+                Remarks = _strain.Remarks,
+                GeneInformation = _strain.GeneInformation,
+                Publications = _strain.Publications,
+                RecommendedForTeaching = _strain.RecommendedForTeaching,
+                Price = _strain.Price,
+                Quality = _strain.Quality,
+                Status = _strain.Status
             };
         }
         public bool Delete(int id)
@@ -91,6 +98,7 @@ namespace WebAPIStrain.Services
         {
             var strains = dbContext.Strains.Select(strain => new StrainVM
             {
+                IdStrain = strain.IdStrain,
                 StrainNumber = strain.StrainNumber,
                 IdSpecies = strain.IdSpecies,
                 IdCondition = strain.IdCondition,
@@ -102,7 +110,6 @@ namespace WebAPIStrain.Services
                 CellSize = strain.CellSize,
                 Organization = strain.Organization,
                 Characteristics = strain.Characteristics,
-                DepositionDate = strain.DepositionDate,
                 CollectionSite = strain.CollectionSite,
                 Continent = strain.Continent,
                 Country = strain.Country,
@@ -114,7 +121,9 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                StatusOfStrain = strain.StatusOfStrain
+                Price = strain.Price,
+                Quality = strain.Quality,
+                Status = strain.Status
             }).ToList();
             return strains;
         }
@@ -152,13 +161,14 @@ namespace WebAPIStrain.Services
             #endregion
 
             #region Paging
-            PAGE_SIZE = 8;
+            //tính tổng trang sau khi filter và sort chứ chưa paging nha
             totalPage = (int)Math.Ceiling(strains.ToList().Count / (double)PAGE_SIZE);
 
             strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
             #endregion
             var result = strains.Select(strain => new StrainVM
             {
+                IdStrain = strain.IdStrain,
                 StrainNumber = strain.StrainNumber,
                 IdSpecies = strain.IdSpecies,
                 IdCondition = strain.IdCondition,
@@ -170,7 +180,6 @@ namespace WebAPIStrain.Services
                 CellSize = strain.CellSize,
                 Organization = strain.Organization,
                 Characteristics = strain.Characteristics,
-                DepositionDate = strain.DepositionDate,
                 CollectionSite = strain.CollectionSite,
                 Continent = strain.Continent,
                 Country = strain.Country,
@@ -182,9 +191,12 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                StatusOfStrain = strain.StatusOfStrain
-            });
-            return result.ToList();
+                Price = strain.Price,
+                Quality = strain.Quality,
+                Status = strain.Status,
+                TotalPage = totalPage,
+            }).ToList();
+            return result;
         }
 
         public StrainVM GetById(int id)
@@ -206,7 +218,6 @@ namespace WebAPIStrain.Services
                     CellSize = strain.CellSize,
                     Organization = strain.Organization,
                     Characteristics = strain.Characteristics,
-                    DepositionDate = strain.DepositionDate,
                     CollectionSite = strain.CollectionSite,
                     Continent = strain.Continent,
                     Country = strain.Country,
@@ -218,7 +229,9 @@ namespace WebAPIStrain.Services
                     GeneInformation = strain.GeneInformation,
                     Publications = strain.Publications,
                     RecommendedForTeaching = strain.RecommendedForTeaching,
-                    StatusOfStrain = strain.StatusOfStrain
+                    Price = strain.Price,
+                    Quality = strain.Quality,
+                    Status = strain.Status,
                 };
                 return _strain;
             }
@@ -241,8 +254,7 @@ namespace WebAPIStrain.Services
                 _strain.CellSize = strain.CellSize;
                 _strain.Organization = strain.Organization;
                 _strain.Characteristics = strain.Characteristics;
-                _strain.DepositionDate = strain.DepositionDate;
-                _strain.CollectionSite = strain.CollectionSite;
+               _strain.CollectionSite = strain.CollectionSite;
                 _strain.Continent = strain.Continent;
                 _strain.Country = strain.Country;
                 _strain.IsolationSource = strain.IsolationSource;
@@ -253,7 +265,9 @@ namespace WebAPIStrain.Services
                 _strain.GeneInformation = strain.GeneInformation;
                 _strain.Publications = strain.Publications;
                 _strain.RecommendedForTeaching = strain.RecommendedForTeaching;
-                _strain.StatusOfStrain = strain.StatusOfStrain;
+               _strain.Price = strain.Price;
+                _strain.Quality = strain.Quality;
+              _strain.Status = strain.Status;
 
                 dbContext.SaveChanges();
                 return true;

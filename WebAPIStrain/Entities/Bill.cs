@@ -7,7 +7,7 @@ public partial class Bill
 {
     public string IdBill { get; set; } = null!;
 
-    public int? IdCustomer { get; set; }
+    public string? IdCustomer { get; set; }
 
     public string? IdEmployee { get; set; }
 

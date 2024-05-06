@@ -4,18 +4,14 @@ namespace WebAPIStrain.Models
 {
     public class EmployeeModel
     {
-        //account
-        public string? Username { get; set; }
-
-        public string? Password { get; set; }
-        public string? Status { get; set; }
-
         //employee
         public int? IdRole { get; set; }
 
         public string? FirstName { get; set; }
 
         public string? LastName { get; set; }
+
+        public string? FullName { get; set; }
 
         public string? IdCard { get; set; }
 
@@ -29,17 +25,19 @@ namespace WebAPIStrain.Models
 
         public string? Degree { get; set; }
 
-        public string? Addresss { get; set; }
+        public string? Address { get; set; }
 
         public DateOnly? JoinDate { get; set; }
 
-        public string? Institution { get; set; }
+        public byte[]? ImageEmployee { get; set; }
 
-        public string? Department { get; set; }
+        // account
 
-        public string? Position { get; set; }
+        public string? Username { get; set; }
 
-        public string? ResearchField { get; set; }
+        public string? Password { get; set; }
+
+        public string? Status { get; set; }
 
     }
 }

@@ -5,7 +5,7 @@ namespace WebAPIStrain.Entities;
 
 public partial class AccountForEmployee
 {
-    public int IdAccount { get; set; }
+    public string IdEmployee { get; set; } = null!;
 
     public string? Username { get; set; }
 
@@ -13,5 +13,5 @@ public partial class AccountForEmployee
 
     public string? Status { get; set; }
 
-    public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+    public virtual Employee IdEmployeeNavigation { get; set; } = null!;
 }

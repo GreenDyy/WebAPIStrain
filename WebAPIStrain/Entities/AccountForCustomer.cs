@@ -5,9 +5,7 @@ namespace WebAPIStrain.Entities;
 
 public partial class AccountForCustomer
 {
-    public int IdAccountForCustomer { get; set; }
-
-    public int? Id { get; set; }
+    public string IdCustomer { get; set; } = null!;
 
     public string? Username { get; set; }
 
@@ -15,5 +13,5 @@ public partial class AccountForCustomer
 
     public string? Status { get; set; }
 
-    public virtual Customer? IdNavigation { get; set; }
+    public virtual Customer IdCustomerNavigation { get; set; } = null!;
 }
