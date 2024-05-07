@@ -7,8 +7,8 @@ namespace WebAPIStrain.Services
     {
         public List<PhylumVM> GetAll();
         public PhylumVM GetById(int id);
-        public PhylumVM Create(PhylumModel phylum);
-        public bool Update(int id,PhylumModel phylum);
+        public PhylumVM Create(PhylumModel inputPhylum);
+        public bool Update(int id,PhylumModel inputPhylum);
         public bool Delete(int id);
     }
 }

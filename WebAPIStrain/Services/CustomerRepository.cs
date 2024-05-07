@@ -64,6 +64,16 @@ namespace WebAPIStrain.Services
             };
             dbContext.Add(newAccount);
             dbContext.SaveChanges();
+
+            //tạo cart
+            var newCart = new Cart
+            {
+                IdCustomer = newCustomer.IdCustomer,
+                TotalProduct = 0,
+            };
+            dbContext.Carts.Add(newCart);
+            dbContext.SaveChanges();
+
             //truy vào csdl lấy data mới thêm, dùng VM
             return new CustomerVM
             {

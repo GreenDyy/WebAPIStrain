@@ -9,7 +9,7 @@ public partial class Cart
 
     public string? IdCustomer { get; set; }
 
-    public int? ToatalProduct { get; set; }
+    public int? TotalProduct { get; set; }
 
     public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 

@@ -26,5 +26,11 @@ namespace WebAPIStrain.ViewModels
         public string? Password { get; set; }
 
         public string? Status { get; set; }
+
+        //cart
+
+        public int IdCart { get; set; }
+
+        public int? TotalProduct { get; set; }
     }
 }

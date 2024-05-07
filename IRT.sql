@@ -289,7 +289,7 @@ GO
 CREATE TABLE Cart(
 	ID_Cart INT IDENTITY(1,1) PRIMARY KEY,
 	ID_Customer NVARCHAR(50),
-	Toatal_Product INT,
+	Total_Product INT,
 
 	CONSTRAINT FK_Cart_Customer FOREIGN KEY (ID_Customer) REFERENCES Customer(ID_Customer)
 );
@@ -458,11 +458,11 @@ WHERE
 	Strain_Number = '' OR Name_Species = ''
 
 
-	select * from Customer
-	select * from AccountForCustomer
+	select * from Phylum
+	select * from Class
+	select * from Genus
+	select * from Species
 
-	
-	select * from Employee
-	select * from AccountForEmployee
 
-	select * from RoleForEmployee
+	select * from Cart
+	select * from CartDetail
