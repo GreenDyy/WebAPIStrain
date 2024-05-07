@@ -7,21 +7,21 @@ namespace WebAPIStrain.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CartController : ControllerBase
+    public class CartDetailController : ControllerBase
     {
-        private readonly ICartRepository _cartRepository;
+        private readonly ICartDetailRepository _cartDetailRepository;
 
-        public CartController(ICartRepository cartRepository) {
-            _cartRepository = cartRepository;
+        public CartDetailController(ICartDetailRepository cartDetailRepository) 
+        {
+            _cartDetailRepository = cartDetailRepository;
         }
-
 
         [HttpGet]
         public IActionResult GetAll()
         {
             try
             {
-                return Ok(_cartRepository.GetAll());
+                return Ok(_cartDetailRepository.GetAll());
             }
             catch
             {
@@ -34,7 +34,7 @@ namespace WebAPIStrain.Controllers
         {
             try
             {
-                var data = _cartRepository.GetById(id);
+                var data = _cartDetailRepository.GetById(id);
                 if (data != null)
                 {
                     return Ok(data);
@@ -47,12 +47,12 @@ namespace WebAPIStrain.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, CartModel inputCart)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             try
             {
-                if (_cartRepository.Update(id, inputCart))
+                if (_cartDetailRepository.Delete(id))
                 {
                     return NoContent();
                 }
@@ -67,12 +67,12 @@ namespace WebAPIStrain.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, CartDetailModel inputCartDetail)
         {
             try
             {
-                if (_cartRepository.Delete(id))
+                if (_cartDetailRepository.Update(id, inputCartDetail))
                 {
                     return NoContent();
                 }
@@ -80,6 +80,20 @@ namespace WebAPIStrain.Controllers
                 {
                     return StatusCode(StatusCodes.Status404NotFound);
                 }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Create(CartDetailModel inputCartDetail)
+        {
+            try
+            {
+                _cartDetailRepository.Create(inputCartDetail);
+                return Ok();
             }
             catch
             {

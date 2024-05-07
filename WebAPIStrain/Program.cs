@@ -36,6 +36,7 @@ builder.Services.AddScoped<IGenusRepository, GenusRepository>();
 builder.Services.AddScoped<ISpeciesRepository, SpeciesRepository>();
 builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 
 var app = builder.Build();
 

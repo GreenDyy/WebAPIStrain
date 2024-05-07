@@ -1,4 +1,5 @@
 ﻿using WebAPIStrain.Entities;
+using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
 
 namespace WebAPIStrain.Services
@@ -36,6 +37,18 @@ namespace WebAPIStrain.Services
                 };
             }
             return null;
+        }
+
+        public bool Update(int id, CartModel inputCart)
+        {
+            var cart = dbContext.Carts.FirstOrDefault(c => c.IdCart == id);
+            if(cart!=null )
+            {
+                cart.TotalProduct = inputCart.TotalProduct;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
         public bool Delete(int id)
         {

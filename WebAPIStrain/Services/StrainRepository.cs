@@ -12,7 +12,7 @@ namespace WebAPIStrain.Services
     public class StrainRepository : IStrainRepository
     {
         public readonly IrtContext dbContext;
-        public static int PAGE_SIZE { get; set; } = 4;
+        public static int PAGE_SIZE { get; set; } = 8;
         public int totalPage;
         public StrainRepository(IrtContext context)
         {

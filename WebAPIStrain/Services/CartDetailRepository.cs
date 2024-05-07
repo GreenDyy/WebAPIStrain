@@ -1,79 +1,88 @@
-﻿//using WebAPIStrain.Entities;
-//using WebAPIStrain.Models;
-//using WebAPIStrain.ViewModels;
+﻿using WebAPIStrain.Entities;
+using WebAPIStrain.Models;
+using WebAPIStrain.ViewModels;
 
-//namespace WebAPIStrain.Services
-//{
-//    public class CartDetailRepository : ICartDetailRepository
-//    {
-//        private readonly IrtContext dbContext;
+namespace WebAPIStrain.Services
+{
+    public class CartDetailRepository : ICartDetailRepository
+    {
+        private readonly IrtContext dbContext;
 
-//        public CartDetailRepository(IrtContext context)
-//        {
-//            dbContext = context;
-//        }
-//        public CartDetailVM Create(CartDetailModel inputCartDetail)
-//        {
-//            var newCartDetail = new Phylum
-//            {
-//                NamePhylum = phylum.NamePhylum,
-//            };
-//            dbContext.Add(newPhylum);
-//            dbContext.SaveChanges();
-//            return new PhylumVM
-//            {
-//                IdPhylum = newPhylum.IdPhylum,
-//                NamePhylum = newPhylum.NamePhylum
-//            };
-//        }
+        public CartDetailRepository(IrtContext context)
+        {
+            dbContext = context;
+        }
+        public CartDetailVM Create(CartDetailModel inputCartDetail)
+        {
+            var newCartDetail = new CartDetail
+            {
+                IdCart = inputCartDetail.IdCart,
+                IdStrain = inputCartDetail.IdStrain,
+                QuantityOfStrain = inputCartDetail.QuantityOfStrain,
+            };
+            dbContext.Add(newCartDetail);
+            dbContext.SaveChanges();
+            return new CartDetailVM
+            {
+                IdCartDetail = newCartDetail.IdCartDetail,
+                IdCart = newCartDetail.IdCart,
+                IdStrain = newCartDetail.IdStrain,
+                QuantityOfStrain = newCartDetail.QuantityOfStrain,
+            };
+        }
 
-//        public bool Delete(int id)
-//        {
-//            var phylum = dbContext.Phylums.FirstOrDefault(p => p.IdPhylum == id);
-//            if (phylum != null)
-//            {
-//                dbContext.Remove(phylum);
-//                dbContext.SaveChanges();
-//                return true;
-//            }
-//            return false;
-//        }
+        public bool Delete(int id)
+        {
+            var cartDetail = dbContext.CartDetails.FirstOrDefault(cartDetail => cartDetail.IdCartDetail == id);
+            if (cartDetail != null)
+            {
+                dbContext.Remove(cartDetail);
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
 
-//        public List<CartDetailVM> GetAll()
-//        {
-//            var phylums = dbContext.Phylums.Select(p => new PhylumVM
-//            {
-//                IdPhylum = p.IdPhylum,
-//                NamePhylum = p.NamePhylum
-//            }).ToList();
-//            return phylums;
-//        }
+        public List<CartDetailVM> GetAll()
+        {
+            var cartDetails = dbContext.CartDetails.Select(cartDetail => new CartDetailVM
+            {
+                IdCartDetail = cartDetail.IdCartDetail,
+                IdCart = cartDetail.IdCart,
+                IdStrain = cartDetail.IdStrain,
+                QuantityOfStrain = cartDetail.QuantityOfStrain,
+            }).ToList();
+            return cartDetails;
+        }
 
-//        public CartDetailVM GetById(int id)
-//        {
-//            var phylum = dbContext.Phylums.FirstOrDefault(p => p.IdPhylum == id);
-//            if (phylum != null)
-//            {
-//                return new PhylumVM
-//                {
-//                    IdPhylum = phylum.IdPhylum,
-//                    NamePhylum = phylum.NamePhylum
-//                };
-//            }
-//            return null;
-//        }
+        public CartDetailVM GetById(int id)
+        {
+            var cartDetail = dbContext.CartDetails.FirstOrDefault(cd => cd.IdCartDetail == id);
+            if (cartDetail != null)
+            {
+                return new CartDetailVM
+                {
+                    IdCartDetail = cartDetail.IdCartDetail,
+                    IdCart = cartDetail.IdCart,
+                    IdStrain = cartDetail.IdStrain,
+                    QuantityOfStrain = cartDetail.QuantityOfStrain,
+                };
+            }
+            return null;
+        }
 
-//        public bool Update(int id, CartDetailModel inputCartDetail)
-//        {
-//            var _phylum = dbContext.Phylums.FirstOrDefault(p => p.IdPhylum == id);
-//            if (_phylum != null)
-//            {
-//                _phylum.NamePhylum = phylum.NamePhylum;
+        public bool Update(int id, CartDetailModel inputCartDetail)
+        {
+            var cartDetail= dbContext.CartDetails.FirstOrDefault(cd => cd.IdCartDetail == id);
+            if (cartDetail!= null)
+            {
+                cartDetail.IdStrain = inputCartDetail.IdStrain;
+                cartDetail.QuantityOfStrain = inputCartDetail.QuantityOfStrain;
 
-//                dbContext.SaveChanges();
-//                return true;
-//            }
-//            return false;
-//        }
-//    }
-//}
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+    }
+}
