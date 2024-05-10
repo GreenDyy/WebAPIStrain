@@ -10,6 +10,6 @@ namespace WebAPIStrain.Services
         public CustomerVM Create(CustomerModel customer);
         public bool Update(string id, CustomerModel customer);
         public bool Delete(string id);
-        public CustomerVM Login(string username, string password);
+        public CustomerVM Login(Login login);
     }
 }

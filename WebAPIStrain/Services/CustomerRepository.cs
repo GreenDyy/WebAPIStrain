@@ -169,9 +169,9 @@ namespace WebAPIStrain.Services
             return false;
         }
 
-        public CustomerVM Login(string username, string password)
+        public CustomerVM Login(Login login)
         {
-            var account = dbContext.AccountForCustomers.FirstOrDefault(ac => ac.Username == username);
+            var account = dbContext.AccountForCustomers.FirstOrDefault(ac => ac.Username == login.Username);
             if (account != null)
             {
                 //bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(password, account.Password);
@@ -179,7 +179,7 @@ namespace WebAPIStrain.Services
                 //{
                 //    return true;
                 //} đợi sửa data pass custom thành mã hoá rồi dùng
-                if (account.Password == password)
+                if (account.Password == login.Password)
                 {
                     var profile = dbContext.Customers.FirstOrDefault(c => c.IdCustomer == account.IdCustomer);
                     return new CustomerVM

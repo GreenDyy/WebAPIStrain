@@ -51,6 +51,8 @@ namespace WebAPIStrain.Services
                 IdCart = cartDetail.IdCart,
                 IdStrain = cartDetail.IdStrain,
                 QuantityOfStrain = cartDetail.QuantityOfStrain,
+                IdCartNavigation = cartDetail.IdCartNavigation,
+                IdStrainNavigation = cartDetail.IdStrainNavigation,
             }).ToList();
             return cartDetails;
         }
@@ -66,6 +68,8 @@ namespace WebAPIStrain.Services
                     IdCart = cartDetail.IdCart,
                     IdStrain = cartDetail.IdStrain,
                     QuantityOfStrain = cartDetail.QuantityOfStrain,
+                    IdStrainNavigation= cartDetail.IdStrainNavigation,
+                    IdCartNavigation = cartDetail.IdCartNavigation
                 };
             }
             return null;

@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebAPIStrain.Services;
 using WebAPIStrain.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using WebAPIStrain.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +42,26 @@ builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 
+//token
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+var secrectKey = builder.Configuration.GetSection("AppSettings")["SecretKey"];
+var secrectKeyBytes = Encoding.UTF8.GetBytes(secrectKey);
+
+builder.Services.AddAuthentication
+    (JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(otp =>
+    {   
+        otp.TokenValidationParameters = new TokenValidationParameters
+        {
+            //tự cấp token
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            //ký vào token
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(secrectKeyBytes),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,6 +71,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.UseHttpsRedirection();
 
