@@ -41,6 +41,7 @@ builder.Services.AddScoped<ISpeciesRepository, SpeciesRepository>();
 builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
+builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
 
 //token
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));

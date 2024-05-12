@@ -10,8 +10,8 @@ namespace WebAPIStrain.ViewModels
 
         public int? TotalProduct { get; set; }
 
-        //public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
+        public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 
-        //public virtual Customer? IdCustomerNavigation { get; set; }
+        public virtual Customer? IdCustomerNavigation { get; set; }
     }
 }

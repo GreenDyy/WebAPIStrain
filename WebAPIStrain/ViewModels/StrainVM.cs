@@ -62,9 +62,9 @@ namespace WebAPIStrain.ViewModels
 
         //public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 
-        //public virtual ConditionalStrain? IdConditionNavigation { get; set; }
+        public virtual ConditionalStrain? IdConditionNavigation { get; set; }
 
-        //public virtual Species? IdSpeciesNavigation { get; set; }
+        public virtual Species? IdSpeciesNavigation { get; set; }
 
         //public virtual ICollection<IdentifyStrain> IdentifyStrains { get; set; } = new List<IdentifyStrain>();
 

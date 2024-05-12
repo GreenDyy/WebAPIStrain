@@ -47,6 +47,24 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("GetAllDetailCart")]
+        public IActionResult GetAllByIdCart(int IdCart)
+        {
+            try
+            {
+                var data = _cartDetailRepository.GetAllByIdCart(IdCart);
+                if (data != null)
+                {
+                    return Ok(data);
+                }
+                return StatusCode(StatusCodes.Status404NotFound);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

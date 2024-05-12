@@ -65,6 +65,27 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("StrainNumber/{strainNumber}")]
+        public IActionResult GetByStrainNumber(string strainNumber)
+        {
+            try
+            {
+                var strain = _strainRepository.GetByStrainNumber(strainNumber);
+                if (strain != null)
+                {
+                    return Ok(strain);
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

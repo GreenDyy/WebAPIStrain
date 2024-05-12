@@ -238,6 +238,45 @@ namespace WebAPIStrain.Services
             return null;
         }
 
+        public StrainVM GetByStrainNumber(string strainNumber)
+        {
+            var strain = dbContext.Strains.FirstOrDefault(s => s.StrainNumber == strainNumber);
+            if (strain != null)
+            {
+                var _strain = new StrainVM
+                {
+                    IdStrain = strain.IdStrain,
+                    StrainNumber = strain.StrainNumber,
+                    IdSpecies = strain.IdSpecies,
+                    IdCondition = strain.IdCondition,
+                    ImageStrain = strain.ImageStrain,
+                    ScientificName = strain.ScientificName,
+                    SynonymStrain = strain.SynonymStrain,
+                    FormerName = strain.FormerName,
+                    CommonName = strain.CommonName,
+                    CellSize = strain.CellSize,
+                    Organization = strain.Organization,
+                    Characteristics = strain.Characteristics,
+                    CollectionSite = strain.CollectionSite,
+                    Continent = strain.Continent,
+                    Country = strain.Country,
+                    IsolationSource = strain.IsolationSource,
+                    ToxinProducer = strain.ToxinProducer,
+                    StateOfStrain = strain.StateOfStrain,
+                    AgitationResistance = strain.AgitationResistance,
+                    Remarks = strain.Remarks,
+                    GeneInformation = strain.GeneInformation,
+                    Publications = strain.Publications,
+                    RecommendedForTeaching = strain.RecommendedForTeaching,
+                    Price = strain.Price,
+                    Quality = strain.Quality,
+                    Status = strain.Status,
+                };
+                return _strain;
+            }
+            return null;
+        }
+
         public bool Update(int id, StrainModel strain)
         {
             var _strain = dbContext.Strains.FirstOrDefault(s => s.IdStrain == id);
@@ -254,7 +293,7 @@ namespace WebAPIStrain.Services
                 _strain.CellSize = strain.CellSize;
                 _strain.Organization = strain.Organization;
                 _strain.Characteristics = strain.Characteristics;
-               _strain.CollectionSite = strain.CollectionSite;
+                _strain.CollectionSite = strain.CollectionSite;
                 _strain.Continent = strain.Continent;
                 _strain.Country = strain.Country;
                 _strain.IsolationSource = strain.IsolationSource;
@@ -265,9 +304,9 @@ namespace WebAPIStrain.Services
                 _strain.GeneInformation = strain.GeneInformation;
                 _strain.Publications = strain.Publications;
                 _strain.RecommendedForTeaching = strain.RecommendedForTeaching;
-               _strain.Price = strain.Price;
+                _strain.Price = strain.Price;
                 _strain.Quality = strain.Quality;
-              _strain.Status = strain.Status;
+                _strain.Status = strain.Status;
 
                 dbContext.SaveChanges();
                 return true;

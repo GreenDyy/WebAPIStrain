@@ -38,6 +38,20 @@ namespace WebAPIStrain.Services
             }
             return null;
         }
+        public CartVM GetByIdCustomer(string idCustomer)
+        {
+            var cart = dbContext.Carts.FirstOrDefault(c => c.IdCustomer == idCustomer);
+            if (cart != null)
+            {
+                return new CartVM
+                {
+                    IdCart = cart.IdCart,
+                    IdCustomer = cart.IdCustomer,
+                    TotalProduct = cart.TotalProduct,
+                };
+            }
+            return null;
+        }
 
         public bool Update(int id, CartModel inputCart)
         {

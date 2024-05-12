@@ -47,6 +47,24 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("GetByIdCustomer")]
+        public IActionResult GetByIdCustomer(string idCustomer)
+        {
+            try
+            {
+                var data = _cartRepository.GetByIdCustomer(idCustomer);
+                if (data != null)
+                {
+                    return Ok(data);
+                }
+                return StatusCode(StatusCodes.Status404NotFound);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpPut("{id}")]
         public IActionResult Update(int id, CartModel inputCart)
         {

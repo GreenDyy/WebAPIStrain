@@ -1,4 +1,5 @@
-﻿using WebAPIStrain.Entities;
+﻿using NuGet.Protocol;
+using WebAPIStrain.Entities;
 using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
 
@@ -68,17 +69,31 @@ namespace WebAPIStrain.Services
                     IdCart = cartDetail.IdCart,
                     IdStrain = cartDetail.IdStrain,
                     QuantityOfStrain = cartDetail.QuantityOfStrain,
-                    IdStrainNavigation= cartDetail.IdStrainNavigation,
+                    IdStrainNavigation = cartDetail.IdStrainNavigation,
                     IdCartNavigation = cartDetail.IdCartNavigation
                 };
             }
             return null;
         }
 
+        public List<CartDetailVM> GetAllByIdCart(int idCart)
+        {
+            var cartDetails = dbContext.CartDetails.Where(cartDetail => cartDetail.IdCart == idCart).Select(cartDetail => new CartDetailVM
+            {
+                IdCartDetail = cartDetail.IdCartDetail,
+                IdCart = cartDetail.IdCart,
+                IdStrain = cartDetail.IdStrain,
+                QuantityOfStrain = cartDetail.QuantityOfStrain,
+                IdCartNavigation = cartDetail.IdCartNavigation,
+                IdStrainNavigation = cartDetail.IdStrainNavigation
+            }).ToList();
+            return cartDetails;
+        }
+
         public bool Update(int id, CartDetailModel inputCartDetail)
         {
-            var cartDetail= dbContext.CartDetails.FirstOrDefault(cd => cd.IdCartDetail == id);
-            if (cartDetail!= null)
+            var cartDetail = dbContext.CartDetails.FirstOrDefault(cd => cd.IdCartDetail == id);
+            if (cartDetail != null)
             {
                 cartDetail.IdStrain = inputCartDetail.IdStrain;
                 cartDetail.QuantityOfStrain = inputCartDetail.QuantityOfStrain;
