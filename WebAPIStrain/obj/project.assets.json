@@ -8069,19 +8069,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\GreenDuy\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+      "projectUniqueName": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
       "projectName": "WebAPIStrain",
-      "projectPath": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
-      "packagesPath": "C:\\Users\\GreenDuy\\.nuget\\packages\\",
-      "outputPath": "E:\\Codes\\Year4\\AllDoAn\\HK2_KhoaLuan\\WebAPIStrain\\WebAPIStrain\\obj\\",
+      "projectPath": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\GreenDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

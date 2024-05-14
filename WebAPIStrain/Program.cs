@@ -42,6 +42,7 @@ builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
+builder.Services.AddScoped<IInventoryRepository,  InventoryRepository>();
 
 //token
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));

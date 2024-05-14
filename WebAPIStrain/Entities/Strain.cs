@@ -51,10 +51,6 @@ public partial class Strain
 
     public string? RecommendedForTeaching { get; set; }
 
-    public decimal? Price { get; set; }
-
-    public int? Quality { get; set; }
-
     public string? Status { get; set; }
 
     public virtual ICollection<BillDetail> BillDetails { get; set; } = new List<BillDetail>();
@@ -66,6 +62,8 @@ public partial class Strain
     public virtual Species? IdSpeciesNavigation { get; set; }
 
     public virtual ICollection<IdentifyStrain> IdentifyStrains { get; set; } = new List<IdentifyStrain>();
+
+    public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 
     public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
 }

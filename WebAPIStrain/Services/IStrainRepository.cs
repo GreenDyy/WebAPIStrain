@@ -6,7 +6,7 @@ namespace WebAPIStrain.Services
     public interface IStrainRepository
     {
         public List<StrainVM> GetAll();
-        public List<StrainVM> GetAll(string? search, string? sortBy, int page);
+        public List<StrainVM> GetAll(string? search, string? sortBy, string statusSell, int page);
         public StrainVM GetById(int id);
         public StrainVM GetByStrainNumber(string strainNumber);
         public StrainVM Create(StrainModel strain);

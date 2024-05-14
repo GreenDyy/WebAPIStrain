@@ -45,8 +45,6 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Price = strain.Price,
-                Quality = strain.Quality,
                 Status = strain.Status
             };
             dbContext.Add(_strain);
@@ -77,9 +75,10 @@ namespace WebAPIStrain.Services
                 GeneInformation = _strain.GeneInformation,
                 Publications = _strain.Publications,
                 RecommendedForTeaching = _strain.RecommendedForTeaching,
-                Price = _strain.Price,
-                Quality = _strain.Quality,
-                Status = _strain.Status
+                Status = _strain.Status,
+                //IdentifyStrains = _strain.IdentifyStrains,
+                //Inventories = _strain.Inventories,
+                //IsolatorStrains = _strain.IsolatorStrains,
             };
         }
         public bool Delete(int id)
@@ -121,19 +120,27 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Price = strain.Price,
-                Quality = strain.Quality,
-                Status = strain.Status
+                Status = strain.Status,
+                //IdentifyStrains = strain.IdentifyStrains,
+                //Inventories = strain.Inventories,
+                //IsolatorStrains = strain.IsolatorStrains
             }).ToList();
             return strains;
         }
 
         //Lưu ý: thứ tự của bộ lọc là: filtering -> sorting -> paging
-        public List<StrainVM> GetAll(string? search, string? sortBy, int page)
+        public List<StrainVM> GetAll(string? search, string? sortBy, string statusSell, int page)
         {
+
             var strains = dbContext.Strains.AsQueryable();
 
             #region Filtering
+            //lọc xem bán dc hoặc ko bán dc
+            if(statusSell != "All") //nếu status khác All tức là có Yes và No, All thì ko lọc, lấy hết lun
+            {
+                strains = strains.Where(s => s.Status == statusSell);
+            }
+           
             if (!string.IsNullOrEmpty(search))
             {
                 //có 2 optiop để search, có thể mở rộng thêm
@@ -143,7 +150,7 @@ namespace WebAPIStrain.Services
 
             #region Sorting
             //sort mặc định là sort theo Scientific_Name
-            strains = strains.OrderBy(s => s.ScientificName);
+            strains = strains.OrderBy(s => s.IdStrain);
             if (!string.IsNullOrEmpty(sortBy))
             {
                 switch (sortBy)
@@ -191,10 +198,13 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Price = strain.Price,
-                Quality = strain.Quality,
                 Status = strain.Status,
+                //IdentifyStrains = strain.IdentifyStrains,
+                //Inventories = strain.Inventories,
+                //IsolatorStrains = strain.IsolatorStrains,
                 TotalPage = totalPage,
+
+
             }).ToList();
             return result;
         }
@@ -229,9 +239,10 @@ namespace WebAPIStrain.Services
                     GeneInformation = strain.GeneInformation,
                     Publications = strain.Publications,
                     RecommendedForTeaching = strain.RecommendedForTeaching,
-                    Price = strain.Price,
-                    Quality = strain.Quality,
                     Status = strain.Status,
+                    //IdentifyStrains = strain.IdentifyStrains,
+                    //Inventories = strain.Inventories,
+                    //IsolatorStrains = strain.IsolatorStrains
                 };
                 return _strain;
             }
@@ -268,9 +279,10 @@ namespace WebAPIStrain.Services
                     GeneInformation = strain.GeneInformation,
                     Publications = strain.Publications,
                     RecommendedForTeaching = strain.RecommendedForTeaching,
-                    Price = strain.Price,
-                    Quality = strain.Quality,
                     Status = strain.Status,
+                    //IdentifyStrains = strain.IdentifyStrains,
+                    //Inventories = strain.Inventories,
+                    //IsolatorStrains = strain.IsolatorStrains
                 };
                 return _strain;
             }
@@ -304,8 +316,6 @@ namespace WebAPIStrain.Services
                 _strain.GeneInformation = strain.GeneInformation;
                 _strain.Publications = strain.Publications;
                 _strain.RecommendedForTeaching = strain.RecommendedForTeaching;
-                _strain.Price = strain.Price;
-                _strain.Quality = strain.Quality;
                 _strain.Status = strain.Status;
 
                 dbContext.SaveChanges();

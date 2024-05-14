@@ -11,6 +11,7 @@
             public int? IdStrain { get; set; }
 
             public int? QuantityOfStrain { get; set; }
+            public decimal? Price { get; set; }
 
             public virtual Cart? IdCartNavigation { get; set; }
 

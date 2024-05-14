@@ -4,6 +4,8 @@ namespace WebAPIStrain.Models
 {
     public class StrainModel
     {
+        public int IdStrain { get; set; }
+
         public string? StrainNumber { get; set; }
 
         public int? IdSpecies { get; set; }
@@ -47,10 +49,6 @@ namespace WebAPIStrain.Models
         public string? Publications { get; set; }
 
         public string? RecommendedForTeaching { get; set; }
-
-        public decimal? Price { get; set; }
-
-        public int? Quality { get; set; }
 
         public string? Status { get; set; }
     }

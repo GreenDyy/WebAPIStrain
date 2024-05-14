@@ -23,6 +23,8 @@ public partial class ContentWork
 
     public string? Status { get; set; }
 
+    public string? Priority { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 
     public virtual ProjectContent? IdProjectContentNavigation { get; set; }

@@ -50,24 +50,21 @@ namespace WebAPIStrain.ViewModels
 
         public string? RecommendedForTeaching { get; set; }
 
-        public decimal? Price { get; set; }
-
-        public int? Quality { get; set; }
-
         public string? Status { get; set; }
-
-        public int TotalPage {  get; set; }
 
         //public virtual ICollection<BillDetail> BillDetails { get; set; } = new List<BillDetail>();
 
         //public virtual ICollection<CartDetail> CartDetails { get; set; } = new List<CartDetail>();
 
-        public virtual ConditionalStrain? IdConditionNavigation { get; set; }
+        //public virtual ConditionalStrain? IdConditionNavigation { get; set; }
 
-        public virtual Species? IdSpeciesNavigation { get; set; }
+        //public virtual Species? IdSpeciesNavigation { get; set; }
 
         //public virtual ICollection<IdentifyStrain> IdentifyStrains { get; set; } = new List<IdentifyStrain>();
 
+        //public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
+
         //public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
+        public int TotalPage {  get; set; }
     }
 }

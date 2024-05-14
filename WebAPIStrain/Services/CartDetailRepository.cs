@@ -85,7 +85,9 @@ namespace WebAPIStrain.Services
                 IdStrain = cartDetail.IdStrain,
                 QuantityOfStrain = cartDetail.QuantityOfStrain,
                 IdCartNavigation = cartDetail.IdCartNavigation,
-                IdStrainNavigation = cartDetail.IdStrainNavigation
+                IdStrainNavigation = cartDetail.IdStrainNavigation,
+           
+
             }).ToList();
             return cartDetails;
         }
