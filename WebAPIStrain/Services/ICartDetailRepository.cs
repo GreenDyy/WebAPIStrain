@@ -11,5 +11,6 @@ namespace WebAPIStrain.Services
         public CartDetailVM Create(CartDetailModel inputCartDetail);
         public bool Update(int id, CartDetailModel inputCartDetail);
         public bool Delete(int id);
+        public int GetAllToTalQuantity (int idCart);
     }
 }

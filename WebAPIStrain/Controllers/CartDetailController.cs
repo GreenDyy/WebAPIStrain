@@ -118,5 +118,19 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpGet("GetAllTotalQuantity/{idCart}")]
+        public IActionResult GetTotalQuantity(int idCart)
+        {
+            try
+            {
+                var total = _cartDetailRepository.GetAllToTalQuantity(idCart);
+                return Ok(total);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

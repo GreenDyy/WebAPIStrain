@@ -86,7 +86,7 @@ namespace WebAPIStrain.Services
                 QuantityOfStrain = cartDetail.QuantityOfStrain,
                 IdCartNavigation = cartDetail.IdCartNavigation,
                 IdStrainNavigation = cartDetail.IdStrainNavigation,
-           
+
 
             }).ToList();
             return cartDetails;
@@ -104,6 +104,17 @@ namespace WebAPIStrain.Services
                 return true;
             }
             return false;
+        }
+
+        public int GetAllToTalQuantity(int idCart)
+        {
+            int? totalQuantity = 0;
+            var cartDetails = dbContext.CartDetails.Where(dc => dc.IdCart == idCart);
+            foreach (var cartDetail in cartDetails)
+            {
+                totalQuantity += cartDetail.QuantityOfStrain;
+            }
+            return (int)totalQuantity;
         }
     }
 }
