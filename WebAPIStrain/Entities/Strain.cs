@@ -51,7 +51,7 @@ public partial class Strain
 
     public string? RecommendedForTeaching { get; set; }
 
-    public string? Status { get; set; }
+    public DateOnly? DateAdd { get; set; }
 
     public virtual ICollection<BillDetail> BillDetails { get; set; } = new List<BillDetail>();
 
@@ -66,4 +66,6 @@ public partial class Strain
     public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 
     public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
+
+    public virtual ICollection<StrainApprovalHistory> StrainApprovalHistories { get; set; } = new List<StrainApprovalHistory>();
 }

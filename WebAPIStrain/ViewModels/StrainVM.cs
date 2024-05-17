@@ -50,7 +50,7 @@ namespace WebAPIStrain.ViewModels
 
         public string? RecommendedForTeaching { get; set; }
 
-        public string? Status { get; set; }
+        public DateOnly? DateAdd { get; set; }
 
         //public virtual ICollection<BillDetail> BillDetails { get; set; } = new List<BillDetail>();
 

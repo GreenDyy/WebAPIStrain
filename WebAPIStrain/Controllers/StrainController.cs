@@ -32,11 +32,11 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll(string? search, string? sortBy, string statusSell = "Yes", int page = 1)
+        public IActionResult GetAll(string? search, string? sortBy, int page = 1)
         {
             try
             {
-                return Ok(_strainRepository.GetAll(search, sortBy, statusSell, page));
+                return Ok(_strainRepository.GetAll(search, sortBy, page));
             }
             catch
             {

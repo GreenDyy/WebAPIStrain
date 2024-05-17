@@ -45,7 +45,7 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Status = strain.Status
+                DateAdd = strain.DateAdd,
             };
             dbContext.Add(_strain);
             dbContext.SaveChanges();
@@ -75,7 +75,7 @@ namespace WebAPIStrain.Services
                 GeneInformation = _strain.GeneInformation,
                 Publications = _strain.Publications,
                 RecommendedForTeaching = _strain.RecommendedForTeaching,
-                Status = _strain.Status,
+                DateAdd = _strain.DateAdd,
                 //IdentifyStrains = _strain.IdentifyStrains,
                 //Inventories = _strain.Inventories,
                 //IsolatorStrains = _strain.IsolatorStrains,
@@ -120,7 +120,7 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Status = strain.Status,
+                DateAdd = strain.DateAdd,
                 //IdentifyStrains = strain.IdentifyStrains,
                 //Inventories = strain.Inventories,
                 //IsolatorStrains = strain.IsolatorStrains
@@ -129,18 +129,12 @@ namespace WebAPIStrain.Services
         }
 
         //Lưu ý: thứ tự của bộ lọc là: filtering -> sorting -> paging
-        public List<StrainVM> GetAll(string? search, string? sortBy, string statusSell, int page)
+        public List<StrainVM> GetAll(string? search, string? sortBy, int page)
         {
 
             var strains = dbContext.Strains.AsQueryable();
 
             #region Filtering
-            //lọc xem bán dc hoặc ko bán dc
-            if(statusSell != "All") //nếu status khác All tức là có Yes và No, All thì ko lọc, lấy hết lun
-            {
-                strains = strains.Where(s => s.Status == statusSell);
-            }
-           
             if (!string.IsNullOrEmpty(search))
             {
                 //có 2 optiop để search, có thể mở rộng thêm
@@ -198,7 +192,7 @@ namespace WebAPIStrain.Services
                 GeneInformation = strain.GeneInformation,
                 Publications = strain.Publications,
                 RecommendedForTeaching = strain.RecommendedForTeaching,
-                Status = strain.Status,
+                DateAdd = strain.DateAdd,
                 //IdentifyStrains = strain.IdentifyStrains,
                 //Inventories = strain.Inventories,
                 //IsolatorStrains = strain.IsolatorStrains,
@@ -239,7 +233,7 @@ namespace WebAPIStrain.Services
                     GeneInformation = strain.GeneInformation,
                     Publications = strain.Publications,
                     RecommendedForTeaching = strain.RecommendedForTeaching,
-                    Status = strain.Status,
+                    DateAdd = strain.DateAdd,
                     //IdentifyStrains = strain.IdentifyStrains,
                     //Inventories = strain.Inventories,
                     //IsolatorStrains = strain.IsolatorStrains
@@ -279,7 +273,7 @@ namespace WebAPIStrain.Services
                     GeneInformation = strain.GeneInformation,
                     Publications = strain.Publications,
                     RecommendedForTeaching = strain.RecommendedForTeaching,
-                    Status = strain.Status,
+                    DateAdd = strain.DateAdd,
                     //IdentifyStrains = strain.IdentifyStrains,
                     //Inventories = strain.Inventories,
                     //IsolatorStrains = strain.IsolatorStrains
@@ -316,7 +310,7 @@ namespace WebAPIStrain.Services
                 _strain.GeneInformation = strain.GeneInformation;
                 _strain.Publications = strain.Publications;
                 _strain.RecommendedForTeaching = strain.RecommendedForTeaching;
-                _strain.Status = strain.Status;
+                _strain.DateAdd = strain.DateAdd;
 
                 dbContext.SaveChanges();
                 return true;
