@@ -43,6 +43,12 @@ builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
 builder.Services.AddScoped<IInventoryRepository,  InventoryRepository>();
+builder.Services.AddScoped<IStrainApprovalHistoryRepository, StrainApprovalHistoryRepository>();
+//quận huyện
+builder.Services.AddScoped<IWardsRepository, WardsRepository>();
+builder.Services.AddScoped<IDistrictsRepository, DistrictsRepository>();
+builder.Services.AddScoped<IProvincesRepository, ProvincesRepository>();
+
 
 //token
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
