@@ -48,6 +48,18 @@ builder.Services.AddScoped<IStrainApprovalHistoryRepository, StrainApprovalHisto
 builder.Services.AddScoped<IWardsRepository, WardsRepository>();
 builder.Services.AddScoped<IDistrictsRepository, DistrictsRepository>();
 builder.Services.AddScoped<IProvincesRepository, ProvincesRepository>();
+//Tanh thêm
+builder.Services.AddScoped<IIsolatorStrainRepository, IsolatorStrainRepository>();
+builder.Services.AddScoped<IIdentifyStrainRepository, IdentifyStrainRepository>();
+builder.Services.AddScoped<IPartnerRepository, PartnerRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IProjectContentRepository, ProjectContentRepository>();
+builder.Services.AddScoped<IContentWorkRepository, ContentWorkRepository>();
+builder.Services.AddScoped<IAccountForCustomerRepository, AccountForCustomerRepository>();
+builder.Services.AddScoped<IBillRepository, BillRepository>();
+builder.Services.AddScoped<IBillDetailRepository, BillDetailRepository>();
+builder.Services.AddScoped<IScienceNewspaperRepository, ScienceNewspaperRepository>();
+builder.Services.AddScoped<IAuthorNewspaperRepository, AuthorNewspaperRepository>();
 
 
 //token
