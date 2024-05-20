@@ -1,4 +1,5 @@
-﻿using WebAPIStrain.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
 
 namespace WebAPIStrain.Services
@@ -11,6 +12,7 @@ namespace WebAPIStrain.Services
         public StrainVM GetByStrainNumber(string strainNumber);
         public StrainVM Create(StrainModel strain);
         public bool Update(int id, StrainModel strain);
+        public bool UpdateStrainNumber(int id, string strainNumber);
         public bool Delete(int id);
     }
 }

@@ -317,5 +317,17 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool UpdateStrainNumber(int id, string strainNumber)
+        {
+            var _strain = dbContext.Strains.FirstOrDefault(s => s.IdStrain == id);
+            if (_strain != null)
+            {
+                _strain.StrainNumber = strainNumber;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

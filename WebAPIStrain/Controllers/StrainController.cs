@@ -126,6 +126,31 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpPatch("{id}/StrainNumber")]
+        public IActionResult UpdateStrainNumber(int id, [FromBody] string strainNumber)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(strainNumber))
+                {
+                    return BadRequest("StrainNumber cannot be null or empty.");
+                }
+
+                if (_strainRepository.UpdateStrainNumber(id, strainNumber))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpPost]
         public IActionResult Create(StrainModel strain)
         {

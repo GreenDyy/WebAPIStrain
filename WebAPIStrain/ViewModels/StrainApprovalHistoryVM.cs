@@ -14,6 +14,5 @@ namespace WebAPIStrain.ViewModels
 
         public string? Reason { get; set; }
 
-        public virtual Strain? IdStrainNavigation { get; set; }
     }
 }
