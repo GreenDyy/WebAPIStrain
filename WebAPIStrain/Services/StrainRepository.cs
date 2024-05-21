@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.IdentityModel.Tokens;
 using System.Diagnostics.Metrics;
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
@@ -131,8 +132,16 @@ namespace WebAPIStrain.Services
         //Lưu ý: thứ tự của bộ lọc là: filtering -> sorting -> paging
         public List<StrainVM> GetAll(string? search, string? sortBy, int page)
         {
-
             var strains = dbContext.Strains.AsQueryable();
+            //filter ra các strain đã dc cấp mã
+
+
+            #region Paging
+            //tính tổng trang sau khi filter và sort chứ chưa paging nha
+            totalPage = (int)Math.Ceiling(strains.ToList().Count / (double)PAGE_SIZE);
+
+            strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+            #endregion
 
             #region Filtering
             if (!string.IsNullOrEmpty(search))
@@ -140,7 +149,6 @@ namespace WebAPIStrain.Services
                 //có 2 optiop để search, có thể mở rộng thêm
                 strains = strains.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
             }
-
             #endregion
 
             #region Sorting
@@ -162,12 +170,6 @@ namespace WebAPIStrain.Services
             }
             #endregion
 
-            #region Paging
-            //tính tổng trang sau khi filter và sort chứ chưa paging nha
-            totalPage = (int)Math.Ceiling(strains.ToList().Count / (double)PAGE_SIZE);
-
-            strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
-            #endregion
             var result = strains.Select(strain => new StrainVM
             {
                 IdStrain = strain.IdStrain,
@@ -200,8 +202,8 @@ namespace WebAPIStrain.Services
                 TotalPage = totalPage,
 
 
-            }).ToList();
-            return result;
+            });
+            return result.ToList();
         }
 
         public StrainVM GetById(int id)
@@ -331,88 +333,292 @@ namespace WebAPIStrain.Services
             return false;
         }
 
-       // public List<StrainVM> GetAllStrainPhylum(string? idPhylum, int page)
-       // {
-       //     #region Filtering
-       //     var strains = dbContext.Strains
-       //.Join(dbContext.Species, strain => strain.IdSpecies, species => species.IdSpecies, (strain, species) => new { Strain = strain, Species = species })
-       //.Join(dbContext.Genus, combined => combined.Species.IdGenus, genus => genus.IdGenus, (combined, genus) => new { combined.Strain, combined.Species, Genus = genus })
-       //.Join(dbContext.Classes, combined => combined.Genus.IdClass, classObj => classObj.IdClass, (combined, classObj) => new { combined.Strain, combined.Species, combined.Genus, Class = classObj })
-       //.Join(dbContext.Phylums, combined => combined.Class.IdPhylum, phylum => phylum.IdPhylum, (combined, phylum) => new { combined.Strain, combined.Species, combined.Genus, combined.Class, Phylum = phylum })
-       //.Where(combined => combined.Phylum.IdPhylum == idPhylum)
-       //.Select(combined => new StrainVM
-       //{
-       //    IdStrain = combined.Strain.IdStrain,
-       //    StrainNumber = combined.Strain.StrainNumber,
-       //    IdSpecies = combined.Strain.IdSpecies,
-       //    IdCondition = combined.Strain.IdCondition,
-       //    ImageStrain = combined.Strain.ImageStrain,
-       //    ScientificName = combined.Strain.ScientificName,
-       //    SynonymStrain = combined.Strain.SynonymStrain,
-       //    FormerName = combined.Strain.FormerName,
-       //    CommonName = combined.Strain.CommonName,
-       //    CellSize = combined.Strain.CellSize,
-       //    Organization = combined.Strain.Organization,
-       //    Characteristics = combined.Strain.Characteristics,
-       //    CollectionSite = combined.Strain.CollectionSite,
-       //    Continent = combined.Strain.Continent,
-       //    Country = combined.Strain.Country,
-       //    IsolationSource = combined.Strain.IsolationSource,
-       //    ToxinProducer = combined.Strain.ToxinProducer,
-       //    StateOfStrain = combined.Strain.StateOfStrain,
-       //    AgitationResistance = combined.Strain.AgitationResistance,
-       //    Remarks = combined.Strain.Remarks,
-       //    GeneInformation = combined.Strain.GeneInformation,
-       //    Publications = combined.Strain.Publications,
-       //    RecommendedForTeaching = combined.Strain.RecommendedForTeaching,
-       //    DateAdd = combined.Strain.DateAdd
-       //})
-       //.OrderBy(strain => strain.IdStrain)
-       //.Skip((page - 1) * PAGE_SIZE)
-       //.Take(PAGE_SIZE)
-       //.ToList();
-       //     #endregion
+        public List<StrainVM> GetAllStrainPhylum(int page, string? namePhylum, string? search, string? sortBy)
+        {
+            var queryStrain = dbContext.Strains.AsQueryable();
+            var result = from s in queryStrain
+                         join sp in dbContext.Species on s.IdSpecies equals sp.IdSpecies
+                         join g in dbContext.Genus on sp.IdGenus equals g.IdGenus
+                         join cs in dbContext.Classes on g.IdClass equals cs.IdClass
+                         join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
+                         join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         where ph.NamePhylum.Equals(namePhylum)
+                         select new StrainVM
+                         {
+                             IdStrain = s.IdStrain,
+                             StrainNumber = s.StrainNumber,
+                             IdSpecies = s.IdSpecies,
+                             IdCondition = s.IdCondition,
+                             ImageStrain = s.ImageStrain,
+                             ScientificName = s.ScientificName,
+                             SynonymStrain = s.SynonymStrain,
+                             FormerName = s.FormerName,
+                             CommonName = s.CommonName,
+                             CellSize = s.CellSize,
+                             Organization = s.Organization,
+                             Characteristics = s.Characteristics,
+                             CollectionSite = s.CollectionSite,
+                             Continent = s.Continent,
+                             Country = s.Country,
+                             IsolationSource = s.IsolationSource,
+                             ToxinProducer = s.ToxinProducer,
+                             StateOfStrain = s.StateOfStrain,
+                             AgitationResistance = s.AgitationResistance,
+                             Remarks = s.Remarks,
+                             GeneInformation = s.GeneInformation,
+                             Publications = s.Publications,
+                             RecommendedForTeaching = s.RecommendedForTeaching,
+                             DateAdd = s.DateAdd,
+                             TotalPage = totalPage,
+                         };
+            totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
+            result = result.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
 
-       //     #region Paging
-       //     //tính tổng trang sau khi filter và sort chứ chưa paging nha
-       //     totalPage = (int)Math.Ceiling(strains.ToList().Count / (double)PAGE_SIZE);
+            #region Filtering
+            if (!string.IsNullOrEmpty(search))
+            {
+                //có 2 optiop để search, có thể mở rộng thêm
+                result = result.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
+            }
 
-       //     strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
-       //     #endregion
-       //     var result = strains.Select(strain => new StrainVM
-       //     {
-       //         IdStrain = strain.IdStrain,
-       //         StrainNumber = strain.StrainNumber,
-       //         IdSpecies = strain.IdSpecies,
-       //         IdCondition = strain.IdCondition,
-       //         ImageStrain = strain.ImageStrain,
-       //         ScientificName = strain.ScientificName,
-       //         SynonymStrain = strain.SynonymStrain,
-       //         FormerName = strain.FormerName,
-       //         CommonName = strain.CommonName,
-       //         CellSize = strain.CellSize,
-       //         Organization = strain.Organization,
-       //         Characteristics = strain.Characteristics,
-       //         CollectionSite = strain.CollectionSite,
-       //         Continent = strain.Continent,
-       //         Country = strain.Country,
-       //         IsolationSource = strain.IsolationSource,
-       //         ToxinProducer = strain.ToxinProducer,
-       //         StateOfStrain = strain.StateOfStrain,
-       //         AgitationResistance = strain.AgitationResistance,
-       //         Remarks = strain.Remarks,
-       //         GeneInformation = strain.GeneInformation,
-       //         Publications = strain.Publications,
-       //         RecommendedForTeaching = strain.RecommendedForTeaching,
-       //         DateAdd = strain.DateAdd,
-       //         //IdentifyStrains = strain.IdentifyStrains,
-       //         //Inventories = strain.Inventories,
-       //         //IsolatorStrains = strain.IsolatorStrains,
-       //         TotalPage = totalPage,
+            #endregion
 
+            #region Sorting
+            //sort mặc định là sort theo Scientific_Name
+            result = result.OrderBy(s => s.IdStrain);
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "Scientific_Name_Asc":
+                        result = result.OrderBy(s => s.ScientificName);
+                        break;
+                    case "Scientific_Name_Desc":
+                        result = result.OrderByDescending(s => s.ScientificName);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
 
-       //     }).ToList();
-       //     return result;
-       // }
+            return result.ToList();
+        }
+
+        public List<StrainVM> GetAllStrainClass(int page, string? nameClass, string? search, string? sortBy)
+        {
+            var queryStrain = dbContext.Strains.AsQueryable();
+            var result = from s in queryStrain
+                         join sp in dbContext.Species on s.IdSpecies equals sp.IdSpecies
+                         join g in dbContext.Genus on sp.IdGenus equals g.IdGenus
+                         join cs in dbContext.Classes on g.IdClass equals cs.IdClass
+                         join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
+                         join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         where cs.NameClass.Equals(nameClass)
+                         select new StrainVM
+                         {
+                             IdStrain = s.IdStrain,
+                             StrainNumber = s.StrainNumber,
+                             IdSpecies = s.IdSpecies,
+                             IdCondition = s.IdCondition,
+                             ImageStrain = s.ImageStrain,
+                             ScientificName = s.ScientificName,
+                             SynonymStrain = s.SynonymStrain,
+                             FormerName = s.FormerName,
+                             CommonName = s.CommonName,
+                             CellSize = s.CellSize,
+                             Organization = s.Organization,
+                             Characteristics = s.Characteristics,
+                             CollectionSite = s.CollectionSite,
+                             Continent = s.Continent,
+                             Country = s.Country,
+                             IsolationSource = s.IsolationSource,
+                             ToxinProducer = s.ToxinProducer,
+                             StateOfStrain = s.StateOfStrain,
+                             AgitationResistance = s.AgitationResistance,
+                             Remarks = s.Remarks,
+                             GeneInformation = s.GeneInformation,
+                             Publications = s.Publications,
+                             RecommendedForTeaching = s.RecommendedForTeaching,
+                             DateAdd = s.DateAdd,
+                             TotalPage = totalPage,
+                         };
+            totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
+            result = result.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+
+            #region Filtering
+            if (!string.IsNullOrEmpty(search))
+            {
+                //có 2 optiop để search, có thể mở rộng thêm
+                result = result.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
+            }
+
+            #endregion
+
+            #region Sorting
+            //sort mặc định là sort theo Scientific_Name
+            result = result.OrderBy(s => s.IdStrain);
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "Scientific_Name_Asc":
+                        result = result.OrderBy(s => s.ScientificName);
+                        break;
+                    case "Scientific_Name_Desc":
+                        result = result.OrderByDescending(s => s.ScientificName);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
+
+            return result.ToList();
+        }
+
+        public List<StrainVM> GetAllStrainGenus(int page, string? nameGenus, string? search, string? sortBy)
+        {
+            var queryStrain = dbContext.Strains.AsQueryable();
+            var result = from s in queryStrain
+                         join sp in dbContext.Species on s.IdSpecies equals sp.IdSpecies
+                         join g in dbContext.Genus on sp.IdGenus equals g.IdGenus
+                         join cs in dbContext.Classes on g.IdClass equals cs.IdClass
+                         join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
+                         join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         where g.NameGenus.Equals(nameGenus)
+                         select new StrainVM
+                         {
+                             IdStrain = s.IdStrain,
+                             StrainNumber = s.StrainNumber,
+                             IdSpecies = s.IdSpecies,
+                             IdCondition = s.IdCondition,
+                             ImageStrain = s.ImageStrain,
+                             ScientificName = s.ScientificName,
+                             SynonymStrain = s.SynonymStrain,
+                             FormerName = s.FormerName,
+                             CommonName = s.CommonName,
+                             CellSize = s.CellSize,
+                             Organization = s.Organization,
+                             Characteristics = s.Characteristics,
+                             CollectionSite = s.CollectionSite,
+                             Continent = s.Continent,
+                             Country = s.Country,
+                             IsolationSource = s.IsolationSource,
+                             ToxinProducer = s.ToxinProducer,
+                             StateOfStrain = s.StateOfStrain,
+                             AgitationResistance = s.AgitationResistance,
+                             Remarks = s.Remarks,
+                             GeneInformation = s.GeneInformation,
+                             Publications = s.Publications,
+                             RecommendedForTeaching = s.RecommendedForTeaching,
+                             DateAdd = s.DateAdd,
+                             TotalPage = totalPage,
+                         };
+            totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
+            result = result.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+
+            #region Filtering
+            if (!string.IsNullOrEmpty(search))
+            {
+                //có 2 optiop để search, có thể mở rộng thêm
+                result = result.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
+            }
+
+            #endregion
+
+            #region Sorting
+            //sort mặc định là sort theo Scientific_Name
+            result = result.OrderBy(s => s.IdStrain);
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "Scientific_Name_Asc":
+                        result = result.OrderBy(s => s.ScientificName);
+                        break;
+                    case "Scientific_Name_Desc":
+                        result = result.OrderByDescending(s => s.ScientificName);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
+
+            return result.ToList();
+        }
+
+        public List<StrainVM> GetAllStrainSpecies(int page, string? nameSpecies, string? search, string? sortBy)
+        {
+            var queryStrain = dbContext.Strains.AsQueryable();
+            var result = from s in queryStrain
+                         join sp in dbContext.Species on s.IdSpecies equals sp.IdSpecies
+                         join g in dbContext.Genus on sp.IdGenus equals g.IdGenus
+                         join cs in dbContext.Classes on g.IdClass equals cs.IdClass
+                         join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
+                         join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         where sp.NameSpecies.Equals(nameSpecies)
+                         select new StrainVM
+                         {
+                             IdStrain = s.IdStrain,
+                             StrainNumber = s.StrainNumber,
+                             IdSpecies = s.IdSpecies,
+                             IdCondition = s.IdCondition,
+                             ImageStrain = s.ImageStrain,
+                             ScientificName = s.ScientificName,
+                             SynonymStrain = s.SynonymStrain,
+                             FormerName = s.FormerName,
+                             CommonName = s.CommonName,
+                             CellSize = s.CellSize,
+                             Organization = s.Organization,
+                             Characteristics = s.Characteristics,
+                             CollectionSite = s.CollectionSite,
+                             Continent = s.Continent,
+                             Country = s.Country,
+                             IsolationSource = s.IsolationSource,
+                             ToxinProducer = s.ToxinProducer,
+                             StateOfStrain = s.StateOfStrain,
+                             AgitationResistance = s.AgitationResistance,
+                             Remarks = s.Remarks,
+                             GeneInformation = s.GeneInformation,
+                             Publications = s.Publications,
+                             RecommendedForTeaching = s.RecommendedForTeaching,
+                             DateAdd = s.DateAdd,
+                             TotalPage = totalPage,
+                         };
+            totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
+            result = result.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+
+            #region Filtering
+            if (!string.IsNullOrEmpty(search))
+            {
+                //có 2 optiop để search, có thể mở rộng thêm
+                result = result.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
+            }
+
+            #endregion
+
+            #region Sorting
+            //sort mặc định là sort theo Scientific_Name
+            result = result.OrderBy(s => s.IdStrain);
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "Scientific_Name_Asc":
+                        result = result.OrderBy(s => s.ScientificName);
+                        break;
+                    case "Scientific_Name_Desc":
+                        result = result.OrderByDescending(s => s.ScientificName);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            #endregion
+
+            return result.ToList();
+        }
     }
 }

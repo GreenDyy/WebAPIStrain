@@ -44,6 +44,58 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("FollowPhylum")]
+        public IActionResult GetAllStrainPhylum(string? namePhylum, string? search, string? sortBy, int page = 1)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllStrainPhylum(page, namePhylum, search, sortBy));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("FollowClass")]
+        public IActionResult GetAllStrainClass(string? nameClass, string? search, string? sortBy, int page = 1)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllStrainClass(page, nameClass, search, sortBy));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("FollowGenus")]
+        public IActionResult GetAllStrainGenus(string? nameGenus, string? search, string? sortBy, int page = 1)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllStrainGenus(page, nameGenus, search, sortBy));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("FollowSpecies")]
+        public IActionResult GetAllStrainSpecies(string? nameSpecies, string? search, string? sortBy, int page = 1)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllStrainSpecies(page, nameSpecies, search, sortBy));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
