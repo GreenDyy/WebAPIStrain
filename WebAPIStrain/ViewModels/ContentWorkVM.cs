@@ -12,5 +12,7 @@
         public string? ContractNo { get; set; }
         public string? Status { get; set; }
         public string? Priority { get; set; }
+        public DateOnly? EndDateActual { get; set; }
+        public string? Notificattion { get; set; }
     }
 }

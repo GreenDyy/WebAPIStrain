@@ -28,7 +28,9 @@ namespace WebAPIStrain.Services
                 EndDate = contentWork.EndDate,
                 ContractNo = contentWork.ContractNo,
                 Status = contentWork.Status,
-                Priority = contentWork.Priority
+                Priority = contentWork.Priority,
+                EndDateActual = contentWork.EndDateActual,
+                Notificattion = contentWork.Notificattion,
             };
             dbContext.Add(newContentWork);
             dbContext.SaveChanges();
@@ -43,7 +45,9 @@ namespace WebAPIStrain.Services
                 EndDate = newContentWork.EndDate,
                 ContractNo = newContentWork.ContractNo,
                 Status = newContentWork.Status,
-                Priority = newContentWork.Priority
+                Priority = newContentWork.Priority,
+                EndDateActual= newContentWork.EndDateActual,
+                Notificattion= newContentWork.Notificattion,
             };
         }
 
@@ -72,7 +76,9 @@ namespace WebAPIStrain.Services
                 EndDate = p.EndDate,
                 ContractNo = p.ContractNo,
                 Status = p.Status,
-                Priority = p.Priority
+                Priority = p.Priority,
+                EndDateActual = p.EndDateActual,
+                Notificattion = p.Notificattion
             }).ToList();
             return contentWorks;
         }
@@ -93,7 +99,9 @@ namespace WebAPIStrain.Services
                     EndDate = contentWork.EndDate,
                     ContractNo = contentWork.ContractNo,
                     Status = contentWork.Status,
-                    Priority = contentWork.Priority
+                    Priority = contentWork.Priority,
+                    EndDateActual = contentWork.EndDateActual,
+                    Notificattion = contentWork.Notificattion
                 };
             }
             return null;
@@ -113,6 +121,8 @@ namespace WebAPIStrain.Services
                 _contentWork.ContractNo = contentWork.ContractNo;
                 _contentWork.Status = contentWork.Status;
                 _contentWork.Priority = contentWork.Priority;
+                _contentWork.EndDateActual = contentWork.EndDateActual;
+                _contentWork.Notificattion = contentWork.Notificattion;
                 dbContext.SaveChanges();
                 return true;
             }
