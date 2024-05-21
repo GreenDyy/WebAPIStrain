@@ -12,6 +12,6 @@ namespace WebAPIStrain.ViewModels
 
         //public virtual Class? IdClassNavigation { get; set; }
 
-        //public virtual ICollection<Species> Species { get; set; } = new List<Species>();
+        public virtual ICollection<SpeciesVM> Species { get; set; } = new List<SpeciesVM>();
     }
 }

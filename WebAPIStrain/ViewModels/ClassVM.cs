@@ -10,7 +10,7 @@ namespace WebAPIStrain.ViewModels
 
         public int? IdPhylum { get; set; }
 
-        //public virtual ICollection<Genu> Genus { get; set; } = new List<Genu>();
+        public virtual ICollection<GenusVM> Genus { get; set; } = new List<GenusVM>();
 
         //public virtual Phylum? IdPhylumNavigation { get; set; }
     }

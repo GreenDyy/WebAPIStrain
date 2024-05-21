@@ -140,6 +140,7 @@ namespace WebAPIStrain.Services
                 //có 2 optiop để search, có thể mở rộng thêm
                 strains = strains.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
             }
+
             #endregion
 
             #region Sorting
@@ -329,5 +330,89 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+       // public List<StrainVM> GetAllStrainPhylum(string? idPhylum, int page)
+       // {
+       //     #region Filtering
+       //     var strains = dbContext.Strains
+       //.Join(dbContext.Species, strain => strain.IdSpecies, species => species.IdSpecies, (strain, species) => new { Strain = strain, Species = species })
+       //.Join(dbContext.Genus, combined => combined.Species.IdGenus, genus => genus.IdGenus, (combined, genus) => new { combined.Strain, combined.Species, Genus = genus })
+       //.Join(dbContext.Classes, combined => combined.Genus.IdClass, classObj => classObj.IdClass, (combined, classObj) => new { combined.Strain, combined.Species, combined.Genus, Class = classObj })
+       //.Join(dbContext.Phylums, combined => combined.Class.IdPhylum, phylum => phylum.IdPhylum, (combined, phylum) => new { combined.Strain, combined.Species, combined.Genus, combined.Class, Phylum = phylum })
+       //.Where(combined => combined.Phylum.IdPhylum == idPhylum)
+       //.Select(combined => new StrainVM
+       //{
+       //    IdStrain = combined.Strain.IdStrain,
+       //    StrainNumber = combined.Strain.StrainNumber,
+       //    IdSpecies = combined.Strain.IdSpecies,
+       //    IdCondition = combined.Strain.IdCondition,
+       //    ImageStrain = combined.Strain.ImageStrain,
+       //    ScientificName = combined.Strain.ScientificName,
+       //    SynonymStrain = combined.Strain.SynonymStrain,
+       //    FormerName = combined.Strain.FormerName,
+       //    CommonName = combined.Strain.CommonName,
+       //    CellSize = combined.Strain.CellSize,
+       //    Organization = combined.Strain.Organization,
+       //    Characteristics = combined.Strain.Characteristics,
+       //    CollectionSite = combined.Strain.CollectionSite,
+       //    Continent = combined.Strain.Continent,
+       //    Country = combined.Strain.Country,
+       //    IsolationSource = combined.Strain.IsolationSource,
+       //    ToxinProducer = combined.Strain.ToxinProducer,
+       //    StateOfStrain = combined.Strain.StateOfStrain,
+       //    AgitationResistance = combined.Strain.AgitationResistance,
+       //    Remarks = combined.Strain.Remarks,
+       //    GeneInformation = combined.Strain.GeneInformation,
+       //    Publications = combined.Strain.Publications,
+       //    RecommendedForTeaching = combined.Strain.RecommendedForTeaching,
+       //    DateAdd = combined.Strain.DateAdd
+       //})
+       //.OrderBy(strain => strain.IdStrain)
+       //.Skip((page - 1) * PAGE_SIZE)
+       //.Take(PAGE_SIZE)
+       //.ToList();
+       //     #endregion
+
+       //     #region Paging
+       //     //tính tổng trang sau khi filter và sort chứ chưa paging nha
+       //     totalPage = (int)Math.Ceiling(strains.ToList().Count / (double)PAGE_SIZE);
+
+       //     strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+       //     #endregion
+       //     var result = strains.Select(strain => new StrainVM
+       //     {
+       //         IdStrain = strain.IdStrain,
+       //         StrainNumber = strain.StrainNumber,
+       //         IdSpecies = strain.IdSpecies,
+       //         IdCondition = strain.IdCondition,
+       //         ImageStrain = strain.ImageStrain,
+       //         ScientificName = strain.ScientificName,
+       //         SynonymStrain = strain.SynonymStrain,
+       //         FormerName = strain.FormerName,
+       //         CommonName = strain.CommonName,
+       //         CellSize = strain.CellSize,
+       //         Organization = strain.Organization,
+       //         Characteristics = strain.Characteristics,
+       //         CollectionSite = strain.CollectionSite,
+       //         Continent = strain.Continent,
+       //         Country = strain.Country,
+       //         IsolationSource = strain.IsolationSource,
+       //         ToxinProducer = strain.ToxinProducer,
+       //         StateOfStrain = strain.StateOfStrain,
+       //         AgitationResistance = strain.AgitationResistance,
+       //         Remarks = strain.Remarks,
+       //         GeneInformation = strain.GeneInformation,
+       //         Publications = strain.Publications,
+       //         RecommendedForTeaching = strain.RecommendedForTeaching,
+       //         DateAdd = strain.DateAdd,
+       //         //IdentifyStrains = strain.IdentifyStrains,
+       //         //Inventories = strain.Inventories,
+       //         //IsolatorStrains = strain.IsolatorStrains,
+       //         TotalPage = totalPage,
+
+
+       //     }).ToList();
+       //     return result;
+       // }
     }
 }

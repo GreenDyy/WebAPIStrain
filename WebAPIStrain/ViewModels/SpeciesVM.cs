@@ -12,6 +12,6 @@ namespace WebAPIStrain.ViewModels
 
         //public virtual Genu? IdGenusNavigation { get; set; }
 
-        //public virtual ICollection<Strain> Strains { get; set; } = new List<Strain>();
+        public virtual ICollection<StrainVM> Strains { get; set; } = new List<StrainVM>();
     }
 }

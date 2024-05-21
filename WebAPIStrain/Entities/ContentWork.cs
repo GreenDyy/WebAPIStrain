@@ -25,6 +25,10 @@ public partial class ContentWork
 
     public string? Priority { get; set; }
 
+    public DateOnly? EndDateActual { get; set; }
+
+    public string? Notificattion { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 
     public virtual ProjectContent? IdProjectContentNavigation { get; set; }

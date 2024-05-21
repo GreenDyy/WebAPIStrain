@@ -45,8 +45,27 @@ namespace WebAPIStrain.Services
             var phylums = dbContext.Phylums.Select(p => new PhylumVM
             {
                 IdPhylum = p.IdPhylum,
-                NamePhylum = p.NamePhylum
+                NamePhylum = p.NamePhylum,
+                Classes = p.Classes.Select(c => new ClassVM
+                {
+                    IdClass = c.IdClass,
+                    NameClass = c.NameClass,
+                    IdPhylum = c.IdPhylum,
+                    Genus = c.Genus.Select(g => new GenusVM
+                    {
+                        IdGenus = g.IdGenus,
+                        NameGenus = g.NameGenus,
+                        IdClass = g.IdClass,
+                        Species = g.Species.Select(s => new SpeciesVM
+                        {
+                            IdSpecies = s.IdSpecies,
+                            NameSpecies = s.NameSpecies,
+                            IdGenus = s.IdGenus,
+                        }).ToList()
+                    }).ToList()
+                }).ToList()
             }).ToList();
+
             return phylums;
         }
 
@@ -59,7 +78,7 @@ namespace WebAPIStrain.Services
                 {
                     IdPhylum = phylum.IdPhylum,
                     NamePhylum = phylum.NamePhylum
-                };    
+                };
             }
             return null;
         }
