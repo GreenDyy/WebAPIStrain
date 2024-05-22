@@ -110,5 +110,21 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool UpdateByIdStrain(int idStrain, InventoryModel inputInventory)
+        {
+            var _inventory = dbContext.Inventories.FirstOrDefault(p => p.IdStrain== idStrain);
+            if (_inventory != null)
+            {
+                _inventory.IdStrain = inputInventory.IdStrain;
+                _inventory.Price = inputInventory.Price;
+                _inventory.EntryDate = inputInventory.EntryDate;
+                _inventory.Quantity = inputInventory.Quantity;
+
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

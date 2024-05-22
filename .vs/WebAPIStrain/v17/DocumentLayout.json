@@ -1,17 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\",
+  "WorkspaceRootPath": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\viewmodels\\phylumvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\viewmodels\\phylumvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\services\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\services\\iinventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\iinventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\codes\\khoaluantotnghiep\\webapistrain\\webapistrain\\models\\inventorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\models\\inventorymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,39 +42,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StrainController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "RelativeToolTip": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAAAkwNwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T10:45:01.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StrainController.cs",
-              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "ViewState": "AQIAAK8AAAAAAAAAAAAkwNwAAAAAAAAA",
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\InventoryController.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\InventoryController.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAswHAAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T10:44:49.905Z",
+              "WhenOpened": "2024-05-22T03:48:05.785Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PhylumVM.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\ViewModels\\PhylumVM.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\PhylumVM.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\ViewModels\\PhylumVM.cs",
-              "RelativeToolTip": "WebAPIStrain\\ViewModels\\PhylumVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "InventoryRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\InventoryRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\InventoryRepository.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\InventoryRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\InventoryRepository.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAYwHYAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T10:44:12.229Z",
+              "WhenOpened": "2024-05-22T03:45:49.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IInventoryRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\IInventoryRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IInventoryRepository.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\IInventoryRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\IInventoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T03:45:42.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InventoryModel.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Models\\InventoryModel.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Models\\InventoryModel.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Models\\InventoryModel.cs",
+              "RelativeToolTip": "WebAPIStrain\\Models\\InventoryModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T03:34:20.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StrainRepository.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ViewState": "AQIAANAAAAAAAAAAAAAiwPAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T03:01:22.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StrainVM.cs",
+              "DocumentMoniker": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "ToolTip": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "RelativeToolTip": "WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAgwD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T03:00:51.201Z",
               "EditorCaption": ""
             }
           ]

@@ -4,8 +4,6 @@ namespace WebAPIStrain.Models
 {
     public class InventoryModel
     {
-        public int InventoryId { get; set; }
-
         public int? IdStrain { get; set; }
 
         public int? Quantity { get; set; }

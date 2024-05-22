@@ -105,6 +105,26 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpPut("IDStrain/{idStrain}")]
+        public IActionResult UpdateByIdStrain(int idStrain, InventoryModel inputInventory)
+        {
+            try
+            {
+                if (_inventoryRepository.UpdateByIdStrain(idStrain, inputInventory))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpPost]
         public IActionResult Create(InventoryModel inputInventory)
         {
