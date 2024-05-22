@@ -138,6 +138,19 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("GetRandom")]
+        public IActionResult GetRandomStrain()
+        {
+            try
+            {
+                return Ok(_strainRepository.GetRandomStrain());
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

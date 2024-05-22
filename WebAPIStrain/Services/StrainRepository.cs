@@ -134,6 +134,7 @@ namespace WebAPIStrain.Services
         {
             var strains = dbContext.Strains.AsQueryable();
             //filter ra các strain đã dc cấp mã
+            //strains.Where(x => x.)
 
 
             #region Paging
@@ -200,6 +201,7 @@ namespace WebAPIStrain.Services
                 //Inventories = strain.Inventories,
                 //IsolatorStrains = strain.IsolatorStrains,
                 TotalPage = totalPage,
+                Price = dbContext.Inventories.FirstOrDefault(p => p.IdStrain == strain.IdStrain).Price,
 
 
             });
@@ -342,6 +344,7 @@ namespace WebAPIStrain.Services
                          join cs in dbContext.Classes on g.IdClass equals cs.IdClass
                          join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
                          join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         join i in dbContext.Inventories on s.IdStrain equals i.IdStrain
                          where ph.NamePhylum.Equals(namePhylum)
                          select new StrainVM
                          {
@@ -369,6 +372,7 @@ namespace WebAPIStrain.Services
                              Publications = s.Publications,
                              RecommendedForTeaching = s.RecommendedForTeaching,
                              DateAdd = s.DateAdd,
+                             Price = i.Price,
                              TotalPage = totalPage,
                          };
             totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
@@ -414,6 +418,7 @@ namespace WebAPIStrain.Services
                          join cs in dbContext.Classes on g.IdClass equals cs.IdClass
                          join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
                          join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         join i in dbContext.Inventories on s.IdStrain equals i.IdStrain
                          where cs.NameClass.Equals(nameClass)
                          select new StrainVM
                          {
@@ -441,6 +446,7 @@ namespace WebAPIStrain.Services
                              Publications = s.Publications,
                              RecommendedForTeaching = s.RecommendedForTeaching,
                              DateAdd = s.DateAdd,
+                             Price = i.Price,
                              TotalPage = totalPage,
                          };
             totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
@@ -486,6 +492,7 @@ namespace WebAPIStrain.Services
                          join cs in dbContext.Classes on g.IdClass equals cs.IdClass
                          join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
                          join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         join i in dbContext.Inventories on s.IdStrain equals i.IdStrain
                          where g.NameGenus.Equals(nameGenus)
                          select new StrainVM
                          {
@@ -513,6 +520,7 @@ namespace WebAPIStrain.Services
                              Publications = s.Publications,
                              RecommendedForTeaching = s.RecommendedForTeaching,
                              DateAdd = s.DateAdd,
+                             Price = i.Price,
                              TotalPage = totalPage,
                          };
             totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
@@ -558,6 +566,7 @@ namespace WebAPIStrain.Services
                          join cs in dbContext.Classes on g.IdClass equals cs.IdClass
                          join ph in dbContext.Phylums on cs.IdPhylum equals ph.IdPhylum
                          join sh in dbContext.StrainApprovalHistories on s.IdStrain equals sh.IdStrain
+                         join i in dbContext.Inventories on s.IdStrain equals i.IdStrain
                          where sp.NameSpecies.Equals(nameSpecies)
                          select new StrainVM
                          {
@@ -585,6 +594,7 @@ namespace WebAPIStrain.Services
                              Publications = s.Publications,
                              RecommendedForTeaching = s.RecommendedForTeaching,
                              DateAdd = s.DateAdd,
+                             Price = i.Price,
                              TotalPage = totalPage,
                          };
             totalPage = (int)Math.Ceiling(result.ToList().Count / (double)PAGE_SIZE);
@@ -619,6 +629,41 @@ namespace WebAPIStrain.Services
             #endregion
 
             return result.ToList();
+        }
+
+        public List<StrainVM> GetRandomStrain()
+        {
+            var strains = dbContext.Strains
+                .OrderBy(x => Guid.NewGuid().ToString())
+                .Take(8)
+                .Select(strain => new StrainVM
+                {
+                    IdStrain = strain.IdStrain,
+                    StrainNumber = strain.StrainNumber,
+                    IdSpecies = strain.IdSpecies,
+                    IdCondition = strain.IdCondition,
+                    ImageStrain = strain.ImageStrain,
+                    ScientificName = strain.ScientificName,
+                    SynonymStrain = strain.SynonymStrain,
+                    FormerName = strain.FormerName,
+                    CommonName = strain.CommonName,
+                    CellSize = strain.CellSize,
+                    Organization = strain.Organization,
+                    Characteristics = strain.Characteristics,
+                    CollectionSite = strain.CollectionSite,
+                    Continent = strain.Continent,
+                    Country = strain.Country,
+                    IsolationSource = strain.IsolationSource,
+                    ToxinProducer = strain.ToxinProducer,
+                    StateOfStrain = strain.StateOfStrain,
+                    AgitationResistance = strain.AgitationResistance,
+                    Remarks = strain.Remarks,
+                    GeneInformation = strain.GeneInformation,
+                    Publications = strain.Publications,
+                    RecommendedForTeaching = strain.RecommendedForTeaching,
+                    DateAdd = strain.DateAdd,
+                }).ToList();
+            return strains;
         }
     }
 }

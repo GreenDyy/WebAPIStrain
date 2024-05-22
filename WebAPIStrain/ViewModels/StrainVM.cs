@@ -66,5 +66,6 @@ namespace WebAPIStrain.ViewModels
 
         //public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
         public int TotalPage {  get; set; }
+        public decimal? Price { get; set; }
     }
 }
