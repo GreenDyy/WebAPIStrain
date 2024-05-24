@@ -53,13 +53,14 @@ namespace WebAPIStrain.Services
             dbContext.SaveChanges();
 
             //account
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputCustomer.Password);
+            //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputCustomer.Password);
 
             var newAccount = new AccountForCustomer
             {
                 IdCustomer = newCustomer.IdCustomer, //lấy id dc generate từ customer vừa add ở trên
                 Username = inputCustomer.Username,
-                Password = hashedPassword,
+                //Password = hashedPassword,
+                Password = inputCustomer.Password,
                 Status = inputCustomer.Status
             };
             dbContext.Add(newAccount);

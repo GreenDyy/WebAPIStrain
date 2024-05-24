@@ -109,20 +109,22 @@ namespace WebAPIStrain.Controllers
             if (customer != null)
             {
                 //ok thì cấp token
-                return Ok(new ApiResponse
-                {
-                    Success = true,
-                    Message = "Authenticate Success",
-                    Data = customer
-                });
+                //return Ok(new ApiResponse
+                //{
+                //    Success = true,
+                //    Message = "Authenticate Success",
+                //    Data = customer
+                //});
+                return Ok(customer);
             }
             else
             {
-                return Ok(new ApiResponse
-                {
-                    Success = false,
-                    Message = "Sai tài khoản hoặc mật khẩu"
-                });
+                //return Ok(new ApiResponse
+                //{
+                //    Success = false,
+                //    Message = "Sai tài khoản hoặc mật khẩu"
+                //});
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
 
