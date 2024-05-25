@@ -60,6 +60,8 @@ builder.Services.AddScoped<IBillRepository, BillRepository>();
 builder.Services.AddScoped<IBillDetailRepository, BillDetailRepository>();
 builder.Services.AddScoped<IScienceNewspaperRepository, ScienceNewspaperRepository>();
 builder.Services.AddScoped<IAuthorNewspaperRepository, AuthorNewspaperRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
 
 
 //token

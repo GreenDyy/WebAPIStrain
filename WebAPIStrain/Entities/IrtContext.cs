@@ -49,6 +49,10 @@ public partial class IrtContext : DbContext
 
     public virtual DbSet<IsolatorStrain> IsolatorStrains { get; set; }
 
+    public virtual DbSet<Order> Orders { get; set; }
+
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+
     public virtual DbSet<Partner> Partners { get; set; }
 
     public virtual DbSet<Phylum> Phylums { get; set; }
@@ -145,7 +149,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Bill>(entity =>
         {
-            entity.HasKey(e => e.IdBill).HasName("PK__Bill__F098680AD9608975");
+            entity.HasKey(e => e.IdBill).HasName("PK__Bill__F098680A9977F9C9");
 
             entity.ToTable("Bill");
 
@@ -158,6 +162,7 @@ public partial class IrtContext : DbContext
             entity.Property(e => e.IdEmployee)
                 .HasMaxLength(50)
                 .HasColumnName("ID_Employee");
+            entity.Property(e => e.IdOrder).HasColumnName("ID_Order");
             entity.Property(e => e.StatusOfBill)
                 .HasMaxLength(255)
                 .HasColumnName("Status_Of_Bill");
@@ -172,11 +177,15 @@ public partial class IrtContext : DbContext
             entity.HasOne(d => d.IdEmployeeNavigation).WithMany(p => p.Bills)
                 .HasForeignKey(d => d.IdEmployee)
                 .HasConstraintName("FK_BillOffline_Employee");
+
+            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.Bills)
+                .HasForeignKey(d => d.IdOrder)
+                .HasConstraintName("FK__Bill__ID_Order__0D44F85C");
         });
 
         modelBuilder.Entity<BillDetail>(entity =>
         {
-            entity.HasKey(e => e.IdBillDetail).HasName("PK__BillDeta__3421CE5D01A39303");
+            entity.HasKey(e => e.IdBillDetail).HasName("PK__BillDeta__3421CE5D796AE7D3");
 
             entity.ToTable("BillDetail");
 
@@ -197,7 +206,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Cart>(entity =>
         {
-            entity.HasKey(e => e.IdCart).HasName("PK__Cart__72140ECF2E2D76A4");
+            entity.HasKey(e => e.IdCart).HasName("PK__Cart__72140ECFD771632F");
 
             entity.ToTable("Cart");
 
@@ -214,7 +223,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<CartDetail>(entity =>
         {
-            entity.HasKey(e => e.IdCartDetail).HasName("PK__CartDeta__19B4E082C1525943");
+            entity.HasKey(e => e.IdCartDetail).HasName("PK__CartDeta__19B4E0825A2438E1");
 
             entity.ToTable("CartDetail");
 
@@ -432,6 +441,47 @@ public partial class IrtContext : DbContext
                 .HasForeignKey(d => d.IdStrain)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_EmployeeStrain_Strain");
+        });
+
+        modelBuilder.Entity<Order>(entity =>
+        {
+            entity.HasKey(e => e.IdOrder).HasName("PK__Orders__EC9FA9553DE3E618");
+
+            entity.Property(e => e.IdOrder).HasColumnName("ID_Order");
+            entity.Property(e => e.IdCustomer)
+                .HasMaxLength(50)
+                .HasColumnName("ID_Customer");
+            entity.Property(e => e.IdEmployee)
+                .HasMaxLength(50)
+                .HasColumnName("ID_Employee");
+            entity.Property(e => e.Status).HasMaxLength(255);
+
+            entity.HasOne(d => d.IdCustomerNavigation).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.IdCustomer)
+                .HasConstraintName("FK__Orders__ID_Custo__03BB8E22");
+
+            entity.HasOne(d => d.IdEmployeeNavigation).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.IdEmployee)
+                .HasConstraintName("FK__Orders__ID_Emplo__04AFB25B");
+        });
+
+        modelBuilder.Entity<OrderDetail>(entity =>
+        {
+            entity.HasKey(e => e.IdOrderDetail).HasName("PK__OrderDet__855D4EF59B69C2F4");
+
+            entity.ToTable("OrderDetail");
+
+            entity.Property(e => e.IdOrderDetail).HasColumnName("ID_OrderDetail");
+            entity.Property(e => e.IdOrder).HasColumnName("ID_Order");
+            entity.Property(e => e.IdStrain).HasColumnName("ID_Strain");
+
+            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.IdOrder)
+                .HasConstraintName("FK__OrderDeta__ID_Or__078C1F06");
+
+            entity.HasOne(d => d.IdStrainNavigation).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.IdStrain)
+                .HasConstraintName("FK__OrderDeta__ID_St__0880433F");
         });
 
         modelBuilder.Entity<Partner>(entity =>

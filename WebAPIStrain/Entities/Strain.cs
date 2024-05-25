@@ -67,5 +67,7 @@ public partial class Strain
 
     public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
 
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
     public virtual ICollection<StrainApprovalHistory> StrainApprovalHistories { get; set; } = new List<StrainApprovalHistory>();
 }

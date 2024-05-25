@@ -26,7 +26,7 @@ namespace WebAPIStrain.Services
                 BillDate = bill.BillDate,
                 StatusOfBill = bill.StatusOfBill,
                 TypeOfBill = bill.TypeOfBill,
-                Total = bill.Total
+                TotalPrice = bill.Total
             };
             dbContext.Add(newBill);
             dbContext.SaveChanges();
@@ -38,7 +38,7 @@ namespace WebAPIStrain.Services
                 BillDate = newBill.BillDate,
                 StatusOfBill = newBill.StatusOfBill,
                 TypeOfBill = newBill.TypeOfBill,
-                Total = newBill.Total
+                TotalPrice = newBill.TotalPrice
             };
         }
 
@@ -64,7 +64,7 @@ namespace WebAPIStrain.Services
                 BillDate = p.BillDate,
                 StatusOfBill = p.StatusOfBill,
                 TypeOfBill = p.TypeOfBill,
-                Total = p.Total
+                TotalPrice = p.TotalPrice
             }).ToList();
             return bills;
         }
@@ -82,7 +82,7 @@ namespace WebAPIStrain.Services
                     BillDate = bill.BillDate,
                     StatusOfBill = bill.StatusOfBill,
                     TypeOfBill = bill.TypeOfBill,
-                    Total = bill.Total
+                    TotalPrice = bill.TotalPrice
                 };
             }
             return null;
@@ -98,7 +98,7 @@ namespace WebAPIStrain.Services
                 _bill.BillDate = bill.BillDate;
                 _bill.StatusOfBill = bill.StatusOfBill;
                 _bill.TypeOfBill = bill.TypeOfBill;
-                _bill.Total = bill.Total;
+                _bill.TotalPrice = bill.Total;
                 dbContext.SaveChanges();
                 return true;
             }

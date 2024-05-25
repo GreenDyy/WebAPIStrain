@@ -8,6 +8,6 @@
         public DateOnly? BillDate { get; set; }
         public string? StatusOfBill { get; set; }
         public string? TypeOfBill { get; set; }
-        public double? Total { get; set; }
+        public double? TotalPrice { get; set; }
     }
 }

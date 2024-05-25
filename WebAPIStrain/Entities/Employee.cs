@@ -45,5 +45,7 @@ public partial class Employee
 
     public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
 
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
+
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 }
