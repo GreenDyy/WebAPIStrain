@@ -54,7 +54,6 @@ namespace WebAPIStrain.Services
         {
             var newOrder = new Order
             {
-                IdOrder = order.IdOrder,
                 IdCustomer = order.IdCustomer,
                 IdEmployee = order.IdEmployee,
                 DateOrder = order.DateOrder,

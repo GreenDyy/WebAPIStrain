@@ -1,9 +1,9 @@
-﻿namespace WebAPIStrain.Models
+﻿using WebAPIStrain.Entities;
+
+namespace WebAPIStrain.Models
 {
     public class OrderModel
     {
-        public int IdOrder { get; set; }
-
         public string? IdCustomer { get; set; }
 
         public string? IdEmployee { get; set; }

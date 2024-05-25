@@ -1,4 +1,6 @@
-﻿namespace WebAPIStrain.ViewModels
+﻿using WebAPIStrain.Entities;
+
+namespace WebAPIStrain.ViewModels
 {
     public class OrderVM
     {
@@ -15,5 +17,6 @@
         public string? Status { get; set; }
 
         public string? Note { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 }

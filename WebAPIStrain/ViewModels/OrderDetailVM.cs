@@ -1,4 +1,6 @@
-﻿namespace WebAPIStrain.ViewModels
+﻿using WebAPIStrain.Entities;
+
+namespace WebAPIStrain.ViewModels
 {
     public class OrderDetailVM
     {
