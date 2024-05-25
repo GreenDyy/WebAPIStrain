@@ -98,9 +98,10 @@ namespace WebAPIStrain.Controllers
         [HttpPost]
         public IActionResult Create(CustomerModel customer)
         {
-            _customerRepository.Create(customer);
-            return Ok();
-        }
+            if (_customerRepository.Create(customer) != null)
+                return Ok();
+            return StatusCode(StatusCodes.Status500InternalServerError);
+        }   
 
         [HttpPost("Login")]
         public IActionResult Login(Login account)

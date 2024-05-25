@@ -17,85 +17,101 @@ namespace WebAPIStrain.Services
 
         public CustomerVM Create(CustomerModel inputCustomer)
         {
-            //"KH00001"
-            //xử lý IdCustomer cuối trước khi thêm
-            //các bước xử lý id: cắt chuỗi số -> convert sang int -> tăng 1 -> conver sang string dạng D5 -> ghép lại như cữ
+            // Kiểm tra tài khoản tồn tại
+            var ac = dbContext.AccountForCustomers.FirstOrDefault(a => a.Username == inputCustomer.Username);
+            if (ac != null)
+            {
+                return null;
+            }
+
+            // Xử lý IdCustomer mới
             string newIdCustomer;
-            string? lastIdCustomer;
-            var lastCustomer = dbContext.Customers.OrderBy(c => c.IdCustomer).LastOrDefault();
+            var lastCustomer = dbContext.Customers.OrderByDescending(c => c.IdCustomer).FirstOrDefault();
             if (lastCustomer != null)
             {
-                lastIdCustomer = lastCustomer.IdCustomer;
-                string partNumberId = lastIdCustomer.Substring(2); //00001
+                string lastIdCustomer = lastCustomer.IdCustomer;
+                string partNumberId = lastIdCustomer.Substring(2); // Bỏ "KH"
                 int number = int.Parse(partNumberId);
                 number++;
-                partNumberId = number.ToString("D5");
-                newIdCustomer = "KH" + partNumberId;
+                newIdCustomer = "KH" + number.ToString("D5");
             }
             else
             {
                 newIdCustomer = "KH00001";
             }
 
-            //---
-            var newCustomer = new Customer
+            using (var transaction = dbContext.Database.BeginTransaction())
             {
-                IdCustomer = newIdCustomer,
-                FirstName = inputCustomer.FirstName,
-                LastName = inputCustomer.LastName,
-                FullName = inputCustomer.LastName + " " + inputCustomer.FirstName,
-                DateOfBirth = inputCustomer.DateOfBirth,
-                Gender = inputCustomer.Gender,
-                Email = inputCustomer.Email,
-                PhoneNumber = inputCustomer.PhoneNumber,
-                Address = inputCustomer.Address,
-                Image = inputCustomer.Image,
-            };
-            dbContext.Add(newCustomer);
-            dbContext.SaveChanges();
+                try
+                {
+                    // Tạo Customer mới
+                    var newCustomer = new Customer
+                    {
+                        IdCustomer = newIdCustomer,
+                        FirstName = inputCustomer.FirstName,
+                        LastName = inputCustomer.LastName,
+                        FullName = inputCustomer.LastName + " " + inputCustomer.FirstName,
+                        DateOfBirth = inputCustomer.DateOfBirth,
+                        Gender = inputCustomer.Gender,
+                        Email = inputCustomer.Email,
+                        PhoneNumber = inputCustomer.PhoneNumber,
+                        Address = inputCustomer.Address,
+                        Image = inputCustomer.Image,
+                    };
+                    dbContext.Add(newCustomer);
+                    dbContext.SaveChanges();
 
-            //account
-            //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputCustomer.Password);
+                    // Tạo Account mới
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputCustomer.Password);
+                    var newAccount = new AccountForCustomer
+                    {
+                        IdCustomer = newCustomer.IdCustomer,
+                        Username = inputCustomer.Username,
+                        Password = hashedPassword,
+                        Status = inputCustomer.Status
+                    };
+                    dbContext.Add(newAccount);
+                    dbContext.SaveChanges();
 
-            var newAccount = new AccountForCustomer
-            {
-                IdCustomer = newCustomer.IdCustomer, //lấy id dc generate từ customer vừa add ở trên
-                Username = inputCustomer.Username,
-                //Password = hashedPassword,
-                Password = inputCustomer.Password,
-                Status = inputCustomer.Status
-            };
-            dbContext.Add(newAccount);
-            dbContext.SaveChanges();
+                    // Tạo Cart mới
+                    var newCart = new Cart
+                    {
+                        IdCustomer = newCustomer.IdCustomer,
+                        TotalProduct = 0,
+                    };
+                    dbContext.Carts.Add(newCart);
+                    dbContext.SaveChanges();
 
-            //tạo cart
-            var newCart = new Cart
-            {
-                IdCustomer = newCustomer.IdCustomer,
-                TotalProduct = 0,
-            };
-            dbContext.Carts.Add(newCart);
-            dbContext.SaveChanges();
+                    // Commit transaction
+                    transaction.Commit();
 
-            //truy vào csdl lấy data mới thêm, dùng VM
-            return new CustomerVM
-            {
-                IdCustomer = newCustomer.IdCustomer,
-                FirstName = newCustomer.FirstName,
-                LastName = newCustomer.LastName,
-                FullName = newCustomer.FullName,
-                DateOfBirth = newCustomer.DateOfBirth,
-                Gender = newCustomer.Gender,
-                Email = newCustomer.Email,
-                PhoneNumber = newCustomer.PhoneNumber,
-                Address = newCustomer.Address,
-                Image = newCustomer.Image,
+                    // Trả về CustomerVM
+                    return new CustomerVM
+                    {
+                        IdCustomer = newCustomer.IdCustomer,
+                        FirstName = newCustomer.FirstName,
+                        LastName = newCustomer.LastName,
+                        FullName = newCustomer.FullName,
+                        DateOfBirth = newCustomer.DateOfBirth,
+                        Gender = newCustomer.Gender,
+                        Email = newCustomer.Email,
+                        PhoneNumber = newCustomer.PhoneNumber,
+                        Address = newCustomer.Address,
+                        Image = newCustomer.Image,
 
-                Username = newAccount.Username,
-                Password = newAccount.Password,
-                Status = newAccount.Status,
-            };
+                        Username = newAccount.Username,
+                        Password = newAccount.Password,
+                        Status = newAccount.Status,
+                    };
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    throw;
+                }
+            }
         }
+
 
         public bool Delete(string id)
         {
@@ -127,7 +143,7 @@ namespace WebAPIStrain.Services
                 Username = c.AccountForCustomer.Username,
                 Password = c.AccountForCustomer.Password,
                 Status = c.AccountForCustomer.Status
-                
+
             }).ToList();
             return customers;
         }
@@ -172,7 +188,8 @@ namespace WebAPIStrain.Services
                 _customer.Address = customer.Address;
                 _customer.Image = customer.Image;
                 _customer.AccountForCustomer.Username = customer.Username;
-                _customer.AccountForCustomer.Password = customer.Password;
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(customer.Password);
+                _customer.AccountForCustomer.Password = hashedPassword;
                 _customer.AccountForCustomer.Status = customer.Status;
 
                 dbContext.SaveChanges();
@@ -186,12 +203,8 @@ namespace WebAPIStrain.Services
             var account = dbContext.AccountForCustomers.FirstOrDefault(ac => ac.Username == login.Username);
             if (account != null)
             {
-                //bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(password, account.Password);
-                //if (isPasswordMatch)
-                //{
-                //    return true;
-                //} đợi sửa data pass custom thành mã hoá rồi dùng
-                if (account.Password == login.Password)
+                bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(login.Password, account.Password);
+                if (isPasswordMatch)
                 {
                     var profile = dbContext.Customers.FirstOrDefault(c => c.IdCustomer == account.IdCustomer);
                     return new CustomerVM
@@ -212,7 +225,6 @@ namespace WebAPIStrain.Services
                         Status = account.Status,
                     };
                 }
-                return null;
             }
             return null;
         }

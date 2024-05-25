@@ -1,12 +1,75 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StrainVM.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "RelativeToolTip": "WebAPIStrain\\ViewModels\\StrainVM.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAgwEIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:25:50.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StrainRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAUwI0AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T13:23:44.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAYwHUAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T03:29:50.29Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
