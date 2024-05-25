@@ -21,6 +21,10 @@ public partial class Customer
 
     public string? PhoneNumber { get; set; }
 
+    public string? Address { get; set; }
+
+    public byte[]? Image { get; set; }
+
     public virtual AccountForCustomer? AccountForCustomer { get; set; }
 
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();

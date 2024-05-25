@@ -20,6 +20,10 @@ namespace WebAPIStrain.Models
 
         public string? PhoneNumber { get; set; }
 
+        public string? Address { get; set; }
+
+        public byte[]? Image { get; set; }
+
         //account
 
         public string? Username { get; set; }

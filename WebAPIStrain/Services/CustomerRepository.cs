@@ -47,7 +47,9 @@ namespace WebAPIStrain.Services
                 DateOfBirth = inputCustomer.DateOfBirth,
                 Gender = inputCustomer.Gender,
                 Email = inputCustomer.Email,
-                PhoneNumber = inputCustomer.PhoneNumber
+                PhoneNumber = inputCustomer.PhoneNumber,
+                Address = inputCustomer.Address,
+                Image = inputCustomer.Image,
             };
             dbContext.Add(newCustomer);
             dbContext.SaveChanges();
@@ -86,6 +88,8 @@ namespace WebAPIStrain.Services
                 Gender = newCustomer.Gender,
                 Email = newCustomer.Email,
                 PhoneNumber = newCustomer.PhoneNumber,
+                Address = newCustomer.Address,
+                Image = newCustomer.Image,
 
                 Username = newAccount.Username,
                 Password = newAccount.Password,
@@ -118,9 +122,12 @@ namespace WebAPIStrain.Services
                 Gender = c.Gender,
                 Email = c.Email,
                 PhoneNumber = c.PhoneNumber,
+                Address = c.Address,
+                Image = c.Image,
                 Username = c.AccountForCustomer.Username,
                 Password = c.AccountForCustomer.Password,
                 Status = c.AccountForCustomer.Status
+                
             }).ToList();
             return customers;
         }
@@ -140,6 +147,8 @@ namespace WebAPIStrain.Services
                     Gender = customer.Gender,
                     Email = customer.Email,
                     PhoneNumber = customer.PhoneNumber,
+                    Address = customer.Address,
+                    Image = customer.Image,
                     Username = customer.AccountForCustomer.Username,
                     Password = customer.AccountForCustomer.Password,
                     Status = customer.AccountForCustomer.Status
@@ -160,6 +169,8 @@ namespace WebAPIStrain.Services
                 _customer.Gender = customer.Gender;
                 _customer.Email = customer.Email;
                 _customer.PhoneNumber = customer.PhoneNumber;
+                _customer.Address = customer.Address;
+                _customer.Image = customer.Image;
                 _customer.AccountForCustomer.Username = customer.Username;
                 _customer.AccountForCustomer.Password = customer.Password;
                 _customer.AccountForCustomer.Status = customer.Status;
@@ -193,6 +204,8 @@ namespace WebAPIStrain.Services
                         Gender = profile.Gender,
                         Email = profile.Email,
                         PhoneNumber = profile.PhoneNumber,
+                        Address = profile.Address,
+                        Image = profile.Image,
 
                         Username = account.Username,
                         Password = account.Password,
