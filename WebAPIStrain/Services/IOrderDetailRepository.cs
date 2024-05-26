@@ -11,5 +11,6 @@ namespace WebAPIStrain.Services
         OrderDetailVM Create(OrderDetailModel inputOrderDetail);
         bool Update(int id, OrderDetailModel inputOrderDetail);
         bool Delete(int id);
+        List<OrderDetailVM> GetAllByIdOrder(int idOrder);
     }
 }

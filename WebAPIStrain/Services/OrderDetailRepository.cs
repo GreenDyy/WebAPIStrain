@@ -94,5 +94,19 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public List<OrderDetailVM> GetAllByIdOrder(int idOrder)
+        {
+            var orderDetails = _dbContext.OrderDetails.Where(o=>o.IdOrder == idOrder).Select(od => new OrderDetailVM
+            {
+                IdOrderDetail = od.IdOrderDetail,
+                IdOrder = od.IdOrder,
+                IdStrain = od.IdStrain,
+                Quantity = od.Quantity,
+                Price = od.Price
+            }).ToList();
+
+            return orderDetails;
+        }
     }
 }

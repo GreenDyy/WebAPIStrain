@@ -93,7 +93,20 @@ namespace WebAPIStrain.Controllers
             try
             {
                 var newOrder = _orderRepository.Create(inputOrder);
-                return CreatedAtAction(nameof(GetById), new { id = newOrder.IdOrder }, newOrder);
+                return Ok(newOrder);
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpGet("GetAllByIdCustomer/{idCustomer}")]
+        public IActionResult GetAllByIdCustomer(string idCustomer)
+        {
+            try
+            {
+                return Ok(_orderRepository.GetAllByIdCustomer(idCustomer));
             }
             catch
             {

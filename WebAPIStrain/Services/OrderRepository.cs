@@ -44,7 +44,8 @@ namespace WebAPIStrain.Services
                     DateOrder = order.DateOrder,
                     TotalPrice = order.TotalPrice,
                     Status = order.Status,
-                    Note = order.Note
+                    Note = order.Note,
+                    OrderDetails = order.OrderDetails
                 };
             }
             return null;
@@ -102,6 +103,22 @@ namespace WebAPIStrain.Services
                 return true;
             }
             return false;
+        }
+
+        public List<OrderVM> GetAllByIdCustomer(string idCustomer)
+        {
+            var orders = dbContext.Orders.Where(o=>o.IdCustomer == idCustomer).Select(o => new OrderVM
+            {
+                IdOrder = o.IdOrder,
+                IdCustomer = o.IdCustomer,
+                IdEmployee = o.IdEmployee,
+                DateOrder = o.DateOrder,
+                TotalPrice = o.TotalPrice,
+                Status = o.Status,
+                Note = o.Note,
+                OrderDetails = o.OrderDetails
+            }).ToList();
+            return orders;
         }
     }
 }

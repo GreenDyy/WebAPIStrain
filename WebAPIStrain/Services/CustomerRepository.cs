@@ -225,6 +225,7 @@ namespace WebAPIStrain.Services
                         Status = account.Status,
                     };
                 }
+                return null;
             }
             return null;
         }

@@ -10,5 +10,6 @@ namespace WebAPIStrain.Services
         OrderVM Create(OrderModel inputProject);
         bool Update(string id, OrderModel inputProject);
         bool Delete(string id);
+        List<OrderVM> GetAllByIdCustomer(string idCustomer);
     }
 }

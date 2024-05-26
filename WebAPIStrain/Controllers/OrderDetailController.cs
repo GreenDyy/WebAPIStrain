@@ -100,5 +100,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpGet("GetAllByIdOrder/{idOrder}")]
+        public IActionResult GetAllByIdOrder(int idOrder)
+        {
+            try
+            {
+                return Ok(_orderDetailRepository.GetAllByIdOrder(idOrder));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }
