@@ -74,6 +74,7 @@ namespace WebAPIStrain.Services
                 ProjectName = p.ProjectName,
                 Results = p.Results,
                 StartDateProject = p.StartDateProject,
+                EndDateProject= p.EndDateProject,
                 ContractNo = p.ContractNo,
                 Description = p.Description,
                 FileProject = p.FileProject,
@@ -96,6 +97,7 @@ namespace WebAPIStrain.Services
                     ProjectName = project.ProjectName,
                     Results = project.Results,
                     StartDateProject = project.StartDateProject,
+                    EndDateProject = project.EndDateProject,
                     ContractNo = project.ContractNo,
                     Description = project.Description,
                     FileProject = project.FileProject,
@@ -116,6 +118,7 @@ namespace WebAPIStrain.Services
                 _project.ProjectName = project.ProjectName;
                 _project.Results = project.Results;
                 _project.StartDateProject = project.StartDateProject;
+                _project.EndDateProject = project.EndDateProject;
                 _project.ContractNo = project.ContractNo;
                 _project.Description = project.Description;
                 _project.FileProject = project.FileProject;
