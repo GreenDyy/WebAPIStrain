@@ -448,6 +448,7 @@ public partial class IrtContext : DbContext
             entity.HasKey(e => e.IdOrder).HasName("PK__Orders__EC9FA9553DE3E618");
 
             entity.Property(e => e.IdOrder).HasColumnName("ID_Order");
+            entity.Property(e => e.DeliveryAddress).HasMaxLength(255);
             entity.Property(e => e.IdCustomer)
                 .HasMaxLength(50)
                 .HasColumnName("ID_Customer");

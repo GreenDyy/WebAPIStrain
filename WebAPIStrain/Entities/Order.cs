@@ -19,6 +19,8 @@ public partial class Order
 
     public string? Note { get; set; }
 
+    public string? DeliveryAddress { get; set; }
+
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
 
     public virtual Customer? IdCustomerNavigation { get; set; }

@@ -25,6 +25,10 @@ public partial class Project
 
     public string? Status { get; set; }
 
+    public string? FileName { get; set; }
+
+    public DateOnly? EndDateProject { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 
     public virtual Partner? IdPartnerNavigation { get; set; }

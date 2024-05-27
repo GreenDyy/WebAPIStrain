@@ -16,7 +16,10 @@ namespace WebAPIStrain.ViewModels
 
         public string? Status { get; set; }
 
+        public string? DeliveryAddress { get; set; }
+
         public string? Note { get; set; }
+
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 }

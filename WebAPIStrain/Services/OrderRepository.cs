@@ -26,7 +26,8 @@ namespace WebAPIStrain.Services
                 DateOrder = o.DateOrder,
                 TotalPrice = o.TotalPrice,
                 Status = o.Status,
-                Note = o.Note
+                DeliveryAddress = o.DeliveryAddress,
+                Note = o.Note,
             }).ToList();
             return orders;
         }
@@ -45,6 +46,7 @@ namespace WebAPIStrain.Services
                     TotalPrice = order.TotalPrice,
                     Status = order.Status,
                     Note = order.Note,
+                    DeliveryAddress= order.DeliveryAddress,
                     OrderDetails = order.OrderDetails
                 };
             }
@@ -60,6 +62,7 @@ namespace WebAPIStrain.Services
                 DateOrder = order.DateOrder,
                 TotalPrice = order.TotalPrice,
                 Status = order.Status,
+                DeliveryAddress = order.DeliveryAddress,
                 Note = order.Note
             };
             dbContext.Add(newOrder);
@@ -72,6 +75,7 @@ namespace WebAPIStrain.Services
                 DateOrder = newOrder.DateOrder,
                 TotalPrice = newOrder.TotalPrice,
                 Status = newOrder.Status,
+                DeliveryAddress = newOrder.DeliveryAddress,
                 Note = newOrder.Note
             };
         }
@@ -86,6 +90,7 @@ namespace WebAPIStrain.Services
                 _order.DateOrder = order.DateOrder;
                 _order.TotalPrice = order.TotalPrice;
                 _order.Status = order.Status;
+                _order.DeliveryAddress = order.DeliveryAddress;
                 _order.Note = order.Note;
                 dbContext.SaveChanges();
                 return true;
@@ -115,6 +120,7 @@ namespace WebAPIStrain.Services
                 DateOrder = o.DateOrder,
                 TotalPrice = o.TotalPrice,
                 Status = o.Status,
+                DeliveryAddress = o.DeliveryAddress,
                 Note = o.Note,
                 OrderDetails = o.OrderDetails
             }).ToList();

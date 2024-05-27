@@ -26,10 +26,12 @@ namespace WebAPIStrain.Services
                 ProjectName = project.ProjectName,
                 Results = project.Results,
                 StartDateProject = project.StartDateProject,
+                EndDateProject = project.EndDateProject,
                 ContractNo = project.ContractNo,
                 Description = project.Description,
                 FileProject = project.FileProject,
-                Status = project.Status
+                Status = project.Status,
+                FileName = project.FileName
             };
             dbContext.Add(newProject);
             dbContext.SaveChanges();
@@ -41,10 +43,12 @@ namespace WebAPIStrain.Services
                 ProjectName = newProject.ProjectName,
                 Results = newProject.Results,
                 StartDateProject = newProject.StartDateProject,
+                EndDateProject = newProject.EndDateProject,
                 ContractNo = newProject.ContractNo,
                 Description = newProject.Description,
                 FileProject = newProject.FileProject,
-                Status = newProject.Status
+                Status = newProject.Status,
+                FileName = newProject.FileName
             };
         }
 
@@ -73,6 +77,7 @@ namespace WebAPIStrain.Services
                 ContractNo = p.ContractNo,
                 Description = p.Description,
                 FileProject = p.FileProject,
+                FileName = p.FileName,
                 Status = p.Status
             }).ToList();
             return projects;
@@ -94,6 +99,7 @@ namespace WebAPIStrain.Services
                     ContractNo = project.ContractNo,
                     Description = project.Description,
                     FileProject = project.FileProject,
+                    FileName = project.FileName,
                     Status = project.Status
                 };
             }
@@ -113,6 +119,7 @@ namespace WebAPIStrain.Services
                 _project.ContractNo = project.ContractNo;
                 _project.Description = project.Description;
                 _project.FileProject = project.FileProject;
+                _project.FileName = project.FileName;
                 _project.Status = project.Status;
                 dbContext.SaveChanges();
                 return true;
