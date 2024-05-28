@@ -101,7 +101,7 @@ namespace WebAPIStrain.Controllers
             if (_customerRepository.Create(customer) != null)
                 return Ok();
             return StatusCode(StatusCodes.Status500InternalServerError);
-        }   
+        }
 
         [HttpPost("Login")]
         public IActionResult Login(Login account)
@@ -175,7 +175,25 @@ namespace WebAPIStrain.Controllers
 
             var token = jwtSecurityTokenHandler.CreateToken(tokenDescription);
             return jwtSecurityTokenHandler.WriteToken(token);
-
+        }
+        [HttpPut("reset-pass")]
+        public IActionResult ResetPassword(string email, string newPass)
+        {
+            try
+            {
+                if (_customerRepository.ResetPassword(email, newPass) == true)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

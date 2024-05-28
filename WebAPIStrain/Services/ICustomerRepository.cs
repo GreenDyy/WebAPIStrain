@@ -11,6 +11,6 @@ namespace WebAPIStrain.Services
         public bool Update(string id, CustomerModel customer);
         public bool Delete(string id);
         public CustomerVM Login(Login login);
-
+        public bool ResetPassword(string email, string newPass);
     }
 }

@@ -229,5 +229,21 @@ namespace WebAPIStrain.Services
             }
             return null;
         }
+        public bool ResetPassword(string email, string newPass)
+        {
+            var customer = dbContext.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer != null)
+            {
+                var account = dbContext.AccountForCustomers.FirstOrDefault(a => a.IdCustomer == customer.IdCustomer);
+                if (account != null)
+                {
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newPass);
+                    account.Password = hashedPassword;
+                    dbContext.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

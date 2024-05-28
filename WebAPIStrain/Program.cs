@@ -42,7 +42,7 @@ builder.Services.AddScoped<IRoleForEmployeeRepository, RoleForEmployeeRepository
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartDetailRepository, CartDetailRepository>();
 builder.Services.AddScoped<IConditionRepository, ConditionRepository>();
-builder.Services.AddScoped<IInventoryRepository,  InventoryRepository>();
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
 builder.Services.AddScoped<IStrainApprovalHistoryRepository, StrainApprovalHistoryRepository>();
 //quận huyện
 builder.Services.AddScoped<IWardsRepository, WardsRepository>();
@@ -63,6 +63,11 @@ builder.Services.AddScoped<IAuthorNewspaperRepository, AuthorNewspaperRepository
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
 
+//send mail
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IMailServiceRepository, MailServiceRepository>();
+builder.Services.AddMemoryCache();
+
 
 //token
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
@@ -71,7 +76,7 @@ var secrectKeyBytes = Encoding.UTF8.GetBytes(secrectKey);
 
 builder.Services.AddAuthentication
     (JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(otp =>
-    {   
+    {
         otp.TokenValidationParameters = new TokenValidationParameters
         {
             //tự cấp token
@@ -99,8 +104,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 
