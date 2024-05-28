@@ -100,5 +100,30 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPatch("{idProjectContent}/status")]
+        public IActionResult UpdateStatusProjectContent(int idProjectContent, [FromBody] string status)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(status))
+                {
+                    return BadRequest("StrainNumber cannot be null or empty.");
+                }
+
+                if (_contentWorkRepository.UpdateStatusProjectContent(idProjectContent, status))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace WebAPIStrain.Services
         ContentWorkVM Create(ContentWorkModel inputContentWork);
         bool Update(int id, ContentWorkModel inputContentWork);
         bool Delete(int id);
+        bool UpdateStatusProjectContent(int idProjectContent, string status);
     }
 }

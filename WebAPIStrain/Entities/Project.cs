@@ -17,8 +17,6 @@ public partial class Project
 
     public DateOnly? StartDateProject { get; set; }
 
-    public DateOnly? EndDateProject { get; set; }
-
     public string? ContractNo { get; set; }
 
     public string? Description { get; set; }
@@ -28,6 +26,8 @@ public partial class Project
     public string? Status { get; set; }
 
     public string? FileName { get; set; }
+
+    public DateOnly? EndDateProject { get; set; }
 
     public virtual Employee? IdEmployeeNavigation { get; set; }
 

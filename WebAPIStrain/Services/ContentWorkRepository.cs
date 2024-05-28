@@ -128,5 +128,17 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool UpdateStatusProjectContent(int idProjectContent, string status)
+        {
+            var _strain = dbContext.ProjectContents.FirstOrDefault(s => s.IdProjectContent == idProjectContent);
+            if (_strain != null)
+            {
+                _strain.Status = status;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
