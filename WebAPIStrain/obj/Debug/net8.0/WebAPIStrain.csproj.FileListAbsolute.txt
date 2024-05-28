@@ -2045,3 +2045,6 @@ C:\Users\Admin\Downloads\tanh\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\scopedc
 C:\Users\Admin\Downloads\tanh\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\WebAPISt.0BDC0D64.Up2Date
 C:\Users\Admin\Downloads\tanh\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\WebAPIStrain.genruntimeconfig.cache
 C:\Users\Admin\Downloads\tanh\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\ref\WebAPIStrain.dll
+C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MailKit.dll
+C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MimeKit.dll

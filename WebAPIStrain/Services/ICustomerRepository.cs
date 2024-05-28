@@ -12,5 +12,7 @@ namespace WebAPIStrain.Services
         public bool Delete(string id);
         public CustomerVM Login(Login login);
         public bool ResetPassword(string email, string newPass);
+        public bool CheckExistEmail(string email);
+        public bool CheckExistUserName(string userName);
     }
 }

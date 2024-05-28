@@ -245,5 +245,24 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+        public bool CheckExistEmail(string email)
+        {
+            var customer = dbContext.Customers.FirstOrDefault(c => c.Email == email);
+            if (customer != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckExistUserName(string userName)
+        {
+            var acc = dbContext.AccountForCustomers.FirstOrDefault(a => a.Username == userName);
+            if (acc != null)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

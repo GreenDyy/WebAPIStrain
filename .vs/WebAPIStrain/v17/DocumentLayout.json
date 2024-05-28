@@ -1,38 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\",
+  "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\webapistrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\webapistrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\services\\mailservicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\mailservicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\tanh\\webapistrain\\webapistrain\\controllers\\conditionalstraincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\conditionalstraincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\mailservicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\mailservicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,100 +38,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WebAPIStrain.csproj",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
-              "RelativeDocumentMoniker": "WebAPIStrain\\WebAPIStrain.csproj",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
-              "RelativeToolTip": "WebAPIStrain\\WebAPIStrain.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-28T10:45:26.999Z",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACQAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:21:46.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MailServiceRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\MailServiceRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\MailServiceRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\MailServiceRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\MailServiceRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAD4vxoAAAAiAAAA",
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:43:34.551Z"
+              "WhenOpened": "2024-05-28T14:12:20.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAANUAAAAAAAAAAAAiwPIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-28T14:10:13.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "WebAPIStrain\\Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAkwK0AAAAOAAAA",
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ViewState": "AQIAAOcAAAAAAAAAAAAAAAIBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:42:24.421Z"
+              "WhenOpened": "2024-05-28T14:02:25.199Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\CustomerRepository.cs",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAkwPkAAAAAAAAA",
+              "Title": "MailServiceRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\MailServiceRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\MailServiceRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\MailServiceRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\MailServiceRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:41:51.032Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\ICustomerRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\ICustomerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:41:38.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
-              "RelativeDocumentMoniker": "WebAPIStrain\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
-              "RelativeToolTip": "WebAPIStrain\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-28T10:39:39.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Program.cs",
-              "RelativeToolTip": "WebAPIStrain\\Program.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAkwEMAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:39:15.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ConditionalStrainController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Controllers\\ConditionalStrainController.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\ConditionalStrainController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Downloads\\tanh\\WebAPIStrain\\WebAPIStrain\\Controllers\\ConditionalStrainController.cs",
-              "RelativeToolTip": "WebAPIStrain\\Controllers\\ConditionalStrainController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T10:38:59.896Z"
+              "WhenOpened": "2024-05-28T10:43:34.551Z",
+              "EditorCaption": ""
             }
           ]
         }
