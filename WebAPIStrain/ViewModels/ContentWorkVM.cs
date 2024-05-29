@@ -14,5 +14,9 @@
         public string? Priority { get; set; }
         public DateOnly? EndDateActual { get; set; }
         public string? Notificattion { get; set; }
+        public int? Title { get; set; }
+        public int? SubTitle { get; set; }
+        public byte[]? FileSaved { get; set; }
+        public string? FileName { get; set; }
     }
 }

@@ -2048,3 +2048,6 @@ C:\Users\Admin\Downloads\tanh\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\ref\Web
 C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MailKit.dll
 C:\MyCode\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MimeKit.dll
+C:\Documents\#HUFI HK_KỸ SƯ\git\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Documents\#HUFI HK_KỸ SƯ\git\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MailKit.dll
+C:\Documents\#HUFI HK_KỸ SƯ\git\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MimeKit.dll

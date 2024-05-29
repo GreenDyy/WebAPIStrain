@@ -108,7 +108,7 @@ namespace WebAPIStrain.Controllers
             {
                 if (string.IsNullOrEmpty(status))
                 {
-                    return BadRequest("StrainNumber cannot be null or empty.");
+                    return BadRequest("Cannot be null or empty.");
                 }
 
                 if (_contentWorkRepository.UpdateStatusProjectContent(idProjectContent, status))

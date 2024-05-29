@@ -11,5 +11,6 @@
         public string? ContractNo { get; set; }
         public string? Status { get; set; }
         public string? Priority { get; set; }
+        public int? Title { get; set; }
     }
 }

@@ -310,6 +310,8 @@ public partial class IrtContext : DbContext
 
             entity.ToTable("Customer");
 
+            entity.HasIndex(e => e.Email, "UC_Customer").IsUnique();
+
             entity.Property(e => e.IdCustomer)
                 .HasMaxLength(50)
                 .HasColumnName("ID_Customer");

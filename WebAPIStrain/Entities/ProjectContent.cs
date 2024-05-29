@@ -23,6 +23,8 @@ public partial class ProjectContent
 
     public string? Priority { get; set; }
 
+    public int? Title { get; set; }
+
     public virtual ICollection<ContentWork> ContentWorks { get; set; } = new List<ContentWork>();
 
     public virtual Project? IdProjectNavigation { get; set; }

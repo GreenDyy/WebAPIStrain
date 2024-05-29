@@ -29,6 +29,14 @@ public partial class ContentWork
 
     public string? Notificattion { get; set; }
 
+    public int? Title { get; set; }
+
+    public int? SubTitle { get; set; }
+
+    public byte[]? FileSaved { get; set; }
+
+    public string? FileName { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 
     public virtual ProjectContent? IdProjectContentNavigation { get; set; }

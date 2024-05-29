@@ -31,6 +31,10 @@ namespace WebAPIStrain.Services
                 Priority = contentWork.Priority,
                 EndDateActual = contentWork.EndDateActual,
                 Notificattion = contentWork.Notificattion,
+                Title = contentWork.Title,
+                SubTitle = contentWork.SubTitle,
+                FileSaved = contentWork.FileSaved,
+                FileName = contentWork.FileName,
             };
             dbContext.Add(newContentWork);
             dbContext.SaveChanges();
@@ -46,8 +50,12 @@ namespace WebAPIStrain.Services
                 ContractNo = newContentWork.ContractNo,
                 Status = newContentWork.Status,
                 Priority = newContentWork.Priority,
-                EndDateActual= newContentWork.EndDateActual,
-                Notificattion= newContentWork.Notificattion,
+                EndDateActual = newContentWork.EndDateActual,
+                Notificattion = newContentWork.Notificattion,
+                Title = newContentWork.Title,
+                SubTitle = newContentWork.SubTitle,
+                FileSaved = newContentWork.FileSaved,
+                FileName = newContentWork.FileName,
             };
         }
 
@@ -78,7 +86,11 @@ namespace WebAPIStrain.Services
                 Status = p.Status,
                 Priority = p.Priority,
                 EndDateActual = p.EndDateActual,
-                Notificattion = p.Notificattion
+                Notificattion = p.Notificattion,
+                Title = p.Title,
+                SubTitle = p.SubTitle,
+                FileSaved = p.FileSaved,
+                FileName = p.FileName,
             }).ToList();
             return contentWorks;
         }
@@ -101,7 +113,11 @@ namespace WebAPIStrain.Services
                     Status = contentWork.Status,
                     Priority = contentWork.Priority,
                     EndDateActual = contentWork.EndDateActual,
-                    Notificattion = contentWork.Notificattion
+                    Notificattion = contentWork.Notificattion,
+                    Title = contentWork.Title,
+                    SubTitle = contentWork.SubTitle,
+                    FileSaved = contentWork.FileSaved,
+                    FileName = contentWork.FileName,
                 };
             }
             return null;
@@ -123,6 +139,8 @@ namespace WebAPIStrain.Services
                 _contentWork.Priority = contentWork.Priority;
                 _contentWork.EndDateActual = contentWork.EndDateActual;
                 _contentWork.Notificattion = contentWork.Notificattion;
+                _contentWork.Title = contentWork.Title;
+                _contentWork.SubTitle = contentWork.SubTitle;
                 dbContext.SaveChanges();
                 return true;
             }

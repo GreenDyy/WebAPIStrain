@@ -27,7 +27,8 @@ namespace WebAPIStrain.Services
                 EndDate = projectContent.EndDate,
                 ContractNo = projectContent.ContractNo,
                 Status = projectContent.Status,
-                Priority = projectContent.Priority
+                Priority = projectContent.Priority,
+                Title = projectContent.Title,
             };
             dbContext.Add(newProjectContent);
             dbContext.SaveChanges();
@@ -41,7 +42,8 @@ namespace WebAPIStrain.Services
                 EndDate = newProjectContent.EndDate,
                 ContractNo = newProjectContent.ContractNo,
                 Status = newProjectContent.Status,
-                Priority = newProjectContent.Priority
+                Priority = newProjectContent.Priority,
+                Title = newProjectContent.Title,
             };
         }
 
@@ -69,7 +71,8 @@ namespace WebAPIStrain.Services
                 EndDate = p.EndDate,
                 ContractNo = p.ContractNo,
                 Status = p.Status,
-                Priority = p.Priority
+                Priority = p.Priority,
+                Title = p.Title,
             }).ToList();
             return projectContents;
         }
@@ -89,7 +92,8 @@ namespace WebAPIStrain.Services
                     EndDate = projectContent.EndDate,
                     ContractNo = projectContent.ContractNo,
                     Status = projectContent.Status,
-                    Priority = projectContent.Priority
+                    Priority = projectContent.Priority,
+                    Title = projectContent.Title,
                 };
             }
             return null;
@@ -108,6 +112,19 @@ namespace WebAPIStrain.Services
                 _projectContent.ContractNo = projectContent.ContractNo;
                 _projectContent.Status = projectContent.Status;
                 _projectContent.Priority = projectContent.Priority;
+                _projectContent.Title = projectContent.Title;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateStatusProject(string idProject, string status)
+        {
+            var _query = dbContext.Projects.FirstOrDefault(s => s.IdProject == idProject);
+            if (_query != null)
+            {
+                _query.Status = status;
                 dbContext.SaveChanges();
                 return true;
             }
