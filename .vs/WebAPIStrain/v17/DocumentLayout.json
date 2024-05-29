@@ -1,12 +1,92 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\viewmodels\\orderdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\viewmodels\\orderdetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\services\\orderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\orderdetailrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\users\\admin\\downloads\\webapistrain\\webapistrain\\webapistrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\webapistrain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderDetailVM.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\ViewModels\\OrderDetailVM.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\OrderDetailVM.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\ViewModels\\OrderDetailVM.cs",
+              "RelativeToolTip": "WebAPIStrain\\ViewModels\\OrderDetailVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T13:18:47.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderDetailRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Services\\OrderDetailRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\OrderDetailRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Services\\OrderDetailRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\OrderDetailRepository.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAYwHEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T13:18:13.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebAPIStrain.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+              "RelativeDocumentMoniker": "WebAPIStrain\\WebAPIStrain.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+              "RelativeToolTip": "WebAPIStrain\\WebAPIStrain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-29T11:09:10.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAAALIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T11:08:49.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

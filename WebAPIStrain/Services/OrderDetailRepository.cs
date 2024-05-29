@@ -97,13 +97,14 @@ namespace WebAPIStrain.Services
 
         public List<OrderDetailVM> GetAllByIdOrder(int idOrder)
         {
-            var orderDetails = _dbContext.OrderDetails.Where(o=>o.IdOrder == idOrder).Select(od => new OrderDetailVM
+            var orderDetails = _dbContext.OrderDetails.Where(o => o.IdOrder == idOrder).Select(od => new OrderDetailVM
             {
                 IdOrderDetail = od.IdOrderDetail,
                 IdOrder = od.IdOrder,
                 IdStrain = od.IdStrain,
                 Quantity = od.Quantity,
-                Price = od.Price
+                Price = od.Price,
+                IdStrainNavigation = od.IdStrainNavigation,
             }).ToList();
 
             return orderDetails;
