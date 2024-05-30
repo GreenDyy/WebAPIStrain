@@ -131,8 +131,8 @@ namespace WebAPIStrain.Controllers
 
                     var productHtml = productTemplate
                                         .Replace("{{HinhAnh}}", imageBase64)
-                                        .Replace("{{TenSanPham}}", item.IdStrainNavigation.ScientificName.ToString())
-                                        .Replace("{{SoLuong}}", item.Quantity.ToString())
+                                        .Replace("{{TenSanPham}}", item?.IdStrainNavigation?.ScientificName?.ToString())
+                                        .Replace("{{SoLuong}}", item?.Quantity?.ToString())
                                         .Replace("{{Gia}}", Convert.ToDecimal(item.Price).ToString("N0"));
 
                     // Thêm sản phẩm đã thay thế vào chuỗi HTML chứa tất cả các sản phẩm
