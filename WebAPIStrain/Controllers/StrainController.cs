@@ -150,6 +150,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpGet("GetAllByStraiNumberAndScientificName")]
+        public IActionResult GetAllByStraiNumberAndScientificName(string? strainNumber, string? scientificName)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllByStraiNumberAndScientificName(strainNumber, scientificName));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

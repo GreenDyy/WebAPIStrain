@@ -665,5 +665,38 @@ namespace WebAPIStrain.Services
                 }).ToList();
             return strains;
         }
+
+        public List<StrainVM> GetAllByStraiNumberAndScientificName(string? strainNumber, string? scientificName)
+        {
+            var strains = dbContext.Strains.Where(s => s.ScientificName.Contains(scientificName) || s.StrainNumber.Contains(strainNumber))
+              .Select(strain => new StrainVM
+              {
+                  IdStrain = strain.IdStrain,
+                  StrainNumber = strain.StrainNumber,
+                  IdSpecies = strain.IdSpecies,
+                  IdCondition = strain.IdCondition,
+                  ImageStrain = strain.ImageStrain,
+                  ScientificName = strain.ScientificName,
+                  SynonymStrain = strain.SynonymStrain,
+                  FormerName = strain.FormerName,
+                  CommonName = strain.CommonName,
+                  CellSize = strain.CellSize,
+                  Organization = strain.Organization,
+                  Characteristics = strain.Characteristics,
+                  CollectionSite = strain.CollectionSite,
+                  Continent = strain.Continent,
+                  Country = strain.Country,
+                  IsolationSource = strain.IsolationSource,
+                  ToxinProducer = strain.ToxinProducer,
+                  StateOfStrain = strain.StateOfStrain,
+                  AgitationResistance = strain.AgitationResistance,
+                  Remarks = strain.Remarks,
+                  GeneInformation = strain.GeneInformation,
+                  Publications = strain.Publications,
+                  RecommendedForTeaching = strain.RecommendedForTeaching,
+                  DateAdd = strain.DateAdd,
+              }).ToList();
+            return strains;
+        }
     }
 }
