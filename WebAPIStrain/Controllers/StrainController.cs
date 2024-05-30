@@ -151,11 +151,11 @@ namespace WebAPIStrain.Controllers
             }
         }
         [HttpGet("GetAllByStraiNumberAndScientificName")]
-        public IActionResult GetAllByStraiNumberAndScientificName(string? strainNumber, string? scientificName)
+        public IActionResult GetAllByStraiNumberAndScientificName(string? search)
         {
             try
             {
-                return Ok(_strainRepository.GetAllByStraiNumberAndScientificName(strainNumber, scientificName));
+                return Ok(_strainRepository.GetAllByStraiNumberAndScientificName(search));
             }
             catch
             {

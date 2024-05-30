@@ -21,6 +21,6 @@ namespace WebAPIStrain.Services
         public List<StrainVM> GetAllStrainGenus(int page, string? nameGenus, string? search, string? sortBy);
         public List<StrainVM> GetAllStrainSpecies(int page, string? nameSpecies, string? search, string? sortBy);
         public List<StrainVM> GetRandomStrain();
-        public List<StrainVM> GetAllByStraiNumberAndScientificName(string? strainNumber, string? scientificName);
+        public List<StrainVM> GetAllByStraiNumberAndScientificName(string? search);
     }
 }

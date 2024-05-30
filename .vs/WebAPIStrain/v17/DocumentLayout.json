@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Dowloads\\WebAPIStrain\\",
+  "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\dowloads\\webapistrain\\webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\dowloads\\webapistrain\\webapistrain\\services\\istrainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\istrainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|d:\\dowloads\\webapistrain\\webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,39 +24,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "StrainController.cs",
-              "DocumentMoniker": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ToolTip": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
               "RelativeToolTip": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAADwv5kAAABfAAAA",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAUwJ0AAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T10:49:15.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IStrainRepository.cs",
-              "DocumentMoniker": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Services\\IStrainRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IStrainRepository.cs",
-              "ToolTip": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Services\\IStrainRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\IStrainRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T10:35:56.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StrainRepository.cs",
-              "DocumentMoniker": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainRepository.cs",
-              "ToolTip": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\StrainRepository.cs",
-              "ViewState": "AQIAAI8CAAAAAAAAAAAqwJwCAABgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:24:17.08Z",
               "EditorCaption": ""
             }
           ]

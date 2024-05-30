@@ -666,9 +666,9 @@ namespace WebAPIStrain.Services
             return strains;
         }
 
-        public List<StrainVM> GetAllByStraiNumberAndScientificName(string? strainNumber, string? scientificName)
+        public List<StrainVM> GetAllByStraiNumberAndScientificName(string? search)
         {
-            var strains = dbContext.Strains.Where(s => s.ScientificName.Contains(scientificName) || s.StrainNumber.Contains(strainNumber))
+            var strains = dbContext.Strains.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search))
               .Select(strain => new StrainVM
               {
                   IdStrain = strain.IdStrain,
