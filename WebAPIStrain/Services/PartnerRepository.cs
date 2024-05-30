@@ -27,7 +27,10 @@ namespace WebAPIStrain.Services
                 PhoneNumber = partner.PhoneNumber,
                 BankNumber = partner.BankNumber,
                 BankName = partner.BankName,
-                QhnsNumber = partner.QhnsNumber
+                QhnsNumber = partner.QhnsNumber,
+                NameWard = partner.NameWard,
+                NameDistrict = partner.NameDistrict,
+                NameProvince = partner.NameProvince,
             };
             dbContext.Add(newPartner);
             dbContext.SaveChanges();
@@ -41,7 +44,10 @@ namespace WebAPIStrain.Services
                 PhoneNumber = newPartner.PhoneNumber,
                 BankNumber = newPartner.BankNumber,
                 BankName = newPartner.BankName,
-                QhnsNumber = newPartner.QhnsNumber
+                QhnsNumber = newPartner.QhnsNumber,
+                NameWard = newPartner.NameWard,
+                NameDistrict = newPartner.NameDistrict,
+                NameProvince = newPartner.NameProvince,
             };
         }
 
@@ -69,7 +75,10 @@ namespace WebAPIStrain.Services
                 PhoneNumber = p.PhoneNumber,
                 BankNumber = p.BankNumber,
                 BankName = p.BankName,
-                QhnsNumber = p.QhnsNumber
+                QhnsNumber = p.QhnsNumber,
+                NameWard = p.NameWard,
+                NameDistrict = p.NameDistrict,
+                NameProvince = p.NameProvince,
             }).ToList();
             return partners;
         }
@@ -89,7 +98,10 @@ namespace WebAPIStrain.Services
                     PhoneNumber = partner.PhoneNumber,
                     BankNumber = partner.BankNumber,
                     BankName = partner.BankName,
-                    QhnsNumber = partner.QhnsNumber
+                    QhnsNumber = partner.QhnsNumber,
+                    NameWard= partner.NameWard,
+                    NameDistrict= partner.NameDistrict,
+                    NameProvince = partner.NameProvince,
                 };
             }
             return null;
@@ -108,6 +120,9 @@ namespace WebAPIStrain.Services
                 _partner.BankNumber = partner.BankNumber;
                 _partner.BankName = partner.BankName;
                 _partner.QhnsNumber = partner.QhnsNumber;
+                _partner.NameWard = partner.NameWard;
+                _partner.NameDistrict = partner.NameDistrict;
+                _partner.NameProvince = partner.NameProvince;
                 dbContext.SaveChanges();
                 return true;
             }

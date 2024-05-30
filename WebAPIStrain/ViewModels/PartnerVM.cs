@@ -11,5 +11,8 @@
         public string? BankNumber { get; set; }
         public string? BankName { get; set; }
         public string? QhnsNumber { get; set; }
+        public string? NameWard { get; set; }
+        public string? NameDistrict { get; set; }
+        public string? NameProvince { get; set; }
     }
 }

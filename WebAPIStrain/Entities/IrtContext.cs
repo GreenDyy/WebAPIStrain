@@ -506,9 +506,12 @@ public partial class IrtContext : DbContext
             entity.Property(e => e.NameCompany)
                 .HasMaxLength(255)
                 .HasColumnName("Name_Company");
+            entity.Property(e => e.NameDistrict).HasMaxLength(255);
             entity.Property(e => e.NamePartner)
                 .HasMaxLength(255)
                 .HasColumnName("Name_Partner");
+            entity.Property(e => e.NameProvince).HasMaxLength(255);
+            entity.Property(e => e.NameWard).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(20)
                 .HasColumnName("Phone_Number");

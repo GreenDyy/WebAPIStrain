@@ -23,5 +23,11 @@ public partial class Partner
 
     public string? QhnsNumber { get; set; }
 
+    public string? NameWard { get; set; }
+
+    public string? NameDistrict { get; set; }
+
+    public string? NameProvince { get; set; }
+
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
 }
