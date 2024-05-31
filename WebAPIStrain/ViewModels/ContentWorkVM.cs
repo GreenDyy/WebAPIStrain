@@ -18,5 +18,6 @@
         public int? SubTitle { get; set; }
         public byte[]? FileSaved { get; set; }
         public string? FileName { get; set; }
+        public string? Histories { get; set; }
     }
 }

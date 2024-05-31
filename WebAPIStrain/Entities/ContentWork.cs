@@ -37,6 +37,8 @@ public partial class ContentWork
 
     public string? FileName { get; set; }
 
+    public string? Histories { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 
     public virtual ProjectContent? IdProjectContentNavigation { get; set; }

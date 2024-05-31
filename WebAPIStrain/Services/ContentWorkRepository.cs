@@ -35,6 +35,7 @@ namespace WebAPIStrain.Services
                 SubTitle = contentWork.SubTitle,
                 FileSaved = contentWork.FileSaved,
                 FileName = contentWork.FileName,
+                Histories = contentWork.Histories,
             };
             dbContext.Add(newContentWork);
             dbContext.SaveChanges();
@@ -56,6 +57,7 @@ namespace WebAPIStrain.Services
                 SubTitle = newContentWork.SubTitle,
                 FileSaved = newContentWork.FileSaved,
                 FileName = newContentWork.FileName,
+                Histories = newContentWork.Histories,
             };
         }
 
@@ -91,6 +93,7 @@ namespace WebAPIStrain.Services
                 SubTitle = p.SubTitle,
                 FileSaved = p.FileSaved,
                 FileName = p.FileName,
+                Histories = p.Histories,
             }).ToList();
             return contentWorks;
         }
@@ -118,6 +121,7 @@ namespace WebAPIStrain.Services
                     SubTitle = contentWork.SubTitle,
                     FileSaved = contentWork.FileSaved,
                     FileName = contentWork.FileName,
+                    Histories = contentWork.Histories,
                 };
             }
             return null;
@@ -141,6 +145,7 @@ namespace WebAPIStrain.Services
                 _contentWork.Notificattion = contentWork.Notificattion;
                 _contentWork.Title = contentWork.Title;
                 _contentWork.SubTitle = contentWork.SubTitle;
+                _contentWork.Histories = contentWork.Histories;
                 dbContext.SaveChanges();
                 return true;
             }
