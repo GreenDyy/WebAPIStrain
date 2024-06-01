@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPIStrain.Entities;
 using WebAPIStrain.Models;
 using WebAPIStrain.Services;
 
@@ -152,5 +153,17 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("GetAllByIdEmployee")]
+        public IActionResult GetAllByIdEmployee(string idEmployee)
+        {
+            try
+            {
+                return Ok(_contentWorkRepository.GetAllByIdEmployee(idEmployee));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

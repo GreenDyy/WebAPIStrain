@@ -177,5 +177,29 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+        public List<ContentWorkVM> GetAllByIdEmployee(string idEmployee)
+        {
+            var contentWorks = dbContext.ContentWorks.Where(p => p.IdEmployee == idEmployee).Select(p => new ContentWorkVM
+            {
+                IdContentWork = p.IdContentWork,
+                IdProjectContent = p.IdProjectContent,
+                IdEmployee = p.IdEmployee,
+                NameContent = p.NameContent,
+                Results = p.Results,
+                StartDate = p.StartDate,
+                EndDate = p.EndDate,
+                ContractNo = p.ContractNo,
+                Status = p.Status,
+                Priority = p.Priority,
+                EndDateActual = p.EndDateActual,
+                Notificattion = p.Notificattion,
+                Title = p.Title,
+                SubTitle = p.SubTitle,
+                FileSaved = p.FileSaved,
+                FileName = p.FileName,
+                Histories = p.Histories,
+            }).ToList();
+            return contentWorks;
+        }
     }
 }
