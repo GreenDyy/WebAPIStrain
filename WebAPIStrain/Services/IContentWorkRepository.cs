@@ -12,5 +12,6 @@ namespace WebAPIStrain.Services
         bool Update(int id, ContentWorkModel inputContentWork);
         bool Delete(int id);
         bool UpdateStatusProjectContent(int idProjectContent, string status);
+        bool UpdateFileSaveAndName(int idContentWork, byte[] fileSave, string fileName);
     }
 }

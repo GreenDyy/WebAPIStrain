@@ -125,5 +125,32 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPatch("{idContentWork}/file")]
+        public IActionResult UpdateFileSaveAndName(int idContentWork, [FromBody] UpdateFileModel updateFileDto)
+        {
+            try
+            {
+                if (updateFileDto == null || string.IsNullOrEmpty(updateFileDto.FileName) || updateFileDto.FileSave == null)
+                {
+                    return BadRequest("Cannot be null or empty.");
+                }
+
+                if (_contentWorkRepository.UpdateFileSaveAndName(idContentWork, updateFileDto.FileSave, updateFileDto.FileName))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
     }
 }

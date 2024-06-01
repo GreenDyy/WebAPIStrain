@@ -4,6 +4,7 @@ using WebAPIStrain.Models;
 using WebAPIStrain.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 
 namespace WebAPIStrain.Services
 {
@@ -158,6 +159,19 @@ namespace WebAPIStrain.Services
             if (_strain != null)
             {
                 _strain.Status = status;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateFileSaveAndName(int idContentWork, byte[] fileSave, string fileName)
+        {
+            var _strain = dbContext.ContentWorks.FirstOrDefault(s => s.IdContentWork == idContentWork);
+            if (_strain != null)
+            {
+                _strain.FileSaved = fileSave;
+                _strain.FileName = fileName;
                 dbContext.SaveChanges();
                 return true;
             }
