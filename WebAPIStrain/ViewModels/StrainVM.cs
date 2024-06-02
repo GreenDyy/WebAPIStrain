@@ -65,6 +65,7 @@ namespace WebAPIStrain.ViewModels
         public virtual ICollection<Inventory> Inventories { get; set; } = new List<Inventory>();
 
         //public virtual ICollection<IsolatorStrain> IsolatorStrains { get; set; } = new List<IsolatorStrain>();
+        public virtual ICollection<StrainApprovalHistory> StrainApprovalHistories { get; set; } = new List<StrainApprovalHistory>();
         public int TotalPage {  get; set; }
         public decimal? Price { get; set; }
     }

@@ -698,5 +698,41 @@ namespace WebAPIStrain.Services
               }).ToList();
             return strains;
         }
+        public List<StrainVM> GetAllStrainByTheEmployee(string idEmployee)
+        {
+            var result = from strain in dbContext.Strains
+                         join isolatorStrain in dbContext.IsolatorStrains on strain.IdStrain equals isolatorStrain.IdStrain
+                         where isolatorStrain.IdEmployee == idEmployee
+                         select new StrainVM
+                         {
+                             IdStrain = strain.IdStrain,
+                             StrainNumber = strain.StrainNumber,
+                             IdSpecies = strain.IdSpecies,
+                             IdCondition = strain.IdCondition,
+                             ImageStrain = strain.ImageStrain,
+                             ScientificName = strain.ScientificName,
+                             SynonymStrain = strain.SynonymStrain,
+                             FormerName = strain.FormerName,
+                             CommonName = strain.CommonName,
+                             CellSize = strain.CellSize,
+                             Organization = strain.Organization,
+                             Characteristics = strain.Characteristics,
+                             CollectionSite = strain.CollectionSite,
+                             Continent = strain.Continent,
+                             Country = strain.Country,
+                             IsolationSource = strain.IsolationSource,
+                             ToxinProducer = strain.ToxinProducer,
+                             StateOfStrain = strain.StateOfStrain,
+                             AgitationResistance = strain.AgitationResistance,
+                             Remarks = strain.Remarks,
+                             GeneInformation = strain.GeneInformation,
+                             Publications = strain.Publications,
+                             RecommendedForTeaching = strain.RecommendedForTeaching,
+                             DateAdd = strain.DateAdd,
+                             StrainApprovalHistories = strain.StrainApprovalHistories,
+                         };
+
+            return result.ToList();
+        }
     }
 }
