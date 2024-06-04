@@ -132,11 +132,6 @@ namespace WebAPIStrain.Controllers
         {
             try
             {
-                if (updateFileDto == null || string.IsNullOrEmpty(updateFileDto.FileName) || updateFileDto.FileSave == null)
-                {
-                    return BadRequest("Cannot be null or empty.");
-                }
-
                 if (_contentWorkRepository.UpdateFileSaveAndName(idContentWork, updateFileDto.FileSave, updateFileDto.FileName))
                 {
                     return NoContent();
@@ -148,7 +143,46 @@ namespace WebAPIStrain.Controllers
             }
             catch (Exception ex)
             {
-                // Log the exception
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("{idContentWork}/progressEmployee")]
+        public IActionResult UpdateStatusContentWork(int idContentWork, [FromBody] UpdateStatusContentWorkModel updateStatusDto)
+        {
+            try
+            {
+                if (_contentWorkRepository.UpdateStatusContentWork(idContentWork, updateStatusDto.Results, updateStatusDto.EndDateActual))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("{idContentWork}/notificationNull")]
+        public IActionResult UpdateNotificationNull(int idContentWork)
+        {
+            try
+            {
+                if (_contentWorkRepository.UpdateNotificationNull(idContentWork))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }

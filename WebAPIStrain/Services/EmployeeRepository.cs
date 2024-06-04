@@ -54,6 +54,9 @@ namespace WebAPIStrain.Services
                 Address = inputEmployee.Address,
                 JoinDate = inputEmployee.JoinDate,
                 ImageEmployee = inputEmployee.ImageEmployee,
+                NameWard = inputEmployee.NameWard,
+                NameDistrict = inputEmployee.NameDistrict,
+                NameProvince = inputEmployee.NameProvince,
             };
             dbContext.Employees.Add(employee);
             dbContext.SaveChanges();
@@ -88,6 +91,9 @@ namespace WebAPIStrain.Services
                 Address = employee.Address,
                 JoinDate = employee.JoinDate,
                 ImageEmployee = employee.ImageEmployee,
+                NameWard = employee.NameWard,
+                NameDistrict = employee.NameDistrict,
+                NameProvince = employee.NameProvince,
 
                 Username = account.Username,
                 Password = account.Password,
@@ -127,6 +133,9 @@ namespace WebAPIStrain.Services
                 Address = employee.Address,
                 JoinDate = employee.JoinDate,
                 ImageEmployee = employee.ImageEmployee,
+                NameWard = employee.NameWard,
+                NameDistrict = employee.NameDistrict,
+                NameProvince = employee.NameProvince,
 
                 Username = employee.AccountForEmployee.Username,
                 Password = employee.AccountForEmployee.Password,
@@ -156,6 +165,9 @@ namespace WebAPIStrain.Services
                     Address = employee.Address,
                     JoinDate = employee.JoinDate,
                     ImageEmployee = employee.ImageEmployee,
+                    NameWard = employee.NameWard,
+                    NameDistrict = employee.NameDistrict,
+                    NameProvince = employee.NameProvince,
 
                     Username = employee.AccountForEmployee.Username,
                     Password = employee.AccountForEmployee.Password,
@@ -183,6 +195,9 @@ namespace WebAPIStrain.Services
                 employee.Address = inputEmployee.Address;
                 employee.JoinDate = inputEmployee.JoinDate;
                 employee.ImageEmployee = inputEmployee.ImageEmployee;
+                employee.NameWard = inputEmployee.NameWard;
+                employee.NameDistrict = inputEmployee.NameDistrict;
+                employee.NameProvince = inputEmployee.NameProvince;
 
                 employee.AccountForEmployee.Username = inputEmployee.Username;
                 employee.AccountForEmployee.Password = inputEmployee.Password;

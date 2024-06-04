@@ -177,6 +177,33 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool UpdateStatusContentWork(int idContentWork, string result, string endDateActual)
+        {
+            var _strain = dbContext.ContentWorks.FirstOrDefault(s => s.IdContentWork == idContentWork);
+            if (_strain != null)
+            {
+                _strain.Results = result;
+                _strain.EndDateActual = DateOnly.Parse(endDateActual);
+                _strain.Status = "Đã hoàn thành";
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateNotificationNull(int idContentWork)
+        {
+            var _strain = dbContext.ContentWorks.FirstOrDefault(s => s.IdContentWork == idContentWork);
+            if (_strain != null)
+            {
+                _strain.Notificattion = string.Empty;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public List<ContentWorkVM> GetAllByIdEmployee(string idEmployee)
         {
             var contentWorks = dbContext.ContentWorks.Where(p => p.IdEmployee == idEmployee).Select(p => new ContentWorkVM

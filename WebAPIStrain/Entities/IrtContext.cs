@@ -360,6 +360,9 @@ public partial class IrtContext : DbContext
             entity.Property(e => e.ImageEmployee).HasColumnName("Image_Employee");
             entity.Property(e => e.JoinDate).HasColumnName("Join_Date");
             entity.Property(e => e.LastName).HasMaxLength(100);
+            entity.Property(e => e.NameDistrict).HasMaxLength(255);
+            entity.Property(e => e.NameProvince).HasMaxLength(255);
+            entity.Property(e => e.NameWard).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(20)
                 .HasColumnName("Phone_Number");

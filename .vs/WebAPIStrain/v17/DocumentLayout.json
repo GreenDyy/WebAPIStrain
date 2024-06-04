@@ -1,46 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
+  "WorkspaceRootPath": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\viewmodels\\strainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\straincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\istrainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\istrainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\entities\\strain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\entities\\strain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\strainapprovalhistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainapprovalhistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\entities\\contentwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\entities\\contentwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\icontentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\icontentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\contentworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\documents\\#hufi hk_k\u1EF9 s\u01B0\\git\\webapistrain\\webapistrain\\controllers\\contentworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\contentworkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\contentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\documents\\#hufi hk_k\u1EF9 s\u01B0\\git\\webapistrain\\webapistrain\\services\\contentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\contentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\documents\\#hufi hk_k\u1EF9 s\u01B0\\git\\webapistrain\\webapistrain\\services\\icontentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\icontentworkrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,132 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StrainController.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\StrainController.cs",
-              "RelativeToolTip": "WebAPIStrain\\Controllers\\StrainController.cs",
-              "ViewState": "AQIAAOAAAAAAAAAAAAAAAOsAAAArAAAA",
+              "DocumentIndex": 2,
+              "Title": "IContentWorkRepository.cs",
+              "DocumentMoniker": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Services\\IContentWorkRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IContentWorkRepository.cs",
+              "ToolTip": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Services\\IContentWorkRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\IContentWorkRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T08:18:39.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Strain.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\Strain.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Entities\\Strain.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\Strain.cs",
-              "RelativeToolTip": "WebAPIStrain\\Entities\\Strain.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAIwEcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T08:11:05.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StrainVM.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\StrainVM.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\ViewModels\\StrainVM.cs",
-              "RelativeToolTip": "WebAPIStrain\\ViewModels\\StrainVM.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAA5wC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T08:10:35.065Z",
+              "WhenOpened": "2024-06-03T08:15:06.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IStrainRepository.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IStrainRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IStrainRepository.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IStrainRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\IStrainRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAABgAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T08:07:37.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StrainRepository.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainRepository.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\StrainRepository.cs",
-              "ViewState": "AQIAALUCAAAAAAAAAAAUwLwCAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T07:44:36.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StrainApprovalHistoryRepository.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainApprovalHistoryRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainApprovalHistoryRepository.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainApprovalHistoryRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\StrainApprovalHistoryRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T07:44:34.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ContentWork.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\ContentWork.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Entities\\ContentWork.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\ContentWork.cs",
-              "RelativeToolTip": "WebAPIStrain\\Entities\\ContentWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T03:05:09.964Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IContentWorkRepository.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IContentWorkRepository.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IContentWorkRepository.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IContentWorkRepository.cs",
-              "RelativeToolTip": "WebAPIStrain\\Services\\IContentWorkRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T09:53:57.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "ContentWorkController.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\ContentWorkController.cs",
+              "DocumentMoniker": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Controllers\\ContentWorkController.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\ContentWorkController.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\ContentWorkController.cs",
+              "ToolTip": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Controllers\\ContentWorkController.cs",
               "RelativeToolTip": "WebAPIStrain\\Controllers\\ContentWorkController.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAUwKEAAAANAAAA",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAewKkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T07:12:37.243Z"
+              "WhenOpened": "2024-06-03T07:15:53.681Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 1,
               "Title": "ContentWorkRepository.cs",
-              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ContentWorkRepository.cs",
+              "DocumentMoniker": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Services\\ContentWorkRepository.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Services\\ContentWorkRepository.cs",
-              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ContentWorkRepository.cs",
+              "ToolTip": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\WebAPIStrain\\Services\\ContentWorkRepository.cs",
               "RelativeToolTip": "WebAPIStrain\\Services\\ContentWorkRepository.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAYwIIAAAATAAAA",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAAwMIAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T07:09:00.534Z"
+              "WhenOpened": "2024-06-03T07:15:23.41Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -33,6 +33,12 @@ public partial class Employee
 
     public byte[]? ImageEmployee { get; set; }
 
+    public string? NameWard { get; set; }
+
+    public string? NameDistrict { get; set; }
+
+    public string? NameProvince { get; set; }
+
     public virtual AccountForEmployee? AccountForEmployee { get; set; }
 
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
