@@ -233,8 +233,8 @@ namespace WebAPIStrain.Controllers
         {
             try
             {
-                _strainRepository.Create(strain);
-                return Ok();
+                var strans = _strainRepository.Create(strain);
+                return Ok(strans);
             }
             catch
             {
@@ -253,6 +253,6 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
-      
+
     }
 }
