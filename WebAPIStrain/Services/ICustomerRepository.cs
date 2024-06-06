@@ -14,5 +14,7 @@ namespace WebAPIStrain.Services
         public bool ResetPassword(string email, string newPass);
         public bool CheckExistEmail(string email);
         public bool CheckExistUserName(string userName);
+        public bool CheckExistEmailWithoutSelf(string email, string idCustomer);
+
     }
 }

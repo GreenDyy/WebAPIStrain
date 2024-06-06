@@ -264,5 +264,13 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool CheckExistEmailWithoutSelf(string email, string idCustomer)
+        {
+            var emailExists = dbContext.Customers
+           .Any(c => c.Email == email && c.IdCustomer != idCustomer);
+
+            return emailExists;
+        }
     }
 }

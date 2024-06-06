@@ -224,6 +224,35 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpPost("CheckExistEmailWithoutSelf")]
+        public IActionResult CheckExistEmailWithoutSelf(string email, string idCustomer)
+        {
+            try
+            {
+                bool emailExists = _customerRepository.CheckExistEmailWithoutSelf(email, idCustomer);
+
+                if (emailExists)
+                {
+                    return Ok(new
+                    {
+                        status = 1,
+                        message = "Email này không được phép dùng"
+                    });
+                }
+                else
+                {
+                    return Ok(new
+                    {
+                        status = 0,
+                        message = "Email có thể sử dụng được"
+                    });
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
 
         [HttpPost("CheckExistUserName")]
         public IActionResult CheckExistUserName(string userName)
