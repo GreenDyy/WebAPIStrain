@@ -185,7 +185,7 @@ namespace WebAPIStrain.Services
                 employee.IdRole = inputEmployee.IdRole;
                 employee.FirstName = inputEmployee.FirstName;
                 employee.LastName = inputEmployee.LastName;
-                employee.FullName = inputEmployee.FirstName;
+                employee.FullName = $"{inputEmployee.LastName} {inputEmployee.FirstName}";
                 employee.IdCard = inputEmployee.IdCard;
                 employee.DateOfBirth = inputEmployee.DateOfBirth;
                 employee.Gender = inputEmployee.Gender;
@@ -200,7 +200,6 @@ namespace WebAPIStrain.Services
                 employee.NameProvince = inputEmployee.NameProvince;
 
                 employee.AccountForEmployee.Username = inputEmployee.Username;
-                employee.AccountForEmployee.Password = inputEmployee.Password;
                 employee.AccountForEmployee.Status = inputEmployee.Status;
 
                 dbContext.SaveChanges();
