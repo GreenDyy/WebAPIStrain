@@ -106,7 +106,7 @@ namespace WebAPIStrain.Services
             var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
             if (employee != null)
             {
-                dbContext.Remove(employee.AccountForEmployee);
+                dbContext.AccountForEmployees.Remove(employee.AccountForEmployee);
                 dbContext.Remove(employee);
                 dbContext.SaveChanges();
                 return true;

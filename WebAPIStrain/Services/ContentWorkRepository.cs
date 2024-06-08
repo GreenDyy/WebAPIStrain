@@ -197,7 +197,7 @@ namespace WebAPIStrain.Services
             var _strain = dbContext.ContentWorks.FirstOrDefault(s => s.IdContentWork == idContentWork);
             if (_strain != null)
             {
-                _strain.Notificattion = string.Empty;
+                _strain.Notificattion = "Nhân viên đã xem yêu cầu";
                 dbContext.SaveChanges();
                 return true;
             }
