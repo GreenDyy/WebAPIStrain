@@ -8,7 +8,7 @@ namespace WebAPIStrain.Services
         public List<EmployeeVM> GetAll();
         public EmployeeVM GetById(string id);
         public EmployeeVM Create(EmployeeModel inputEmployee);
-        public bool Update(string id, EmployeeModel inputEmployee);
+        public bool Update(string id, EmployeeModelWithOutPassword inputEmployee);
         public bool Delete(string id);
     }
 }

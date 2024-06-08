@@ -177,7 +177,7 @@ namespace WebAPIStrain.Services
             return null;
         }
 
-        public bool Update(string id, EmployeeModel inputEmployee)
+        public bool Update(string id, EmployeeModelWithOutPassword inputEmployee)
         {
             var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
             if (employee != null)

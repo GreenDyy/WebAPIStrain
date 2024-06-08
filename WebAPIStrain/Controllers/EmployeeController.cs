@@ -68,7 +68,7 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, EmployeeModel inputEmployee)
+        public IActionResult Update(string id, EmployeeModelWithOutPassword inputEmployee)
         {
             try
             {
