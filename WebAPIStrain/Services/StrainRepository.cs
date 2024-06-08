@@ -734,5 +734,16 @@ namespace WebAPIStrain.Services
 
             return result.ToList();
         }
+        public bool UpdateImageForStrain(int idStrain, byte[]? img)
+        {
+            var _strain = dbContext.Strains.FirstOrDefault(s => s.IdStrain == idStrain);
+            if (_strain != null)
+            {
+                _strain.ImageStrain = img;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

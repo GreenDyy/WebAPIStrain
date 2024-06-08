@@ -14,6 +14,7 @@ namespace WebAPIStrain.Services
         public StrainVM Create(StrainModel strain);
         public bool Update(int id, StrainModel strain);
         public bool UpdateStrainNumber(int id, string strainNumber);
+        public bool UpdateImageForStrain(int idStrain, byte[] img);
         public bool Delete(int id);
 
         public List<StrainVM> GetAllStrainPhylum(int page, string? namePhylum, string? search, string? sortBy);

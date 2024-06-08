@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 using System.Reflection.PortableExecutable;
+using System.Text.Json;
 using WebAPIStrain.Models;
 using WebAPIStrain.Services;
 
@@ -247,6 +248,37 @@ namespace WebAPIStrain.Controllers
             try
             {
                 return Ok(_strainRepository.GetAllStrainByTheEmployee(idEmployee));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPatch("{idStrain}/imageStrain")]
+        public IActionResult UpdateImageForStrain(int idStrain, [FromBody] JsonElement payload)
+        {
+            try
+            {
+                if (payload.TryGetProperty("imageStrain", out JsonElement imgElement))
+                {
+                    byte[]? img = null;
+                    if (imgElement.ValueKind == JsonValueKind.String)
+                    {
+                        string base64Img = imgElement.GetString();
+                        img = Convert.FromBase64String(base64Img);
+                    }
+
+                    if (_strainRepository.UpdateImageForStrain(idStrain, img))
+                    {
+                        return NoContent();
+                    }
+                    else
+                    {
+                        return NotFound();
+                    }
+                }
+                return BadRequest("Invalid JSON payload.");
             }
             catch
             {
