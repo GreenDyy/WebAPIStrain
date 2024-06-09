@@ -100,5 +100,20 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPost("Login")]
+        public IActionResult Login(Login account)
+        {
+            var employee = _employeeRepository.Login(account);
+            if (employee != null)
+            {
+      
+                return Ok(employee);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

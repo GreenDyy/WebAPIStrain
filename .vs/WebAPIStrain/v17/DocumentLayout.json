@@ -1,12 +1,143 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\strainrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StrainRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\StrainRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\StrainRepository.cs",
+              "ViewState": "AQIAALoCAAAAAAAAAAAAANgCAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T13:15:45.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAiwIEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:11:04.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAiwHEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:10:49.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\EmployeeRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\EmployeeRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\EmployeeRepository.cs",
+              "ViewState": "AQIAANUAAAAAAAAAAAAQwNQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:07:19.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IEmployeeRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IEmployeeRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:06:49.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\ICustomerRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:06:28.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\CustomerRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\CustomerRepository.cs",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAqwOYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T12:06:25.504Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

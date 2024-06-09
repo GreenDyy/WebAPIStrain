@@ -10,5 +10,6 @@ namespace WebAPIStrain.Services
         public EmployeeVM Create(EmployeeModel inputEmployee);
         public bool Update(string id, EmployeeModelWithOutPassword inputEmployee);
         public bool Delete(string id);
+        public EmployeeVM Login(Login login);
     }
 }

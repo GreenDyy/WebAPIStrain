@@ -207,5 +207,44 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public EmployeeVM Login(Login login)
+        {
+            var account = dbContext.AccountForEmployees.FirstOrDefault(ac => ac.Username == login.Username);
+            if (account != null)
+            {
+                bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(login.Password, account.Password);
+                if (isPasswordMatch)
+                {
+                    var profile = dbContext.Employees.FirstOrDefault(c => c.IdEmployee == account.IdEmployee);
+                    return new EmployeeVM
+                    {
+                        IdEmployee = profile.IdEmployee,
+                        IdRole = profile.IdRole,
+                        FirstName = profile.FirstName,
+                        LastName = profile.LastName,
+                        FullName = profile.FullName,
+                        IdCard = profile.IdCard,
+                        DateOfBirth = profile.DateOfBirth,
+                        Gender = profile.Gender,
+                        Email = profile.Email,
+                        PhoneNumber = profile.PhoneNumber,
+                        Degree = profile.Degree,
+                        Address = profile.Address,
+                        JoinDate = profile.JoinDate,
+                        ImageEmployee = profile.ImageEmployee,
+                        NameWard = profile.NameWard,
+                        NameDistrict = profile.NameDistrict,
+                        NameProvince = profile.NameProvince,
+
+                        Username = account.Username,
+                        Password = account.Password,
+                        Status =account.Status,
+                    };
+                }
+                return null;
+            }
+            return null;
+        }
     }
 }
