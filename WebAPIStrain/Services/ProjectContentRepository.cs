@@ -130,5 +130,23 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public List<ProjectContentVM> GetAllByIdProject(string idProject)
+        {
+            var projectContents = dbContext.ProjectContents.Where(p=>p.IdProject == idProject).Select(p => new ProjectContentVM
+            {
+                IdProjectContent = p.IdProjectContent,
+                IdProject = p.IdProject,
+                NameContent = p.NameContent,
+                Results = p.Results,
+                StartDate = p.StartDate,
+                EndDate = p.EndDate,
+                ContractNo = p.ContractNo,
+                Status = p.Status,
+                Priority = p.Priority,
+                Title = p.Title,
+            }).ToList();
+            return projectContents;
+        }
     }
 }

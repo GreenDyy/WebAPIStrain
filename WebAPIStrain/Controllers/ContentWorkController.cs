@@ -199,5 +199,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpGet("GetAllByIdProjectContent")]
+        public IActionResult GetAllByIdProjectContent(int idProjectContent)
+        {
+            try
+            {
+                return Ok(_contentWorkRepository.GetAllByIdProjectContent(idProjectContent));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace WebAPIStrain.Services
         ProjectVM Create(ProjectModel inputProject);
         bool Update(string id, ProjectModel inputProject);
         bool Delete(string id);
+        List<ProjectVM> GetAllProjectByIdEmployee(string employeeId);
     }
 }

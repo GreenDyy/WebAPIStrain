@@ -16,5 +16,6 @@ namespace WebAPIStrain.Services
         bool UpdateStatusContentWork(int idContentWork, string result, string endDateActual);
         bool UpdateNotificationNull(int idContentWork);
         List<ContentWorkVM> GetAllByIdEmployee(string idEmployee);
+        List<ContentWorkVM> GetAllByIdProjectContent(int idProjectContent);
     }
 }

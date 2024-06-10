@@ -74,7 +74,7 @@ namespace WebAPIStrain.Services
                 ProjectName = p.ProjectName,
                 Results = p.Results,
                 StartDateProject = p.StartDateProject,
-                EndDateProject= p.EndDateProject,
+                EndDateProject = p.EndDateProject,
                 ContractNo = p.ContractNo,
                 Description = p.Description,
                 FileProject = p.FileProject,
@@ -144,6 +144,33 @@ namespace WebAPIStrain.Services
 
             var lastIdNumber = int.Parse(lastProject.IdProject.Substring(2));
             return $"DA{lastIdNumber + 1:D4}";
+        }
+
+        public List<ProjectVM> GetAllProjectByIdEmployee(string employeeId)
+        {
+            var projects = (from project in dbContext.Projects
+                            join projectContent in dbContext.ProjectContents on project.IdProject equals projectContent.IdProject
+                            join contentWork in dbContext.ContentWorks on projectContent.IdProjectContent equals contentWork.IdProjectContent
+                            join employee in dbContext.Employees on contentWork.IdEmployee equals employee.IdEmployee
+                            where employee.IdEmployee == employeeId
+                            select new ProjectVM
+                            {
+                                IdProject = project.IdProject,
+                                IdEmployee = project.IdEmployee,
+                                IdPartner = project.IdPartner,
+                                ProjectName = project.ProjectName,
+                                Results = project.Results,
+                                StartDateProject = project.StartDateProject,
+                                EndDateProject = project.EndDateProject,
+                                ContractNo = project.ContractNo,
+                                Description = project.Description,
+                                FileProject = project.FileProject,
+                                FileName = project.FileName,
+                                Status = project.Status
+                            })
+                            .Distinct()
+                            .ToList();
+            return projects;
         }
     }
 }
