@@ -19,7 +19,8 @@ namespace WebAPIStrain.Services
                 IdStrain = inputInventory.IdStrain,
                 Quantity = inputInventory.Quantity,
                 Price = inputInventory.Price,
-                EntryDate = inputInventory.EntryDate
+                EntryDate = inputInventory.EntryDate,
+                Histories = inputInventory.Histories,
             };
             dbContext.Add(newInventory);
             dbContext.SaveChanges();
@@ -30,6 +31,7 @@ namespace WebAPIStrain.Services
                 Quantity = newInventory.Quantity,
                 Price = newInventory.Price,
                 EntryDate = newInventory.EntryDate,
+                Histories = newInventory.Histories,
             };
         }
 
@@ -54,6 +56,7 @@ namespace WebAPIStrain.Services
                 Price = p.Price,
                 EntryDate = p.EntryDate,
                 Quantity = p.Quantity,
+                Histories = p.Histories,
                 IdStrainNavigation = p.IdStrainNavigation
             }).ToList();
             return inventories;
@@ -71,6 +74,7 @@ namespace WebAPIStrain.Services
                     Price = inventory.Price,
                     EntryDate = inventory.EntryDate,
                     Quantity = inventory.Quantity,
+                    Histories = inventory.Histories,
                     IdStrainNavigation = inventory.IdStrainNavigation
                 };
             }
@@ -89,6 +93,7 @@ namespace WebAPIStrain.Services
                     Price = inventory.Price,
                     EntryDate = inventory.EntryDate,
                     Quantity = inventory.Quantity,
+                    Histories = inventory.Histories,
                     IdStrainNavigation = inventory.IdStrainNavigation
                 };
             }
@@ -104,6 +109,7 @@ namespace WebAPIStrain.Services
                 _inventory.Price = inputInventory.Price;
                 _inventory.EntryDate = inputInventory.EntryDate;
                 _inventory.Quantity = inputInventory.Quantity;
+                _inventory.Histories = inputInventory.Histories;
 
                 dbContext.SaveChanges();
                 return true;
@@ -113,13 +119,14 @@ namespace WebAPIStrain.Services
 
         public bool UpdateByIdStrain(int idStrain, InventoryModel inputInventory)
         {
-            var _inventory = dbContext.Inventories.FirstOrDefault(p => p.IdStrain== idStrain);
+            var _inventory = dbContext.Inventories.FirstOrDefault(p => p.IdStrain == idStrain);
             if (_inventory != null)
             {
                 _inventory.IdStrain = inputInventory.IdStrain;
                 _inventory.Price = inputInventory.Price;
                 _inventory.EntryDate = inputInventory.EntryDate;
                 _inventory.Quantity = inputInventory.Quantity;
+                _inventory.Histories = inputInventory.Histories;
 
                 dbContext.SaveChanges();
                 return true;

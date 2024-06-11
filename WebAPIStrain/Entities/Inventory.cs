@@ -15,5 +15,7 @@ public partial class Inventory
 
     public DateOnly? EntryDate { get; set; }
 
+    public string? Histories { get; set; }
+
     public virtual Strain? IdStrainNavigation { get; set; }
 }

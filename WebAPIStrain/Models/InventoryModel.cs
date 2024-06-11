@@ -11,5 +11,7 @@ namespace WebAPIStrain.Models
         public decimal? Price { get; set; }
 
         public DateOnly? EntryDate { get; set; }
+
+        public string? Histories { get; set; }
     }
 }
