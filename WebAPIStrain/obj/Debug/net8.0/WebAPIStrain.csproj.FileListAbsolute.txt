@@ -2313,3 +2313,6 @@ D:\Dowloads\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\refint\WebAPIStrain.dll
 D:\Dowloads\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\WebAPIStrain.pdb
 D:\Dowloads\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\WebAPIStrain.genruntimeconfig.cache
 D:\Dowloads\WebAPIStrain\WebAPIStrain\obj\Debug\net8.0\ref\WebAPIStrain.dll
+D:\Codes\KhoaLuanTotNghiep\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Codes\KhoaLuanTotNghiep\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MailKit.dll
+D:\Codes\KhoaLuanTotNghiep\WebAPIStrain\WebAPIStrain\bin\Debug\net8.0\MimeKit.dll

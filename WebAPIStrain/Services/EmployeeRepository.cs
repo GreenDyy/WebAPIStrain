@@ -201,7 +201,8 @@ namespace WebAPIStrain.Services
 
                 employee.AccountForEmployee.Username = inputEmployee.Username;
                 employee.AccountForEmployee.Status = inputEmployee.Status;
-                employee.AccountForEmployee.Password = inputEmployee.Password;
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputEmployee.Password);
+                employee.AccountForEmployee.Password = hashedPassword;
 
                 dbContext.SaveChanges();
                 return true;
