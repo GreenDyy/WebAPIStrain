@@ -57,6 +57,9 @@ namespace WebAPIStrain.Services
                         PhoneNumber = inputCustomer.PhoneNumber,
                         Address = inputCustomer.Address,
                         Image = inputCustomer.Image,
+                        NameWard = inputCustomer.NameWard,
+                        NameDistrict = inputCustomer.NameDistrict,
+                        NameProvince = inputCustomer.NameProvince,
                     };
                     dbContext.Add(newCustomer);
                     dbContext.SaveChanges();
@@ -98,6 +101,9 @@ namespace WebAPIStrain.Services
                         PhoneNumber = newCustomer.PhoneNumber,
                         Address = newCustomer.Address,
                         Image = newCustomer.Image,
+                        NameWard = newCustomer.NameWard,
+                        NameDistrict = newCustomer.NameDistrict,
+                        NameProvince = newCustomer.NameProvince,
 
                         Username = newAccount.Username,
                         Password = newAccount.Password,
@@ -140,6 +146,9 @@ namespace WebAPIStrain.Services
                 PhoneNumber = c.PhoneNumber,
                 Address = c.Address,
                 Image = c.Image,
+                NameWard = c.NameWard,
+                NameDistrict = c.NameDistrict,
+                NameProvince = c.NameProvince,
                 Username = c.AccountForCustomer.Username,
                 Password = c.AccountForCustomer.Password,
                 Status = c.AccountForCustomer.Status
@@ -165,6 +174,9 @@ namespace WebAPIStrain.Services
                     PhoneNumber = customer.PhoneNumber,
                     Address = customer.Address,
                     Image = customer.Image,
+                    NameWard = customer.NameWard,
+                    NameDistrict = customer.NameDistrict,
+                    NameProvince = customer.NameProvince,
                     Username = customer.AccountForCustomer.Username,
                     Password = customer.AccountForCustomer.Password,
                     Status = customer.AccountForCustomer.Status
@@ -187,6 +199,9 @@ namespace WebAPIStrain.Services
                 _customer.PhoneNumber = customer.PhoneNumber;
                 _customer.Address = customer.Address;
                 _customer.Image = customer.Image;
+                _customer.NameWard = customer.NameWard;
+                _customer.NameDistrict = customer.NameDistrict;
+                _customer.NameProvince = customer.NameProvince;
                 _customer.AccountForCustomer.Username = customer.Username;
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(customer.Password);
                 _customer.AccountForCustomer.Password = hashedPassword;
@@ -219,6 +234,9 @@ namespace WebAPIStrain.Services
                         PhoneNumber = profile.PhoneNumber,
                         Address = profile.Address,
                         Image = profile.Image,
+                        NameWard = profile.NameWard,
+                        NameDistrict = profile.NameDistrict,
+                        NameProvince = profile.NameProvince,
 
                         Username = account.Username,
                         Password = account.Password,

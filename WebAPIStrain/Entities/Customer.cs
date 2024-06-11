@@ -25,6 +25,12 @@ public partial class Customer
 
     public byte[]? Image { get; set; }
 
+    public string? NameWard { get; set; }
+
+    public string? NameDistrict { get; set; }
+
+    public string? NameProvince { get; set; }
+
     public virtual AccountForCustomer? AccountForCustomer { get; set; }
 
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();

@@ -24,6 +24,12 @@ namespace WebAPIStrain.Models
 
         public byte[]? Image { get; set; }
 
+        public string? NameWard { get; set; }
+
+        public string? NameDistrict { get; set; }
+
+        public string? NameProvince { get; set; }
+
         //account
 
         public string? Username { get; set; }

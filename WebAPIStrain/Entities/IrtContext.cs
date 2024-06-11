@@ -83,11 +83,11 @@ public partial class IrtContext : DbContext
     {
         modelBuilder.Entity<AccountForCustomer>(entity =>
         {
-            entity.HasKey(e => e.IdCustomer).HasName("PK__AccountF__2D8FDE5FD0CCD328");
+            entity.HasKey(e => e.IdCustomer).HasName("PK__AccountF__2D8FDE5FC9860D99");
 
             entity.ToTable("AccountForCustomer");
 
-            entity.HasIndex(e => e.Username, "UQ__AccountF__536C85E4365D1C11").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__AccountF__536C85E45BEA39D9").IsUnique();
 
             entity.Property(e => e.IdCustomer)
                 .HasMaxLength(50)
@@ -104,11 +104,11 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<AccountForEmployee>(entity =>
         {
-            entity.HasKey(e => e.IdEmployee).HasName("PK__AccountF__D9EE4F361F708C18");
+            entity.HasKey(e => e.IdEmployee).HasName("PK__AccountF__D9EE4F363539DCD6");
 
             entity.ToTable("AccountForEmployee");
 
-            entity.HasIndex(e => e.Username, "UQ__AccountF__536C85E4CBB76C79").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__AccountF__536C85E49B88037B").IsUnique();
 
             entity.Property(e => e.IdEmployee)
                 .HasMaxLength(50)
@@ -149,7 +149,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Bill>(entity =>
         {
-            entity.HasKey(e => e.IdBill).HasName("PK__Bill__F098680A8D51B6E5");
+            entity.HasKey(e => e.IdBill).HasName("PK__Bill__F098680AD3852508");
 
             entity.ToTable("Bill");
 
@@ -180,12 +180,12 @@ public partial class IrtContext : DbContext
 
             entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.Bills)
                 .HasForeignKey(d => d.IdOrder)
-                .HasConstraintName("FK__Bill__ID_Order__797309D9");
+                .HasConstraintName("FK__Bill__ID_Order__7A672E12");
         });
 
         modelBuilder.Entity<BillDetail>(entity =>
         {
-            entity.HasKey(e => e.IdBillDetail).HasName("PK__BillDeta__3421CE5D0BB2AA2B");
+            entity.HasKey(e => e.IdBillDetail).HasName("PK__BillDeta__3421CE5DE6F08AAF");
 
             entity.ToTable("BillDetail");
 
@@ -206,7 +206,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Cart>(entity =>
         {
-            entity.HasKey(e => e.IdCart).HasName("PK__Cart__72140ECFBEA36426");
+            entity.HasKey(e => e.IdCart).HasName("PK__Cart__72140ECF688BE41E");
 
             entity.ToTable("Cart");
 
@@ -223,7 +223,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<CartDetail>(entity =>
         {
-            entity.HasKey(e => e.IdCartDetail).HasName("PK__CartDeta__19B4E08246D88B9C");
+            entity.HasKey(e => e.IdCartDetail).HasName("PK__CartDeta__19B4E08278859B2E");
 
             entity.ToTable("CartDetail");
 
@@ -243,7 +243,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Class>(entity =>
         {
-            entity.HasKey(e => e.IdClass).HasName("PK__Class__D7CF744C598DA518");
+            entity.HasKey(e => e.IdClass).HasName("PK__Class__D7CF744CE06A5682");
 
             entity.ToTable("Class");
 
@@ -260,7 +260,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<ConditionalStrain>(entity =>
         {
-            entity.HasKey(e => e.IdCondition).HasName("PK__Conditio__BA54C9AEBAAEC745");
+            entity.HasKey(e => e.IdCondition).HasName("PK__Conditio__BA54C9AE1CE448E7");
 
             entity.ToTable("ConditionalStrain");
 
@@ -282,7 +282,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<ContentWork>(entity =>
         {
-            entity.HasKey(e => e.IdContentWork).HasName("PK__ContentW__951336A7A7034D64");
+            entity.HasKey(e => e.IdContentWork).HasName("PK__ContentW__951336A7C1A18731");
 
             entity.ToTable("ContentWork");
 
@@ -306,7 +306,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.IdCustomer).HasName("PK__Customer__2D8FDE5F6BF9B1FA");
+            entity.HasKey(e => e.IdCustomer).HasName("PK__Customer__2D8FDE5F855A5679");
 
             entity.ToTable("Customer");
 
@@ -321,6 +321,9 @@ public partial class IrtContext : DbContext
             entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.Gender).HasMaxLength(10);
             entity.Property(e => e.LastName).HasMaxLength(100);
+            entity.Property(e => e.NameDistrict).HasMaxLength(255);
+            entity.Property(e => e.NameProvince).HasMaxLength(255);
+            entity.Property(e => e.NameWard).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber)
                 .HasMaxLength(20)
                 .HasColumnName("Phone_Number");
@@ -328,18 +331,18 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<District>(entity =>
         {
-            entity.HasKey(e => e.IdDistricts).HasName("PK__District__A89A7C708715A14D");
+            entity.HasKey(e => e.IdDistricts).HasName("PK__District__A89A7C705ADCB352");
 
             entity.Property(e => e.Name).HasMaxLength(255);
 
             entity.HasOne(d => d.IdProvincesNavigation).WithMany(p => p.Districts)
                 .HasForeignKey(d => d.IdProvinces)
-                .HasConstraintName("FK__Districts__IdPro__03F0984C");
+                .HasConstraintName("FK__Districts__IdPro__04E4BC85");
         });
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.IdEmployee).HasName("PK__Employee__D9EE4F368906570A");
+            entity.HasKey(e => e.IdEmployee).HasName("PK__Employee__D9EE4F36949512B4");
 
             entity.ToTable("Employee");
 
@@ -374,7 +377,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Genu>(entity =>
         {
-            entity.HasKey(e => e.IdGenus).HasName("PK__Genus__7B310685B7D4706A");
+            entity.HasKey(e => e.IdGenus).HasName("PK__Genus__7B3106852EAB58D8");
 
             entity.Property(e => e.IdGenus).HasColumnName("ID_Genus");
             entity.Property(e => e.IdClass).HasColumnName("ID_Class");
@@ -389,7 +392,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<IdentifyStrain>(entity =>
         {
-            entity.HasKey(e => new { e.IdEmployee, e.IdStrain }).HasName("PK__Identify__23CDA4B4888CC0E0");
+            entity.HasKey(e => new { e.IdEmployee, e.IdStrain }).HasName("PK__Identify__23CDA4B49AC9E484");
 
             entity.ToTable("IdentifyStrain");
 
@@ -412,7 +415,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Inventory>(entity =>
         {
-            entity.HasKey(e => e.InventoryId).HasName("PK__Inventor__F5FDE6D379EEEFA8");
+            entity.HasKey(e => e.InventoryId).HasName("PK__Inventor__F5FDE6D3BB41E6E9");
 
             entity.ToTable("Inventory");
 
@@ -422,12 +425,12 @@ public partial class IrtContext : DbContext
 
             entity.HasOne(d => d.IdStrainNavigation).WithMany(p => p.Inventories)
                 .HasForeignKey(d => d.IdStrain)
-                .HasConstraintName("FK__Inventory__ID_St__08B54D69");
+                .HasConstraintName("FK__Inventory__ID_St__09A971A2");
         });
 
         modelBuilder.Entity<IsolatorStrain>(entity =>
         {
-            entity.HasKey(e => new { e.IdEmployee, e.IdStrain }).HasName("PK__Isolator__23CDA4B43DB8606E");
+            entity.HasKey(e => new { e.IdEmployee, e.IdStrain }).HasName("PK__Isolator__23CDA4B465735CA8");
 
             entity.ToTable("IsolatorStrain");
 
@@ -450,7 +453,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.IdOrder).HasName("PK__Orders__EC9FA9559CB0E8C6");
+            entity.HasKey(e => e.IdOrder).HasName("PK__Orders__EC9FA9552C3557E5");
 
             entity.Property(e => e.IdOrder).HasColumnName("ID_Order");
             entity.Property(e => e.DeliveryAddress).HasMaxLength(255);
@@ -464,16 +467,16 @@ public partial class IrtContext : DbContext
 
             entity.HasOne(d => d.IdCustomerNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdCustomer)
-                .HasConstraintName("FK__Orders__ID_Custo__0D7A0286");
+                .HasConstraintName("FK__Orders__ID_Custo__0E6E26BF");
 
             entity.HasOne(d => d.IdEmployeeNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdEmployee)
-                .HasConstraintName("FK__Orders__ID_Emplo__0E6E26BF");
+                .HasConstraintName("FK__Orders__ID_Emplo__0F624AF8");
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => e.IdOrderDetail).HasName("PK__OrderDet__855D4EF56F2CB75F");
+            entity.HasKey(e => e.IdOrderDetail).HasName("PK__OrderDet__855D4EF5AEAB6568");
 
             entity.ToTable("OrderDetail");
 
@@ -483,16 +486,16 @@ public partial class IrtContext : DbContext
 
             entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.IdOrder)
-                .HasConstraintName("FK__OrderDeta__ID_Or__0B91BA14");
+                .HasConstraintName("FK__OrderDeta__ID_Or__0C85DE4D");
 
             entity.HasOne(d => d.IdStrainNavigation).WithMany(p => p.OrderDetails)
                 .HasForeignKey(d => d.IdStrain)
-                .HasConstraintName("FK__OrderDeta__ID_St__0C85DE4D");
+                .HasConstraintName("FK__OrderDeta__ID_St__0D7A0286");
         });
 
         modelBuilder.Entity<Partner>(entity =>
         {
-            entity.HasKey(e => e.IdPartner).HasName("PK__Partner__B982253DD6F8D9B2");
+            entity.HasKey(e => e.IdPartner).HasName("PK__Partner__B982253D58044747");
 
             entity.ToTable("Partner");
 
@@ -526,7 +529,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Phylum>(entity =>
         {
-            entity.HasKey(e => e.IdPhylum).HasName("PK__Phylum__DE75F90119BD2F8D");
+            entity.HasKey(e => e.IdPhylum).HasName("PK__Phylum__DE75F9015FC05AB3");
 
             entity.ToTable("Phylum");
 
@@ -538,7 +541,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Project>(entity =>
         {
-            entity.HasKey(e => e.IdProject).HasName("PK__Project__D310AEBF5F021216");
+            entity.HasKey(e => e.IdProject).HasName("PK__Project__D310AEBFF2E12781");
 
             entity.ToTable("Project");
 
@@ -562,7 +565,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<ProjectContent>(entity =>
         {
-            entity.HasKey(e => e.IdProjectContent).HasName("PK__ProjectC__61A0E4E738A55770");
+            entity.HasKey(e => e.IdProjectContent).HasName("PK__ProjectC__61A0E4E72D448F9C");
 
             entity.ToTable("ProjectContent");
 
@@ -581,14 +584,14 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Province>(entity =>
         {
-            entity.HasKey(e => e.IdProvinces).HasName("PK__Province__EED764E0DD82E18A");
+            entity.HasKey(e => e.IdProvinces).HasName("PK__Province__EED764E0F0346040");
 
             entity.Property(e => e.Name).HasMaxLength(255);
         });
 
         modelBuilder.Entity<RoleForEmployee>(entity =>
         {
-            entity.HasKey(e => e.IdRole).HasName("PK__RoleForE__43DCD32D4CB397A9");
+            entity.HasKey(e => e.IdRole).HasName("PK__RoleForE__43DCD32D0A571209");
 
             entity.ToTable("RoleForEmployee");
 
@@ -599,7 +602,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<ScienceNewspaper>(entity =>
         {
-            entity.HasKey(e => e.IdNewspaper).HasName("PK__ScienceN__DD461981FB132569");
+            entity.HasKey(e => e.IdNewspaper).HasName("PK__ScienceN__DD461981B62EF12E");
 
             entity.ToTable("ScienceNewspaper");
 
@@ -612,7 +615,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Species>(entity =>
         {
-            entity.HasKey(e => e.IdSpecies).HasName("PK__Species__33D1C1175FD93255");
+            entity.HasKey(e => e.IdSpecies).HasName("PK__Species__33D1C1171D4219EB");
 
             entity.Property(e => e.IdSpecies).HasColumnName("ID_Species");
             entity.Property(e => e.IdGenus).HasColumnName("ID_Genus");
@@ -627,7 +630,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Strain>(entity =>
         {
-            entity.HasKey(e => e.IdStrain).HasName("PK__Strain__A23EB82EE63CDFED");
+            entity.HasKey(e => e.IdStrain).HasName("PK__Strain__A23EB82EFC39195A");
 
             entity.ToTable("Strain");
 
@@ -691,7 +694,7 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<StrainApprovalHistory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__StrainAp__3214EC27E7009EEA");
+            entity.HasKey(e => e.Id).HasName("PK__StrainAp__3214EC279AA8979A");
 
             entity.ToTable("StrainApprovalHistory");
 
@@ -706,13 +709,13 @@ public partial class IrtContext : DbContext
 
         modelBuilder.Entity<Ward>(entity =>
         {
-            entity.HasKey(e => e.IdWards).HasName("PK__Wards__6E35F7384805D3D0");
+            entity.HasKey(e => e.IdWards).HasName("PK__Wards__6E35F73898544F66");
 
             entity.Property(e => e.Name).HasMaxLength(255);
 
             entity.HasOne(d => d.IdDistrictsNavigation).WithMany(p => p.Wards)
                 .HasForeignKey(d => d.IdDistricts)
-                .HasConstraintName("FK__Wards__IdDistric__160F4887");
+                .HasConstraintName("FK__Wards__IdDistric__17036CC0");
         });
 
         OnModelCreatingPartial(modelBuilder);
