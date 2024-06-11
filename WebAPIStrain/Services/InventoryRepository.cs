@@ -62,6 +62,20 @@ namespace WebAPIStrain.Services
             return inventories;
         }
 
+        public List<InventoryWithoutIdStrainNavigationVM> GetAllWithoutIdStrainNavigation()
+        {
+            var inventories = dbContext.Inventories.Select(p => new InventoryWithoutIdStrainNavigationVM
+            {
+                InventoryId = p.InventoryId,
+                IdStrain = p.IdStrain,
+                Price = p.Price,
+                EntryDate = p.EntryDate,
+                Quantity = p.Quantity,
+                Histories = p.Histories,
+            }).ToList();
+            return inventories;
+        }
+
         public InventoryVM GetById(int id)
         {
             var inventory = dbContext.Inventories.FirstOrDefault(p => p.InventoryId == id);

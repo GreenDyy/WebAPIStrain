@@ -29,6 +29,19 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpGet("GetAllWithoutIdStrainNavigation")]
+        public IActionResult GetAllWithoutIdStrainNavigation()
+        {
+            try
+            {
+                return Ok(_inventoryRepository.GetAllWithoutIdStrainNavigation());
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

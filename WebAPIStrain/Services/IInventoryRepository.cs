@@ -6,6 +6,7 @@ namespace WebAPIStrain.Services
     public interface IInventoryRepository
     {
         public List<InventoryVM> GetAll();
+        public List<InventoryWithoutIdStrainNavigationVM> GetAllWithoutIdStrainNavigation();
         public InventoryVM GetById(int id);
         public InventoryVM GetByIdStrain(int idStrain);
         public InventoryVM Create(InventoryModel inputInventory);
