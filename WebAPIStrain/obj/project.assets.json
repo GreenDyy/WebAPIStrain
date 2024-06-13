@@ -8233,11 +8233,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+      "projectUniqueName": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
       "projectName": "WebAPIStrain",
-      "projectPath": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+      "projectPath": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Codes\\KhoaLuanTotNghiep\\WebAPIStrain\\WebAPIStrain\\obj\\",
+      "outputPath": "D:\\Dowloads\\WebAPIStrain\\WebAPIStrain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

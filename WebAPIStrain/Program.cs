@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebAPIStrain.Models;
+using WebAPIStrain.PaymentServices.Momo.Config;
+using System.Configuration;
+using WebAPIStrain.PaymentServices.VNPay;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,6 +70,17 @@ builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddTransient<IMailServiceRepository, MailServiceRepository>();
 builder.Services.AddMemoryCache();
+//Momo payment
+builder.Services.Configure<MomoConfig>(builder.Configuration.GetSection("Momo"));
+builder.Services.AddHttpClient<IMomoService, MomoService>();
+    //builder.Services.AddHttpClient();
+
+//VPPay
+builder.Services.Configure<VNPayConfig>(builder.Configuration.GetSection("VNPay"));
+builder.Services.AddSingleton<IVNPayService, VNPayService>();
+builder.Services.AddHttpContextAccessor();
+
+
 
 
 //token
