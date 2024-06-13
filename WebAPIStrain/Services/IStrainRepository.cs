@@ -24,5 +24,6 @@ namespace WebAPIStrain.Services
         public List<StrainVM> GetRandomStrain();
         public List<StrainVM> GetAllByStraiNumberAndScientificName(string? search);
         public List<StrainVM> GetAllStrainByTheEmployee(string idEmployee);
+        public List<StrainVM> GetAllStrainForEmployee(string? search, int page);
     }
 }

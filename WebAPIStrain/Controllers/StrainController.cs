@@ -285,6 +285,19 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        
+             [HttpGet("GetAllStrainForEmployee")]
+        public IActionResult GetAllStrainForEmployee(string? search, int page = 1)
+        {
+            try
+            {
+                return Ok(_strainRepository.GetAllStrainForEmployee(search, page));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
 
     }
 }

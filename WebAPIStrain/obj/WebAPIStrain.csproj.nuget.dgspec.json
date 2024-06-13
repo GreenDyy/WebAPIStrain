@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GreenDuy\\Desktop\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
+    "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GreenDuy\\Desktop\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
+    "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GreenDuy\\Desktop\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "projectUniqueName": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
         "projectName": "WebAPIStrain",
-        "projectPath": "C:\\Users\\GreenDuy\\Desktop\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "projectPath": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
         "packagesPath": "C:\\Users\\GreenDuy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GreenDuy\\Desktop\\WebAPIStrain\\WebAPIStrain\\obj\\",
+        "outputPath": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\GreenDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -14,7 +14,7 @@ namespace WebAPIStrain.Services
     public class StrainRepository : IStrainRepository
     {
         public readonly IrtContext dbContext;
-        public static int PAGE_SIZE { get; set; } = 8;
+        public static int PAGE_SIZE { get; set; } = 30;
         public int totalPage;
         public StrainRepository(IrtContext context)
         {
@@ -200,6 +200,7 @@ namespace WebAPIStrain.Services
                 Publications = si.Strain.Publications,
                 RecommendedForTeaching = si.Strain.RecommendedForTeaching,
                 DateAdd = si.Strain.DateAdd,
+                StrainApprovalHistories = si.Strain.StrainApprovalHistories,
 
                 TotalPage = totalPage,
                 Price = si.Inventory.Price,
@@ -745,5 +746,61 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public List<StrainVM> GetAllStrainForEmployee(string? search, int page)
+        {
+            // Lấy dữ liệu từ bảng Strains
+            var strains = dbContext.Strains.AsQueryable();
+
+            #region Filtering
+            if (!string.IsNullOrEmpty(search))
+            {
+                // Tìm kiếm strains theo ScientificName hoặc StrainNumber
+                strains = strains.Where(s => s.ScientificName.Contains(search) || s.StrainNumber.Contains(search));
+            }
+            #endregion
+
+            #region Paging
+            // Tính tổng số trang sau khi lọc nhưng trước khi phân trang
+            int totalPage = (int)Math.Ceiling(strains.Count() / (double)PAGE_SIZE);
+            strains = strains.Skip((page - 1) * PAGE_SIZE).Take(PAGE_SIZE);
+            #endregion
+
+            // Chuyển đổi kết quả sang danh sách StrainVM
+            var result = strains.Select(s => new StrainVM
+            {
+                IdStrain = s.IdStrain,
+                StrainNumber = s.StrainNumber,
+                IdSpecies = s.IdSpecies,
+                IdCondition = s.IdCondition,
+                ImageStrain = s.ImageStrain,
+                ScientificName = s.ScientificName,
+                SynonymStrain = s.SynonymStrain,
+                FormerName = s.FormerName,
+                CommonName = s.CommonName,
+                CellSize = s.CellSize,
+                Organization = s.Organization,
+                Characteristics = s.Characteristics,
+                CollectionSite = s.CollectionSite,
+                Continent = s.Continent,
+                Country = s.Country,
+                IsolationSource = s.IsolationSource,
+                ToxinProducer = s.ToxinProducer,
+                StateOfStrain = s.StateOfStrain,
+                AgitationResistance = s.AgitationResistance,
+                Remarks = s.Remarks,
+                GeneInformation = s.GeneInformation,
+                Publications = s.Publications,
+                RecommendedForTeaching = s.RecommendedForTeaching,
+                DateAdd = s.DateAdd,
+                StrainApprovalHistories = s.StrainApprovalHistories,
+
+                TotalPage = totalPage,
+              
+            }).ToList();
+
+            return result;
+        }
+
     }
 }
