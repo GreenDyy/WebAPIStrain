@@ -18,9 +18,25 @@ namespace WebAPIStrain.Services
 
         public BillVM Create(BillModel bill)
         {
+            string newIdBill;
+            var lastBill = dbContext.Bills.OrderByDescending(b => b.IdBill).FirstOrDefault();
+            if (lastBill != null)
+            {
+                string lastIdBill = lastBill.IdBill;
+                string partNumberId = lastIdBill.Substring(2);
+                int number = int.Parse(partNumberId);
+                number++;
+                newIdBill = "HD" + number.ToString("D7");
+            }
+            else
+            {
+                newIdBill = "HD0000001";
+            }
+
             var newBill = new Bill
             {
-                IdBill = bill.IdBill,
+                IdBill = newIdBill,
+                IdOrder = bill.IdOrder,
                 IdCustomer = bill.IdCustomer,
                 IdEmployee = bill.IdEmployee,
                 BillDate = bill.BillDate,
@@ -28,11 +44,14 @@ namespace WebAPIStrain.Services
                 TypeOfBill = bill.TypeOfBill,
                 TotalPrice = bill.Total
             };
+
             dbContext.Add(newBill);
             dbContext.SaveChanges();
+
             return new BillVM
             {
                 IdBill = newBill.IdBill,
+                IdOrder= newBill.IdOrder,
                 IdCustomer = newBill.IdCustomer,
                 IdEmployee = newBill.IdEmployee,
                 BillDate = newBill.BillDate,
@@ -41,6 +60,7 @@ namespace WebAPIStrain.Services
                 TotalPrice = newBill.TotalPrice
             };
         }
+
 
         public bool Delete(string id)
         {
@@ -59,6 +79,7 @@ namespace WebAPIStrain.Services
             var bills = dbContext.Bills.Select(p => new BillVM
             {
                 IdBill = p.IdBill,
+                IdOrder = p.IdOrder,
                 IdCustomer = p.IdCustomer,
                 IdEmployee = p.IdEmployee,
                 BillDate = p.BillDate,
@@ -77,6 +98,7 @@ namespace WebAPIStrain.Services
                 return new BillVM
                 {
                     IdBill = bill.IdBill,
+                    IdOrder = bill.IdOrder,
                     IdCustomer = bill.IdCustomer,
                     IdEmployee = bill.IdEmployee,
                     BillDate = bill.BillDate,
@@ -93,6 +115,7 @@ namespace WebAPIStrain.Services
             var _bill = dbContext.Bills.FirstOrDefault(p => p.IdBill == id);
             if (_bill != null)
             {
+                _bill.IdOrder = bill.IdOrder;
                 _bill.IdCustomer = bill.IdCustomer;
                 _bill.IdEmployee = bill.IdEmployee;
                 _bill.BillDate = bill.BillDate;
