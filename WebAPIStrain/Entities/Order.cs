@@ -23,6 +23,8 @@ public partial class Order
 
     public string? PaymentMethod { get; set; }
 
+    public string? StatusOrder { get; set; }
+
     public virtual ICollection<Bill> Bills { get; set; } = new List<Bill>();
 
     public virtual Customer? IdCustomerNavigation { get; set; }

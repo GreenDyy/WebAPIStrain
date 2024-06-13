@@ -22,6 +22,8 @@ namespace WebAPIStrain.ViewModels
 
         public string? PaymentMethod { get; set; }
 
+        public string? StatusOrder { get; set; }
+
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 }

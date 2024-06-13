@@ -465,6 +465,7 @@ public partial class IrtContext : DbContext
                 .HasColumnName("ID_Employee");
             entity.Property(e => e.PaymentMethod).IsUnicode(false);
             entity.Property(e => e.Status).HasMaxLength(255);
+            entity.Property(e => e.StatusOrder).HasMaxLength(255);
 
             entity.HasOne(d => d.IdCustomerNavigation).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.IdCustomer)

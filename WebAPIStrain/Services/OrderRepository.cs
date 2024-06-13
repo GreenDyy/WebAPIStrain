@@ -29,6 +29,7 @@ namespace WebAPIStrain.Services
                 DeliveryAddress = o.DeliveryAddress,
                 Note = o.Note,
                 PaymentMethod = o.PaymentMethod,
+                StatusOrder = o.StatusOrder,
             }).ToList();
             return orders;
         }
@@ -50,6 +51,7 @@ namespace WebAPIStrain.Services
                     DeliveryAddress= order.DeliveryAddress,
                     OrderDetails = order.OrderDetails,
                     PaymentMethod = order.PaymentMethod,
+                    StatusOrder = order.StatusOrder,
                 };
             }
             return null;
@@ -65,7 +67,10 @@ namespace WebAPIStrain.Services
                 TotalPrice = order.TotalPrice,
                 Status = order.Status,
                 DeliveryAddress = order.DeliveryAddress,
-                Note = order.Note
+                Note = order.Note,
+
+                PaymentMethod= order.PaymentMethod,
+                StatusOrder= order.StatusOrder,
             };
             dbContext.Add(newOrder);
             dbContext.SaveChanges();
@@ -78,7 +83,10 @@ namespace WebAPIStrain.Services
                 TotalPrice = newOrder.TotalPrice,
                 Status = newOrder.Status,
                 DeliveryAddress = newOrder.DeliveryAddress,
-                Note = newOrder.Note
+                Note = newOrder.Note,
+
+                PaymentMethod = order.PaymentMethod,
+                StatusOrder = order.StatusOrder,
             };
         }
 
@@ -94,6 +102,8 @@ namespace WebAPIStrain.Services
                 _order.Status = order.Status;
                 _order.DeliveryAddress = order.DeliveryAddress;
                 _order.Note = order.Note;
+                _order.PaymentMethod = order. PaymentMethod;
+                _order.StatusOrder = order.StatusOrder;
                 dbContext.SaveChanges();
                 return true;
             }
@@ -124,6 +134,8 @@ namespace WebAPIStrain.Services
                 Status = o.Status,
                 DeliveryAddress = o.DeliveryAddress,
                 Note = o.Note,
+                PaymentMethod = o.PaymentMethod,
+                StatusOrder = o.StatusOrder,
                 OrderDetails = o.OrderDetails
             }).ToList();
             return orders;
