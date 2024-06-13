@@ -28,6 +28,7 @@ namespace WebAPIStrain.Services
                 Status = o.Status,
                 DeliveryAddress = o.DeliveryAddress,
                 Note = o.Note,
+                PaymentMethod = o.PaymentMethod,
             }).ToList();
             return orders;
         }
@@ -47,7 +48,8 @@ namespace WebAPIStrain.Services
                     Status = order.Status,
                     Note = order.Note,
                     DeliveryAddress= order.DeliveryAddress,
-                    OrderDetails = order.OrderDetails
+                    OrderDetails = order.OrderDetails,
+                    PaymentMethod = order.PaymentMethod,
                 };
             }
             return null;

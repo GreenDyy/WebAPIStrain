@@ -463,6 +463,7 @@ public partial class IrtContext : DbContext
             entity.Property(e => e.IdEmployee)
                 .HasMaxLength(50)
                 .HasColumnName("ID_Employee");
+            entity.Property(e => e.PaymentMethod).IsUnicode(false);
             entity.Property(e => e.Status).HasMaxLength(255);
 
             entity.HasOne(d => d.IdCustomerNavigation).WithMany(p => p.Orders)

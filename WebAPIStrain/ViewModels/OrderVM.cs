@@ -20,6 +20,8 @@ namespace WebAPIStrain.ViewModels
 
         public string? Note { get; set; }
 
+        public string? PaymentMethod { get; set; }
+
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
     }
 }

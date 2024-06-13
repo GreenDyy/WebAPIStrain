@@ -17,5 +17,7 @@ namespace WebAPIStrain.Models
         public string? Note { get; set; }
 
         public string? DeliveryAddress { get; set; }
+
+        public string? PaymentMethod { get; set; }
     }
 }
