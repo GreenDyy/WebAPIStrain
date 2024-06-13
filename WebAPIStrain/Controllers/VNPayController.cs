@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Azure;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPIStrain.PaymentServices.VNPay;
 
@@ -29,15 +30,37 @@ namespace WebAPIStrain.Controllers
             return Ok(paymentUrl);
         }
 
+        //[HttpPost("PaymentExcute")]
+        //public IActionResult PaymentExcute()
+        //{
+        //    var collection = HttpContext.Request.Query;
+        //    try
+        //    {
+        //        // Xử lý phản hồi từ VNPay
+        //        var response = _vnpayService.PaymentExcute(collection);
+
+        //        return Ok(response);
+        //    }
+        //    catch
+        //    {
+        //        return Ok(collection);
+        //    }
+
+        //}
         [HttpPost("PaymentExcute")]
-        public IActionResult PaymentExcute()
+        public IActionResult PaymentExcute([FromQuery] IQueryCollection collection)
         {
-            var collection = HttpContext.Request.Query;
+            try
+            {
+                // Xử lý phản hồi từ VNPay
+                var response = _vnpayService.PaymentExcute(collection);
 
-            // Xử lý phản hồi từ VNPay
-            var response = _vnpayService.PaymentExcute(collection);
-
-            return Ok(response);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Error processing payment.", error = ex.Message });
+            }
         }
     }
 }
