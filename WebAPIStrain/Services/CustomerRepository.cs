@@ -118,14 +118,27 @@ namespace WebAPIStrain.Services
             }
         }
 
-
         public bool Delete(string id)
         {
-            var customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(s => s.IdCustomer == id);
+            var customer = dbContext.Customers
+                .Include(c => c.AccountForCustomer)
+                .Include(c => c.Carts)
+                .FirstOrDefault(s => s.IdCustomer == id);
+
             if (customer != null)
             {
-                dbContext.Remove(customer.AccountForCustomer);
-                dbContext.Remove(customer);
+                if (customer.AccountForCustomer != null)
+                {
+                    dbContext.AccountForCustomers.Remove(customer.AccountForCustomer);
+                }
+                if (customer.Carts != null)
+                {
+                    foreach (var cart in customer.Carts)
+                    {
+                        dbContext.Carts.Remove(cart);
+                    }
+                }
+                dbContext.Customers.Remove(customer);
                 dbContext.SaveChanges();
                 return true;
             }
