@@ -95,6 +95,46 @@ namespace WebAPIStrain.Controllers
             }
         }
 
+        [HttpPut("ChangePass/{id}")]
+        public IActionResult ChangePass(string id, CustomerModel customer)
+        {
+            try
+            {
+                if (_customerRepository.ChangePass(id, customer))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPut("UpdateDataNoPass/{id}")]
+        public IActionResult UpdateDataNoPass(string id, CustomerModel customer)
+        {
+            try
+            {
+                if (_customerRepository.UpdateDataNoPass(id, customer))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         [HttpPost]
         public IActionResult Create(CustomerModel customer)
         {

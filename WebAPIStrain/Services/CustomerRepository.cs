@@ -226,6 +226,46 @@ namespace WebAPIStrain.Services
             return false;
         }
 
+        public bool ChangePass(string id, CustomerModel customer)
+        {
+            var _customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == id);
+            if (_customer != null)
+            {
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(customer.Password);
+                _customer.AccountForCustomer.Password = hashedPassword;
+
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool UpdateDataNoPass(string id, CustomerModel customer)
+        {
+            var _customer = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == id);
+            if (_customer != null)
+            {
+                _customer.FirstName = customer.FirstName;
+                _customer.LastName = customer.LastName;
+                _customer.FullName = customer.LastName + " " + customer.FirstName;
+                _customer.DateOfBirth = customer.DateOfBirth;
+                _customer.Gender = customer.Gender;
+                _customer.Email = customer.Email;
+                _customer.PhoneNumber = customer.PhoneNumber;
+                _customer.Address = customer.Address;
+                _customer.Image = customer.Image;
+                _customer.NameWard = customer.NameWard;
+                _customer.NameDistrict = customer.NameDistrict;
+                _customer.NameProvince = customer.NameProvince;
+                _customer.AccountForCustomer.Username = customer.Username;
+                _customer.AccountForCustomer.Status = customer.Status;
+
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public CustomerVM Login(Login login)
         {
             var account = dbContext.AccountForCustomers.FirstOrDefault(ac => ac.Username == login.Username);

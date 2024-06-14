@@ -115,5 +115,43 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpPut("UpdateDataNoPass/{id}")]
+        public IActionResult UpdateDataNoPass(string id, EmployeeModel inputEmployee)
+        {
+            try
+            {
+                if (_employeeRepository.UpdateDataNoPass(id, inputEmployee))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+        [HttpPut("UpdatePass/{id}")]
+        public IActionResult UpdatePass(string id, EmployeeModel inputEmployee)
+        {
+            try
+            {
+                if (_employeeRepository.UpdatePass(id, inputEmployee))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return StatusCode(StatusCodes.Status404NotFound);
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

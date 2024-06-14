@@ -201,7 +201,7 @@ namespace WebAPIStrain.Services
 
                 employee.AccountForEmployee.Username = inputEmployee.Username;
                 employee.AccountForEmployee.Status = inputEmployee.Status;
-                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputEmployee.Password);
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputEmployee.Password.Trim());
                 employee.AccountForEmployee.Password = hashedPassword;
 
                 dbContext.SaveChanges();
@@ -215,7 +215,7 @@ namespace WebAPIStrain.Services
             var account = dbContext.AccountForEmployees.FirstOrDefault(ac => ac.Username == login.Username);
             if (account != null)
             {
-                bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(login.Password, account.Password);
+                bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(login.Password.Trim(), account.Password);
                 if (isPasswordMatch)
                 {
                     var profile = dbContext.Employees.FirstOrDefault(c => c.IdEmployee == account.IdEmployee);
@@ -247,6 +247,48 @@ namespace WebAPIStrain.Services
                 return null;
             }
             return null;
+        }
+        public bool UpdateDataNoPass(string id, EmployeeModel inputEmployee)
+        {
+            var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
+            if (employee != null)
+            {
+                employee.IdRole = inputEmployee.IdRole;
+                employee.FirstName = inputEmployee.FirstName;
+                employee.LastName = inputEmployee.LastName;
+                employee.FullName = $"{inputEmployee.LastName} {inputEmployee.FirstName}";
+                employee.IdCard = inputEmployee.IdCard;
+                employee.DateOfBirth = inputEmployee.DateOfBirth;
+                employee.Gender = inputEmployee.Gender;
+                employee.Email = inputEmployee.Email;
+                employee.PhoneNumber = inputEmployee.PhoneNumber;
+                employee.Degree = inputEmployee.Degree;
+                employee.Address = inputEmployee.Address;
+                employee.JoinDate = inputEmployee.JoinDate;
+                employee.ImageEmployee = inputEmployee.ImageEmployee;
+                employee.NameWard = inputEmployee.NameWard;
+                employee.NameDistrict = inputEmployee.NameDistrict;
+                employee.NameProvince = inputEmployee.NameProvince;
+
+                employee.AccountForEmployee.Username = inputEmployee.Username;
+                employee.AccountForEmployee.Status = inputEmployee.Status;
+
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool UpdatePass(string id, EmployeeModel inputEmployee)
+        {
+            var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
+            if (employee != null)
+            {
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputEmployee.Password);
+                employee.AccountForEmployee.Password = hashedPassword;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

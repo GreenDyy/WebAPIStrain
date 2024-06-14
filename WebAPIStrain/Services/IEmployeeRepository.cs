@@ -11,5 +11,7 @@ namespace WebAPIStrain.Services
         public bool Update(string id, EmployeeModel inputEmployee);
         public bool Delete(string id);
         public EmployeeVM Login(Login login);
+        public bool UpdatePass(string id, EmployeeModel inputEmployee);
+        public bool UpdateDataNoPass(string id, EmployeeModel inputEmployee);
     }
 }
