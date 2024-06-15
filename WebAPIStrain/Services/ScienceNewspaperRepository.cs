@@ -25,6 +25,7 @@ namespace WebAPIStrain.Services
                 PostDate = scienceNewspaper.PostDate,
                 Image = scienceNewspaper.Image,
                 IdEmployee = scienceNewspaper.IdEmployee,
+                Content2 = scienceNewspaper.Content2,
             };
             dbContext.Add(newScienceNewspaper);
             dbContext.SaveChanges();
@@ -36,6 +37,7 @@ namespace WebAPIStrain.Services
                 PostDate = newScienceNewspaper.PostDate,
                 Image = newScienceNewspaper.Image,
                 IdEmployee = newScienceNewspaper?.IdEmployee,
+                Content2 = newScienceNewspaper?.Content2,
             };
         }
 
@@ -61,6 +63,7 @@ namespace WebAPIStrain.Services
                 PostDate = p.PostDate,
                 Image = p.Image,
                 IdEmployee = p.IdEmployee,
+                Content2 = p.Content2,
             }).ToList();
             return scienceNewspapers;
         }
@@ -77,7 +80,8 @@ namespace WebAPIStrain.Services
                     Content = scienceNewspaper.Content,
                     PostDate = scienceNewspaper.PostDate,
                     Image = scienceNewspaper.Image,
-                    IdEmployee= scienceNewspaper.IdEmployee,
+                    IdEmployee = scienceNewspaper.IdEmployee,
+                    Content2 = scienceNewspaper.Content2,
                 };
             }
             return null;
@@ -93,6 +97,7 @@ namespace WebAPIStrain.Services
                 _scienceNewspaper.PostDate = scienceNewspaper.PostDate;
                 _scienceNewspaper.Image = scienceNewspaper.Image;
                 _scienceNewspaper.IdEmployee = scienceNewspaper.IdEmployee;
+                _scienceNewspaper.Content2 = scienceNewspaper.Content2;
                 dbContext.SaveChanges();
                 return true;
             }

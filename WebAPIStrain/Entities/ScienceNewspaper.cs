@@ -17,5 +17,7 @@ public partial class ScienceNewspaper
 
     public string? IdEmployee { get; set; }
 
+    public string? Content2 { get; set; }
+
     public virtual Employee? IdEmployeeNavigation { get; set; }
 }

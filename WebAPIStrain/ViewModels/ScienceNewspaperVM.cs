@@ -8,5 +8,6 @@
         public DateOnly? PostDate { get; set; }
         public byte[]? Image { get; set; }
         public string? IdEmployee { get; set; }
+        public string? Content2 { get; set; }
     }
 }
