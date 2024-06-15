@@ -127,5 +127,17 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+
+        public bool UpdateStatusPayBill(string idBill, string status)
+        {
+            var _strain = dbContext.Bills.FirstOrDefault(s => s.IdBill == idBill);
+            if (_strain != null)
+            {
+                _strain.StatusOfBill = status;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

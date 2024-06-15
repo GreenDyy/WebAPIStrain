@@ -100,5 +100,25 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPatch("{idBill}/statusPay")]
+        public IActionResult UpdateStatusPayBill(string idBill, [FromBody] string status)
+        {
+            try
+            {
+                if (_billRepository.UpdateStatusPayBill(idBill, status))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
     }
 }

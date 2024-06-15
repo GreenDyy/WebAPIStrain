@@ -10,6 +10,7 @@ namespace WebAPIStrain.Services
         BillVM GetById(string id);
         BillVM Create(BillModel inputBill);
         bool Update(string id, BillModel inputBill);
+        bool UpdateStatusPayBill(string idBill, string status);
         bool Delete(string id);
     }
 }
