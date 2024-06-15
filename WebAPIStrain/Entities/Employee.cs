@@ -54,4 +54,6 @@ public partial class Employee
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
+
+    public virtual ICollection<ScienceNewspaper> ScienceNewspapers { get; set; } = new List<ScienceNewspaper>();
 }

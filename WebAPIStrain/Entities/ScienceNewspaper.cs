@@ -11,5 +11,11 @@ public partial class ScienceNewspaper
 
     public string? Content { get; set; }
 
-    public string? Url { get; set; }
+    public DateOnly? PostDate { get; set; }
+
+    public byte[]? Image { get; set; }
+
+    public string? IdEmployee { get; set; }
+
+    public virtual Employee? IdEmployeeNavigation { get; set; }
 }

@@ -22,7 +22,9 @@ namespace WebAPIStrain.Services
             {
                 Title = scienceNewspaper.Title,
                 Content = scienceNewspaper.Content,
-                Url = scienceNewspaper.Url
+                PostDate = scienceNewspaper.PostDate,
+                Image = scienceNewspaper.Image,
+                IdEmployee = scienceNewspaper.IdEmployee,
             };
             dbContext.Add(newScienceNewspaper);
             dbContext.SaveChanges();
@@ -31,7 +33,9 @@ namespace WebAPIStrain.Services
                 IdNewspaper = newScienceNewspaper.IdNewspaper,
                 Title = newScienceNewspaper.Title,
                 Content = newScienceNewspaper.Content,
-                Url = newScienceNewspaper.Url
+                PostDate = newScienceNewspaper.PostDate,
+                Image = newScienceNewspaper.Image,
+                IdEmployee = newScienceNewspaper?.IdEmployee,
             };
         }
 
@@ -54,7 +58,9 @@ namespace WebAPIStrain.Services
                 IdNewspaper = p.IdNewspaper,
                 Title = p.Title,
                 Content = p.Content,
-                Url = p.Url
+                PostDate = p.PostDate,
+                Image = p.Image,
+                IdEmployee = p.IdEmployee,
             }).ToList();
             return scienceNewspapers;
         }
@@ -69,7 +75,9 @@ namespace WebAPIStrain.Services
                     IdNewspaper = scienceNewspaper.IdNewspaper,
                     Title = scienceNewspaper.Title,
                     Content = scienceNewspaper.Content,
-                    Url = scienceNewspaper.Url
+                    PostDate = scienceNewspaper.PostDate,
+                    Image = scienceNewspaper.Image,
+                    IdEmployee= scienceNewspaper.IdEmployee,
                 };
             }
             return null;
@@ -82,7 +90,9 @@ namespace WebAPIStrain.Services
             {
                 _scienceNewspaper.Title = scienceNewspaper.Title;
                 _scienceNewspaper.Content = scienceNewspaper.Content;
-                _scienceNewspaper.Url = scienceNewspaper.Url;
+                _scienceNewspaper.PostDate = scienceNewspaper.PostDate;
+                _scienceNewspaper.Image = scienceNewspaper.Image;
+                _scienceNewspaper.IdEmployee = scienceNewspaper.IdEmployee;
                 dbContext.SaveChanges();
                 return true;
             }

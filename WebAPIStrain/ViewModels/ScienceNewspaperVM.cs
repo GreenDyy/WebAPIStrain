@@ -5,6 +5,8 @@
         public int IdNewspaper { get; set; }
         public string? Title { get; set; }
         public string? Content { get; set; }
-        public string? Url { get; set; }
+        public DateOnly? PostDate { get; set; }
+        public byte[]? Image { get; set; }
+        public string? IdEmployee { get; set; }
     }
 }
