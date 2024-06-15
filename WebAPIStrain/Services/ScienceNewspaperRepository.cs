@@ -103,5 +103,22 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+        public List<ScienceNewspaperVM> GetRandom()
+        {
+            var scienceNewspapers = dbContext.ScienceNewspapers
+                .OrderBy(x => Guid.NewGuid().ToString())
+                .Take(5)
+                .Select(p => new ScienceNewspaperVM
+                {
+                    IdNewspaper = p.IdNewspaper,
+                    Title = p.Title,
+                    Content = p.Content,
+                    PostDate = p.PostDate,
+                    Image = p.Image,
+                    IdEmployee = p.IdEmployee,
+                    Content2 = p.Content2,
+                }).ToList();
+            return scienceNewspapers;
+        }
     }
 }

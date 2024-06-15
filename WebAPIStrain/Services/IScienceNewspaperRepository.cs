@@ -11,5 +11,6 @@ namespace WebAPIStrain.Services
         ScienceNewspaperVM Create(ScienceNewspaperModel inputScienceNewspaper);
         bool Update(int id, ScienceNewspaperModel inputScienceNewspaper);
         bool Delete(int id);
+        List<ScienceNewspaperVM> GetRandom();
     }
 }

@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\MyCode\\WebAPIStrain\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\controllers\\sciencenewspapercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\controllers\\sciencenewspapercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\isciencenewspaperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\isciencenewspaperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|c:\\mycode\\webapistrain\\webapistrain\\services\\sciencenewspaperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\services\\sciencenewspaperrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,19 +51,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ScienceNewspaperController.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\ScienceNewspaperController.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\ScienceNewspaperController.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\ScienceNewspaperController.cs",
+              "RelativeToolTip": "WebAPIStrain\\Controllers\\ScienceNewspaperController.cs",
+              "ViewState": "AQIAAFoAAAAAAAAAAAA4wGcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T18:33:20.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IScienceNewspaperRepository.cs",
+              "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IScienceNewspaperRepository.cs",
+              "RelativeDocumentMoniker": "WebAPIStrain\\Services\\IScienceNewspaperRepository.cs",
+              "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\IScienceNewspaperRepository.cs",
+              "RelativeToolTip": "WebAPIStrain\\Services\\IScienceNewspaperRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAwA0AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T18:33:03.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ScienceNewspaperRepository.cs",
               "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ScienceNewspaperRepository.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Services\\ScienceNewspaperRepository.cs",
               "ToolTip": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Services\\ScienceNewspaperRepository.cs",
               "RelativeToolTip": "WebAPIStrain\\Services\\ScienceNewspaperRepository.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAwwGMAAABHAAAA",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAiwG8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T18:20:48.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ScienceNewspaperVM.cs",
               "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\ViewModels\\ScienceNewspaperVM.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\ViewModels\\ScienceNewspaperVM.cs",
@@ -63,12 +97,11 @@
               "RelativeToolTip": "WebAPIStrain\\ViewModels\\ScienceNewspaperVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T18:20:39.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T18:20:39.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IrtContext.cs",
               "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\IrtContext.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Entities\\IrtContext.cs",
@@ -76,12 +109,11 @@
               "RelativeToolTip": "WebAPIStrain\\Entities\\IrtContext.cs",
               "ViewState": "AQIAACcAAAAAAAAAAAA2wEEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T18:20:22.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T18:20:22.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "_Readme.txt",
               "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Entities\\_Readme.txt",
               "RelativeDocumentMoniker": "WebAPIStrain\\Entities\\_Readme.txt",
@@ -89,12 +121,11 @@
               "RelativeToolTip": "WebAPIStrain\\Entities\\_Readme.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-06-15T18:20:04.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T18:20:04.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ContentWorkController.cs",
               "DocumentMoniker": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\Controllers\\ContentWorkController.cs",
               "RelativeDocumentMoniker": "WebAPIStrain\\Controllers\\ContentWorkController.cs",
@@ -102,8 +133,7 @@
               "RelativeToolTip": "WebAPIStrain\\Controllers\\ContentWorkController.cs",
               "ViewState": "AQIAAEEAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T16:42:47.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-15T16:42:47.743Z"
             }
           ]
         }

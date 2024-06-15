@@ -100,5 +100,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpGet("GetRandom")]
+        public IActionResult GetRandom()
+        {
+            try
+            {
+                return Ok(_scienceNewspaperRepository.GetRandom());
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }
