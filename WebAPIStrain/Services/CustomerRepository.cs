@@ -343,5 +343,31 @@ namespace WebAPIStrain.Services
 
             return emailExists;
         }
+
+        public CustomerVM LoginWithGoogle(string email)
+        {
+            var profile = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.Email == email);
+            return new CustomerVM
+            {
+                IdCustomer = profile.IdCustomer,
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                FullName = profile.FullName,
+                DateOfBirth = profile.DateOfBirth,
+                Gender = profile.Gender,
+                Email = profile.Email,
+                PhoneNumber = profile.PhoneNumber,
+                Address = profile.Address,
+                Image = profile.Image,
+                NameWard = profile.NameWard,
+                NameDistrict = profile.NameDistrict,
+                NameProvince = profile.NameProvince,
+
+                Username = profile.AccountForCustomer.Username,
+                Password = profile.AccountForCustomer.Password,
+                Status = profile.AccountForCustomer.Status,
+
+            };
+        }
     }
 }

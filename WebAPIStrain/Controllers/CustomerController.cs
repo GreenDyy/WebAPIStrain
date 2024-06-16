@@ -323,5 +323,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpPost("LoginWithGoogle")]
+        public IActionResult LoginWithGoogle(string email)
+        {
+            var customer = _customerRepository.LoginWithGoogle(email);
+            if (customer != null)
+            {
+                return Ok(customer);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
     }
 }

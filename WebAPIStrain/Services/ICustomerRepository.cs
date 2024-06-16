@@ -17,6 +17,7 @@ namespace WebAPIStrain.Services
         public bool CheckExistEmail(string email);
         public bool CheckExistUserName(string userName);
         public bool CheckExistEmailWithoutSelf(string email, string idCustomer);
+        public CustomerVM LoginWithGoogle(string email);
 
     }
 }
