@@ -3,4 +3,7 @@
   <parameter name="IIS Web Application Name" description="" value="irthuit2024-001-site1" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
   </parameter>
+  <parameter name="WebAPIStrain.Entities.IrtContext" description="" value="Data Source=SQL8006.site4now.net;Initial Catalog=db_aa9ed6_irt;User Id=db_aa9ed6_irt_admin;Password=irthuit2024" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\WebAPIStrain\.Entities\.IrtContext\.sql$" />
+  </parameter>
 </parameters>
