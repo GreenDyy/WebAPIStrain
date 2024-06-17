@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
+    "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {}
   },
   "projects": {
-    "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
+    "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "projectUniqueName": "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
         "projectName": "WebAPIStrain",
-        "projectPath": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
-        "packagesPath": "C:\\Users\\GreenDuy\\.nuget\\packages\\",
-        "outputPath": "C:\\MyCode\\WebAPIStrain\\WebAPIStrain\\obj\\",
+        "projectPath": "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\WebAPIStrain\\WebAPIStrain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\GreenDuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
