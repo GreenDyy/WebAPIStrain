@@ -13,5 +13,6 @@ namespace WebAPIStrain.Services
         public EmployeeVM Login(Login login);
         public bool UpdatePass(string id, EmployeeModel inputEmployee);
         public bool UpdateDataNoPass(string id, EmployeeModel inputEmployee);
+        public bool PatchPasswordEmployee(string id, string password);
     }
 }

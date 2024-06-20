@@ -1,94 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\WebAPIStrain\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|e:\\webapistrain\\webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|e:\\webapistrain\\webapistrain\\webapistrain.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\webapistrain.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|e:\\webapistrain\\webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|e:\\webapistrain\\webapistrain\\entities\\irtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D800A29-61F8-415F-B652-E03F22C8932B}|WebAPIStrain\\WebAPIStrain.csproj|solutionrelative:webapistrain\\entities\\irtcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Documents\\#HUFI HK_K\u1EF8 S\u01AF\\git\\WebAPIStrain\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
-              "RelativeDocumentMoniker": "WebAPIStrain\\appsettings.json",
-              "ToolTip": "E:\\WebAPIStrain\\WebAPIStrain\\appsettings.json",
-              "RelativeToolTip": "WebAPIStrain\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-16T13:48:03.316Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WebAPIStrain.http",
-              "DocumentMoniker": "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.http",
-              "RelativeDocumentMoniker": "WebAPIStrain\\WebAPIStrain.http",
-              "ToolTip": "E:\\WebAPIStrain\\WebAPIStrain\\WebAPIStrain.http",
-              "RelativeToolTip": "WebAPIStrain\\WebAPIStrain.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-06-17T07:04:14.304Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IrtContext.cs",
-              "DocumentMoniker": "E:\\WebAPIStrain\\WebAPIStrain\\Entities\\IrtContext.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Entities\\IrtContext.cs",
-              "ToolTip": "E:\\WebAPIStrain\\WebAPIStrain\\Entities\\IrtContext.cs",
-              "RelativeToolTip": "WebAPIStrain\\Entities\\IrtContext.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAAAE4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T16:46:00.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\WebAPIStrain\\WebAPIStrain\\Program.cs",
-              "RelativeDocumentMoniker": "WebAPIStrain\\Program.cs",
-              "ToolTip": "E:\\WebAPIStrain\\WebAPIStrain\\Program.cs",
-              "RelativeToolTip": "WebAPIStrain\\Program.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAUwHEAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T16:45:51.115Z"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -290,5 +290,18 @@ namespace WebAPIStrain.Services
             }
             return false;
         }
+        public bool PatchPasswordEmployee(string id, string password)
+        {
+            var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
+            if (employee != null)
+            {
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+                employee.AccountForEmployee.Password = hashedPassword;
+                dbContext.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

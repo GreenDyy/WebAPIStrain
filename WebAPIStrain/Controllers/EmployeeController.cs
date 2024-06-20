@@ -153,5 +153,28 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpPatch("updatePassword/{id}")]
+        public IActionResult PatchPasswordEmployee(string id, [FromBody] string password)
+        {
+            try
+            {
+                bool result = _employeeRepository.PatchPasswordEmployee(id, password);
+
+                if (result)
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"An error occurred: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
     }
 }
