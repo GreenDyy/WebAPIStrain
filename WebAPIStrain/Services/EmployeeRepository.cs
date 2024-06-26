@@ -218,36 +218,47 @@ namespace WebAPIStrain.Services
                 bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(login.Password.Trim(), account.Password);
                 if (isPasswordMatch)
                 {
-                    var profile = dbContext.Employees.FirstOrDefault(c => c.IdEmployee == account.IdEmployee);
-                    return new EmployeeVM
-                    {
-                        IdEmployee = profile.IdEmployee,
-                        IdRole = profile.IdRole,
-                        FirstName = profile.FirstName,
-                        LastName = profile.LastName,
-                        FullName = profile.FullName,
-                        IdCard = profile.IdCard,
-                        DateOfBirth = profile.DateOfBirth,
-                        Gender = profile.Gender,
-                        Email = profile.Email,
-                        PhoneNumber = profile.PhoneNumber,
-                        Degree = profile.Degree,
-                        Address = profile.Address,
-                        JoinDate = profile.JoinDate,
-                        ImageEmployee = profile.ImageEmployee,
-                        NameWard = profile.NameWard,
-                        NameDistrict = profile.NameDistrict,
-                        NameProvince = profile.NameProvince,
+                    var employeeInfo = dbContext.Employees
+                        .Join(dbContext.RoleForEmployees,
+                            e => e.IdRole,
+                            r => r.IdRole,
+                            (e, r) => new { Employee = e, Role = r })
+                        .FirstOrDefault(joined => joined.Employee.IdEmployee == account.IdEmployee);
 
-                        Username = account.Username,
-                        Password = account.Password,
-                        Status = account.Status,
-                    };
+                    if (employeeInfo != null)
+                    {
+                        return new EmployeeVM
+                        {
+                            IdEmployee = employeeInfo.Employee.IdEmployee,
+                            IdRole = employeeInfo.Employee.IdRole,
+                            FirstName = employeeInfo.Employee.FirstName,
+                            LastName = employeeInfo.Employee.LastName,
+                            FullName = employeeInfo.Employee.FullName,
+                            IdCard = employeeInfo.Employee.IdCard,
+                            DateOfBirth = employeeInfo.Employee.DateOfBirth,
+                            Gender = employeeInfo.Employee.Gender,
+                            Email = employeeInfo.Employee.Email,
+                            PhoneNumber = employeeInfo.Employee.PhoneNumber,
+                            Degree = employeeInfo.Employee.Degree,
+                            Address = employeeInfo.Employee.Address,
+                            JoinDate = employeeInfo.Employee.JoinDate,
+                            ImageEmployee = employeeInfo.Employee.ImageEmployee,
+                            NameWard = employeeInfo.Employee.NameWard,
+                            NameDistrict = employeeInfo.Employee.NameDistrict,
+                            NameProvince = employeeInfo.Employee.NameProvince,
+
+                            Username = account.Username,
+                            Password = account.Password,
+                            Status = account.Status,
+
+                            RoleName = employeeInfo.Role.RoleName
+                        };
+                    }
                 }
-                return null;
             }
             return null;
         }
+
         public bool UpdateDataNoPass(string id, EmployeeModel inputEmployee)
         {
             var employee = dbContext.Employees.Include(e => e.AccountForEmployee).FirstOrDefault(e => e.IdEmployee == id);
