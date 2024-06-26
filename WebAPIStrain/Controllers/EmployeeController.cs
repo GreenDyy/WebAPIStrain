@@ -68,7 +68,7 @@ namespace WebAPIStrain.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id,  EmployeeModel inputEmployee)
+        public IActionResult Update(string id, EmployeeModel inputEmployee)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace WebAPIStrain.Controllers
             var employee = _employeeRepository.Login(account);
             if (employee != null)
             {
-      
+
                 return Ok(employee);
             }
             else
@@ -175,6 +175,18 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+        [HttpGet("GetAllEmployeeFromIdProject")]
+        public IActionResult GetAllEmployeeByIdProjects(string idProject)
+        {
+            try
+            {
+                return Ok(_employeeRepository.GetAllEmployeeByIdProject(idProject));
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
 
+        }
     }
 }

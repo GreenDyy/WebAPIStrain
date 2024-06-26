@@ -127,7 +127,7 @@ namespace WebAPIStrain.Services
                 IdCard = employee.IdCard,
                 DateOfBirth = employee.DateOfBirth,
                 Gender = employee.Gender,
-                Email = employee.   Email,
+                Email = employee.Email,
                 PhoneNumber = employee.PhoneNumber,
                 Degree = employee.Degree,
                 Address = employee.Address,
@@ -241,7 +241,7 @@ namespace WebAPIStrain.Services
 
                         Username = account.Username,
                         Password = account.Password,
-                        Status =account.Status,
+                        Status = account.Status,
                     };
                 }
                 return null;
@@ -302,6 +302,37 @@ namespace WebAPIStrain.Services
             }
             else
                 return false;
+        }
+        public List<EmployeeVM> GetAllEmployeeByIdProject(string idProject)
+        {
+            var employees = (from cw in dbContext.ContentWorks
+                             join pc in dbContext.ProjectContents on cw.IdProjectContent equals pc.IdProjectContent
+                             join p in dbContext.Projects on pc.IdProject equals p.IdProject
+                             join e in dbContext.Employees on cw.IdEmployee equals e.IdEmployee
+                             join r in dbContext.RoleForEmployees on e.IdRole equals r.IdRole
+                             where p.IdProject == idProject
+                             select new EmployeeVM
+                             {
+                                 IdEmployee = e.IdEmployee,
+                                 Address = e.Address,
+                                 DateOfBirth = e.DateOfBirth,
+                                 Degree = e.Degree,
+                                 FirstName = e.FirstName,
+                                 LastName = e.LastName,
+                                 Email = e.Email,
+                                 FullName = e.FullName,
+                                 Gender = e.Gender,
+                                 IdCard = e.IdCard,
+                                 IdRole = e.IdRole,
+                                 ImageEmployee = e.ImageEmployee,
+                                 JoinDate = e.JoinDate,
+                                 PhoneNumber = e.PhoneNumber,
+                                 RoleName = r.RoleName,
+                             })
+                             .Distinct()
+                             .ToList();
+
+            return employees;
         }
     }
 }

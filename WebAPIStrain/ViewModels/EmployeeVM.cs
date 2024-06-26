@@ -46,5 +46,6 @@ namespace WebAPIStrain.ViewModels
         public string? Password { get; set; }
 
         public string? Status { get; set; }
+        public string? RoleName {  get; set; }
     }
 }
