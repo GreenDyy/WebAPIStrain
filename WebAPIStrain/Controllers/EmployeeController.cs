@@ -188,5 +188,64 @@ namespace WebAPIStrain.Controllers
             }
 
         }
+        [HttpPatch("lockAccount/{idEmployee}")]
+        public IActionResult LockAccount(string idEmployee)
+        {
+            try
+            {
+                if (_employeeRepository.LockAccount(idEmployee))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("openAccount/{idEmployee}")]
+        public IActionResult OpenAccount(string idEmployee)
+        {
+            try
+            {
+                if (_employeeRepository.OpenAccount(idEmployee))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("changeRole/{idEmployee}/idRole={idRole}")]
+        public IActionResult ChangeRole(string idEmployee, int idRole)
+        {
+            try
+            {
+                if (_employeeRepository.ChangeRole(idEmployee, idRole))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
     }
 }

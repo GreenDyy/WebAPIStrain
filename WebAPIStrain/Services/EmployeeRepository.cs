@@ -345,5 +345,40 @@ namespace WebAPIStrain.Services
 
             return employees;
         }
+
+        public bool LockAccount(string idEmployee)
+        {
+            var profile = dbContext.Employees.Include(c => c.AccountForEmployee).FirstOrDefault(c => c.IdEmployee == idEmployee);
+            if (profile != null)
+            {
+                profile.AccountForEmployee.Status = "Tài khoản bị khóa";
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool OpenAccount(string idEmployee)
+        {
+            var profile = dbContext.Employees.Include(c => c.AccountForEmployee).FirstOrDefault(c => c.IdEmployee == idEmployee);
+            if (profile != null)
+            {
+                profile.AccountForEmployee.Status = "Đang hoạt động";
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool ChangeRole(string idEmployee, int idRole)
+        {
+            var profile = dbContext.Employees.FirstOrDefault(c => c.IdEmployee == idEmployee);
+            if (profile != null)
+            {
+                profile.IdRole = idRole;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

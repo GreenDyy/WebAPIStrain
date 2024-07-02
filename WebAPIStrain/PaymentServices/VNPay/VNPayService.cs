@@ -29,8 +29,8 @@ namespace WebAPIStrain.PaymentServices.VNPay
             vnpay.AddRequestData("vnp_Version", vnPayConfig.vnp_Version);
             vnpay.AddRequestData("vnp_Command", "pay");
             vnpay.AddRequestData("vnp_TmnCode", vnPayConfig.vnp_TmnCode);
-            //vnpay.AddRequestData("vnp_Amount", (model.Amount * 100).ToString());
-            vnpay.AddRequestData("vnp_Amount", (model.Amount).ToString());
+            vnpay.AddRequestData("vnp_Amount", (model.Amount * 100).ToString());
+            //vnpay.AddRequestData("vnp_Amount", (model.Amount).ToString());
             vnpay.AddRequestData("vnp_CreateDate", DateTime.Now.ToString("yyyyMMddHHmmss"));
 
             vnpay.AddRequestData("vnp_CurrCode", "VND");

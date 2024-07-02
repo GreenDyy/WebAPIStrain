@@ -65,6 +65,9 @@ builder.Services.AddScoped<IScienceNewspaperRepository, ScienceNewspaperReposito
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
 
+//backup dữ liệu
+builder.Services.AddScoped<IBackupRepository, BackupRepository>();
+
 //send mail
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddTransient<IMailServiceRepository, MailServiceRepository>();

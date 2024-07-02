@@ -336,5 +336,45 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }
+
+        [HttpPatch("lockAccount/{idCustomer}")]
+        public IActionResult LockAccount(string idCustomer)
+        {
+            try
+            {
+                if (_customerRepository.LockAccount(idCustomer))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("openAccount/{idCustomer}")]
+        public IActionResult OpenAccount(string idCustomer)
+        {
+            try
+            {
+                if (_customerRepository.OpenAccount(idCustomer))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
     }
 }

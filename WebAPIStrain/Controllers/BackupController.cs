@@ -30,5 +30,32 @@ namespace WebAPIStrain.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+
+        [HttpPost("restore/{backupFilePath}")]
+        public async Task<IActionResult> RestoreDatabase(string backupFilePath)
+        {
+            if (string.IsNullOrWhiteSpace(backupFilePath) || !System.IO.File.Exists(backupFilePath))
+            {
+                return BadRequest("Backup file path is not provided or the file does not exist.");
+            }
+
+            try
+            {
+                string backupFolderPath = Path.GetDirectoryName(backupFilePath);
+                if (!Directory.Exists(backupFolderPath))
+                {
+                    Directory.CreateDirectory(backupFolderPath);
+                }
+
+                await _backupRepository.RestoreDatabaseAsync(backupFilePath);
+
+                return Ok("Database restored successfully");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
     }
 }

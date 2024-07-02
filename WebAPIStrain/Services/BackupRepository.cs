@@ -30,11 +30,26 @@ namespace WebAPIStrain.Services
             string backupFilePath = Path.Combine(backupFolderPath, backupFileName);
             string backupQuery = $"BACKUP DATABASE [{_context.Database.GetDbConnection().Database}] TO DISK = '{backupFilePath}'";
 
-            // Sử dụng Entity Framework để thực thi lệnh SQL thô
             await _context.Database.ExecuteSqlRawAsync(backupQuery);
 
             byte[] fileBytes = await File.ReadAllBytesAsync(backupFilePath);
             return fileBytes;
         }
+
+        public async Task RestoreDatabaseAsync(string backupFilePath)
+        {
+            try
+            {
+                await _context.Database.ExecuteSqlRawAsync("USE master; ALTER DATABASE IRT SET SINGLE_USER WITH ROLLBACK IMMEDIATE;");
+                string restoreQuery = $"RESTORE DATABASE IRT FROM DISK = '{backupFilePath}' WITH REPLACE";
+                await _context.Database.ExecuteSqlRawAsync(restoreQuery);
+                await _context.Database.ExecuteSqlRawAsync("ALTER DATABASE IRT SET MULTI_USER;");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Failed to restore database: {ex.Message}");
+            }
+        }
+
     }
 }

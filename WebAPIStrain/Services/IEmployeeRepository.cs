@@ -15,5 +15,8 @@ namespace WebAPIStrain.Services
         public bool UpdateDataNoPass(string id, EmployeeModel inputEmployee);
         public bool PatchPasswordEmployee(string id, string password);
         public List<EmployeeVM> GetAllEmployeeByIdProject(string idProject);
+        public bool OpenAccount(string idEmployee);
+        public bool LockAccount(string idEmployee);
+        public bool ChangeRole(string idEmployee, int idRole);
     }
 }

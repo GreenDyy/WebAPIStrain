@@ -369,5 +369,29 @@ namespace WebAPIStrain.Services
 
             };
         }
+
+        public bool LockAccount(string idCustomer)
+        {
+            var profile = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == idCustomer);
+            if (profile != null)
+            {
+                profile.AccountForCustomer.Status = "Tài khoản bị khóa";
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public bool OpenAccount(string idCustomer)
+        {
+            var profile = dbContext.Customers.Include(c => c.AccountForCustomer).FirstOrDefault(c => c.IdCustomer == idCustomer);
+            if (profile != null)
+            {
+                profile.AccountForCustomer.Status = "Đang hoạt động";
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
