@@ -12,6 +12,7 @@ namespace WebAPIStrain.Services
         bool Update(int id, ProjectContentModel inputProjectContent);
         bool Delete(int id);
         bool UpdateStatusProject(string idProject, string status);
+        bool UpdateStatusProjectContent(int idProjectContent, string status);
         List<ProjectContentVM> GetAllByIdProject(string idProject);
     }
 }

@@ -131,6 +131,18 @@ namespace WebAPIStrain.Services
             return false;
         }
 
+        public bool UpdateStatusProjectContent(int idProjectContent, string status)
+        {
+            var _query = dbContext.ProjectContents.FirstOrDefault(s => s.IdProjectContent == idProjectContent);
+            if (_query != null)
+            {
+                _query.Status = status;
+                dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public List<ProjectContentVM> GetAllByIdProject(string idProject)
         {
             var projectContents = dbContext.ProjectContents.Where(p=>p.IdProject == idProject).Select(p => new ProjectContentVM

@@ -101,8 +101,8 @@ namespace WebAPIStrain.Controllers
             }
         }
 
-        [HttpPatch("{idProject}/status")]
-        public IActionResult UpdateStatusProjectContent(string idProject, [FromBody] string status)
+        [HttpPatch("{idProject}/statusProject")]
+        public IActionResult UpdateStatusProject(string idProject, [FromBody] string status)
         {
             try
             {
@@ -112,6 +112,30 @@ namespace WebAPIStrain.Controllers
                 }
 
                 if (_projectContentRepository.UpdateStatusProject(idProject, status))
+                {
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+        [HttpPatch("{idProjectContent}/statusProjectContent")]
+        public IActionResult UpdateStatusProjectContent(int idProjectContent, [FromBody] string status)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(status))
+                {
+                    return BadRequest("Cannot be null or empty.");
+                }
+
+                if (_projectContentRepository.UpdateStatusProjectContent(idProjectContent, status))
                 {
                     return NoContent();
                 }
